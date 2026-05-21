@@ -18,4 +18,4 @@ Stop manually tweaking mock data. Input your target statistical thresholds (e.g.
 2. **Requirements:** Windows OS with Microsoft .NET 8.0 Runtime. *(Whitelist in antivirus if the iterative calculation engine triggers a false positive).*
 
 ---
-*Note: This repository hosts the trial release for community feedback and technical evaluation. For commercial licensing and full support, please visit **[datasynthpro.com](https://www.datasynthpro.com)**.*
+*Note: This repository hosts the trial release for community feedback and technical evaluation. For commercial licensing and full support, please visit **[www.datasynthpro.com](https://www.datasynthpro.com)**.*
