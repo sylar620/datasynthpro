@@ -2,7 +2,7 @@
 
 **DataSynth Pro** is a Windows application designed to generate realistic, mathematically sound synthetic datasets that perfectly align with **IBM SPSS** outputs. 
 
-👉 **[Visit the Official Website: datasynthpro.com](https://www.datasynthpro.com)**
+👉 **[Visit the Official Website: www.datasynthpro.com](https://www.datasynthpro.com)**
 
 ## 🚀 Core Value
 Stop manually tweaking mock data. Input your target statistical thresholds (e.g., target p-values, Hazard Ratios, or precise ROC curve AUCs), and our engine will reverse-engineer the distribution and generate the raw dataset in seconds.
