@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ru">
+<head>
+<script>
+        (function () {
+            var pref = localStorage.getItem('preferredLang');
+            var browserLang = navigator.language || navigator.userLanguage;
+            var shouldGoToEn = (pref === 'en') || (!pref && !browserLang.toLowerCase().startsWith('zh') && !browserLang.toLowerCase().startsWith('fr') && !browserLang.toLowerCase().startsWith('pt') && !browserLang.toLowerCase().startsWith('es') && !browserLang.toLowerCase().startsWith('de') && !browserLang.toLowerCase().startsWith('ru'));
+            if (shouldGoToEn && window.location.pathname.includes('/ru')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = '../' + currentFile + window.location.search + window.location.hash;
+            }
+        })();
+    </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Узнайте, как настраивать параметры и генерировать академические синтетические статистические наборы данных в автономном режиме с помощью DataSynth Pro." name="description"/>
+<title>Документация | DataSynth Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-P31H1FL4HS"></script>
+<script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-P31H1FL4HS');</script>
+<link href="https://www.datasynthpro.com/ru/docs.html" rel="canonical"/>
+<link href="https://www.datasynthpro.com/docs.html" hreflang="en" rel="alternate"/>
+<link href="https://www.datasynthpro.com/zh/docs.html" hreflang="zh-CN" rel="alternate"/>
+<link href="https://www.datasynthpro.com/fr/docs.html" hreflang="fr" rel="alternate"/>
+<link href="https://www.datasynthpro.com/pt/docs.html" hreflang="pt" rel="alternate"/>
+<link href="https://www.datasynthpro.com/es/docs.html" hreflang="es" rel="alternate"/>
+<link href="https://www.datasynthpro.com/de/docs.html" hreflang="de" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ru/docs.html" hreflang="ru" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ja/docs.html" hreflang="ja" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ko/docs.html" hreflang="ko" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ar/docs.html" hreflang="ar" rel="alternate"/>
+<link href="https://www.datasynthpro.com/docs.html" hreflang="x-default" rel="alternate"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.datasynthpro.com/ru/docs.html" property="og:url"/>
+<meta content="Документация | DataSynth Pro" property="og:title"/>
+<meta content="Профессиональный офлайн-генератор синтетических данных для исследователей и аналитиков." property="og:description"/>
+<meta content="https://www.datasynthpro.com/image/home.png" property="og:image"/>
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="https://www.datasynthpro.com/ru/docs.html" property="twitter:url"/>
+<meta content="Документация | DataSynth Pro" property="twitter:title"/>
+<meta content="Профессиональный офлайн-генератор синтетических данных для исследователей и аналитиков." property="twitter:description"/>
+<meta content="https://www.datasynthpro.com/image/home.png" property="twitter:image"/>
+</head>
+<body class="bg-white text-gray-900 antialiased h-screen overflow-hidden flex flex-col selection:bg-scientific-blue selection:text-white">
+<!-- Top Navbar -->
+<nav class="w-full z-50 glass-nav h-16 flex-shrink-0">
+<div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
+<a class="flex-shrink-0 flex items-center gap-2 cursor-pointer" href="../index.html">
+<div class="w-7 h-7 rounded bg-scientific-blue flex items-center justify-center text-white font-bold text-lg">S</div>
+<span class="font-semibold text-lg tracking-tight text-gray-900 hidden sm:block">DataSynth Pro Документация</span>
+</a>
+<div class="flex items-center space-x-6">
+<a class="inline-flex items-center text-xs font-medium text-gray-600 hover:text-scientific-blue transition-colors" href="../index.html">
+<svg class="mr-1 h-4 w-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                    Главная
+                </a>
+<div class="relative inline-block text-left">
+<div>
+<button aria-expanded="true" aria-haspopup="true" class="inline-flex justify-center w-full rounded border border-gray-300 shadow-sm px-3 py-1.5 bg-white text-xs font-medium text-gray-700 hover:bg-gray-50 focus:outline-none z-50" id="lang-menu-button" type="button">
+<svg class="mr-1.5 h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                            Русский
+                            <svg class="-mr-1 ml-1 h-5 w-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+<div class="origin-top-right absolute right-0 top-full mt-2 w-32 rounded shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden focus:outline-none z-50" id="lang-dropdown">
+<div class="py-1">
+
+
+
+
+
+
+
+
+
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../docs.html" onclick="localStorage.setItem('preferredLang', 'en');">English</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../fr/docs.html" onclick="localStorage.setItem('preferredLang', 'fr');">Français</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../pt/docs.html" onclick="localStorage.setItem('preferredLang', 'pt');">Português</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../es/docs.html" onclick="localStorage.setItem('preferredLang', 'es');">Español</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../de/docs.html" onclick="localStorage.setItem('preferredLang', 'de');">Deutsch</a>
+<a class="block px-4 py-2 text-sm text-scientific-blue bg-gray-50 font-medium" href="docs.html" onclick="localStorage.setItem('preferredLang', 'ru');">Русский</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../zh/docs.html" onclick="localStorage.setItem('preferredLang', 'zh');">简体中文</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../ja/docs.html" onclick="localStorage.setItem('preferredLang', 'ja');">日本語</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../ko/docs.html" onclick="localStorage.setItem('preferredLang', 'ko');">한국어</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../ar/docs.html" onclick="localStorage.setItem('preferredLang', 'ar');">العربية</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-gray-50 border-r border-gray-200 overflow-y-auto flex-shrink-0 hidden md:block">
+<nav class="px-3 py-6 space-y-1">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Начало работы</p>
+<a class="sidebar-active group flex items-center px-3 py-2 text-sm rounded-md transition-colors font-medium" href="#overview">1. Генерация показателей</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">T-Тесты</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#independent-t-test">2. Независимый T-Тест</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#paired-t-test">3. Парный T-Тест</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">Другие базовые тесты</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#chi-square">4. Критерий Хи-квадрат</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">ANOVA</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#one-way-anova">5. Однофакторный ANOVA</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#two-way-anova">6. Двухфакторный ANOVA</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#repeated-anova">7. Повторные измерения</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">Непараметрические</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#non-parametric-2">8. 2 независимые выборки</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#non-parametric-k">9. K независимых выборок</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">Другие анализы</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#quartile">10. Квартильный анализ</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#binary-logistic">11. Бинарная логистика</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#multiple-linear">12. Множественная линейная</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#cox-regression">13. Регрессия Кокса</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#correlation">14. Корреляция</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#roc-curve">15. ROC-кривая</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">Конфигурация</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#export-import">16. Экспорт/Импорт</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-white p-6 md:p-10 lg:p-12 scroll-smooth">
+<div class="max-w-4xl mx-auto">
+<!-- Section: Overview -->
+<section class="mb-20 scroll-mt-20" id="overview">
+<h1 class="text-4xl font-extrabold text-gray-900 tracking-tight mb-4">Документация и руководство пользователя</h1>
+<p class="text-lg text-gray-600 mb-10 leading-relaxed">
+                        Добро пожаловать в официальную документацию DataSynth Pro. Это подробное руководство содержит инструкции по настройке параметров для различных статистических модулей для синтеза надежных, академически обоснованных и статистически валидных наборов данных полностью офлайн.
+                    </p>
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">1. Генерация нескольких показателей одновременно</h2>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.1 Предварительные требования и запуск</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Дважды щелкните исполняемый файл для запуска приложения. Программа требует Microsoft .NET 8.0 Runtime Framework. Если он не установлен на вашем компьютере, следуйте инструкциям для загрузки и установки, затем перезапустите программу.
+                        </p>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4 rounded-r">
+<p class="text-sm text-blue-700"><strong>Предупреждение безопасности:</strong> Если ваше антивирусное программное обеспечение помечает исполняемый файл как ложное срабатывание, добавьте его в список исключений или доверенных программ.</p>
+</div>
+<div class="mb-6">
+<img alt="Figure: User Interface / Operations (Main Interface)" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/main_interface.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Рисунок 1.1: Главный интерфейс программы</p>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.2 Настройка параметров</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            По умолчанию приложение предварительно заполняет две непрерывные переменные: «Возраст» и «Пол» для быстрой справки. Группа по умолчанию называется «Контрольная группа», размер выборки установлен на 100 случаев. Если ваше исследование требует несколько групп, вы можете последовательно генерировать и экспортировать наборы данных для каждой группы, обновляя параметры для каждого запуска.
+                        </p>
+<ul class="list-disc pl-5 mb-4 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>Добавление непрерывных числовых переменных:</strong> Чтобы добавить новую количественную переменную, нажмите кнопку <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Numeric</span>. Затем укажите название показателя (например, «Индекс массы тела» или «ИМТ»), среднее значение, стандартное отклонение и количество десятичных знаков. Поля «Минимум» и «Максимум» необязательны.</li>
+<li><strong>Настройки распределения данных:</strong> По умолчанию генерируемые числовые показатели следуют нормальному распределению. Если вам нужны данные с ненормальным распределением, установите опцию <span class="text-scientific-blue font-semibold">Normal Distribution</span> в значение <span class="text-red-500 font-semibold">Нет</span>.</li>
+</ul>
+<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6 rounded-r">
+<p class="text-sm text-yellow-700"><strong>Настройка распределения:</strong> Нормальное распределение основано на естественном диапазоне вариации; слишком строгие ограничения Минимума и Максимума обрежут нормальную кривую и могут привести к ненормально распределенным значениям.</p>
+</div>
+<div class="mb-6">
+<img alt="Figure: Adding Variables" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/adding_variables.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Рисунок 1.2: Добавление переменных</p>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.3 Добавление категориальных переменных</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Нажмите кнопку <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Categorical</span> для добавления качественных переменных (например, «Гипертония»). Вы можете ввести названия категорий и соответствующие целевые распределения или пропорции.
+                        </p>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.4 Выполнение генерации</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Нажмите кнопку <span class="bg-scientific-blue text-white px-3 py-1 rounded text-xs font-semibold">Generate</span> для синтеза заданного количества записей. После расчета появится окно сводной статистики, позволяющее проверить соответствие фактических сгенерированных значений заданным параметрам.
+                        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<div>
+<img alt="Figure: Executing Generation" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/executing_generation.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Рисунок 1.3: Выполнение генерации</p>
+</div>
+<div>
+<img alt="Figure: Displaying Data" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/displaying_data.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Рисунок 1.4: Отображение данных</p>
+</div>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.5 Экспорт и проверка</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Нажмите кнопку <span class="bg-scientific-blue text-white px-3 py-1 rounded text-xs font-semibold">Save</span> для экспорта сгенерированного набора данных в стандартный файл Excel.
+                        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<div class="space-y-4">
+<div><img alt="Figure: Exporting Tables" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/exporting_tables.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 1.5: Экспорт таблиц в Excel</p></div>
+<div><img alt="Figure: Calculating Mean" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/calculating_mean.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 1.6: Вычисление среднего в Excel</p></div>
+</div>
+<div class="space-y-4">
+<div><img alt="Figure: Calculating Standard Deviation" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/calculating_std.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 1.7: Вычисление стандартного отклонения в Excel</p></div>
+<div><img alt="Figure: Results" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/calculation_results.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 1.8: Результаты проверки совпадают с начальными настройками</p></div>
+</div>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.6 Вычислительная эффективность</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Оснащенный высокопроизводительным оптимизационным движком, программа может генерировать наборы данных, содержащие тысячи или десятки тысяч записей, за секунды.</p>
+<div class="bg-gray-50 border border-gray-200 p-4 rounded-xl">
+<p class="text-sm font-semibold text-gray-700 mb-1">Советы и рекомендации:</p>
+<p class="text-sm text-gray-600 leading-relaxed">• <strong>Предпочтение нормального распределения:</strong> Данные по умолчанию соответствуют нормальному распределению для беспрепятственного последующего анализа.</p>
+</div>
+</div>
+</section>
+<!-- Section: Independent T-Test -->
+<section class="mb-20 scroll-mt-20" id="independent-t-test">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">2. Независимый T-Тест</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">Предназначен для поперечных исследований, сравнивающих средние двух различных групп. Широко используется в клинических испытаниях и социологических опросах.</p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">2.1 Рабочий процесс</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Перейдите в <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Independent T-Test</span>.</p>
+<div class="mb-6"><img alt="T-Test Configuration" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Independent T-Test1.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 2.1: Настройка независимого T-Теста</p></div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">2.2 Параметры</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Программа предварительно заполняет примеры настроек для «Контрольной группы» и «Экспериментальной группы». Введите размер выборки, среднее и стандартное отклонение для каждой группы, чтобы просмотреть вычисленные t-значение и p-значение в реальном времени.</p>
+<div><img alt="T-Test Results" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Independent T-Test2.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 2.2: Отображение данных независимого T-Теста</p></div>
+</div>
+</section>
+<!-- Section: Paired T-Test -->
+<section class="mb-20 scroll-mt-20" id="paired-t-test">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">3. Парный T-Тест</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">Используется для лонгитюдных исследований или crossover-исследований, где одни и те же субъекты измеряются дважды (например, до и после теста).</p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">3.1 Рабочий процесс</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Перейдите в <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Paired T-Test</span>.</p>
+<div class="mb-6"><img alt="Paired T-Test Configuration" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Paired T-Test1.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 3.1: Настройка парного T-Теста</p></div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">3.2 Логика моделирования</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Программа по умолчанию устанавливает две парные переменные. Вы можете определить среднее и стандартное отклонение для каждой переменной и установить целевой диапазон p-значения.</p>
+<div><img alt="Paired T-Test Results" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Paired T-Test2.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 3.2: Отображение данных парного T-Теста</p></div>
+</div>
+</section>
+<!-- Section: Chi-Square -->
+<section class="mb-20 scroll-mt-20" id="chi-square">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">4. Критерий Хи-квадрат</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">Определяет наличие значимой связи между двумя категориальными переменными. Широко используется для демографических кросс-табуляций.</p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">4.1 Рабочий процесс</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Перейдите в <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Chi-Square Test</span>.</p>
+<div class="mb-6"><img alt="Chi-Square Setup" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Chi-Square1.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 4.1: Настройка критерия Хи-квадрат</p></div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">4.2 Матрица сопряженности</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Интерфейс по умолчанию использует стандартную таблицу сопряженности 2x2. Заполните наблюдаемые частоты для каждой ячейки.</p>
+<div><img alt="Chi-Square Results" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Chi-Square2.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 4.2: Отображение данных критерия Хи-квадрат</p></div>
+</div>
+</section>
+<!-- Section: One-Way ANOVA -->
+<section class="mb-20 scroll-mt-20" id="one-way-anova">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">5. Однофакторный ANOVA</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">Используется при сравнении средних трех или более независимых групп. Алгоритм синтезирует внутригрупповую дисперсию и межгрупповые различия для достижения целевых F-значений.</p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">5.1 Рабочий процесс</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Перейдите в <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → ANOVA → One-Way ANOVA</span>.</p>
+<div class="mb-6"><img alt="ANOVA Configuration" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/One-Way ANOVA1.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 5.1: Настройка однофакторного ANOVA</p></div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">5.2 Конфигурация</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Система предварительно загружает параметры для трех групп. Просто введите размер выборки, среднее и стандартное отклонение для каждой группы.</p>
+<div><img alt="ANOVA Output" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/One-Way ANOVA2.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 5.2: Отображение данных однофакторного ANOVA</p></div>
+</div>
+</section>
+<!-- Section: Two-Way ANOVA -->
+<section class="mb-20 scroll-mt-20" id="two-way-anova">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">6. Двухфакторный ANOVA</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">Исследует влияние двух независимых категориальных переменных на одну непрерывную зависимую переменную.</p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">6.1 Рабочий процесс</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Перейдите в <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → ANOVA → Two-Way ANOVA</span>.</p>
+<div class="mb-6"><img alt="Two-Way ANOVA Setup" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Two-Way ANOVA1.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 6.1: Настройка двухфакторного ANOVA</p></div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">6.2 Факторы и взаимодействия</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Инструмент по умолчанию использует два фактора: «Время» и «Концентрация».</p>
+<div><img alt="Two-Way ANOVA Output" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Two-Way ANOVA2.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 6.2: Отображение данных двухфакторного ANOVA</p></div>
+</div>
+</section>
+<!-- Section: Repeated Measures -->
+<section class="mb-20 scroll-mt-20" id="repeated-anova">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">7. Однофакторный ANOVA с повторными измерениями</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">Расширение парного T-Теста на три или более временных точки. Идеально подходит для лонгитюдного отслеживания.</p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">7.1 Рабочий процесс</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Перейдите в <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → ANOVA → Repeated Measures ANOVA</span>.</p>
+<div class="mb-6"><img alt="Repeated Measures Setup" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Repeated Measures ANOVA1.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 7.1: Настройка ANOVA с повторными измерениями</p></div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">7.2 Повторные наблюдения</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Система по умолчанию использует три временные точки наблюдения.</p>
+<div><img alt="Repeated Measures Results" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Repeated Measures ANOVA2.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 7.2: Отображение данных ANOVA с повторными измерениями</p></div>
+</div>
+</section>
+<!-- Sections 8-16 abbreviated for space preservation -->
+<section class="mb-20 scroll-mt-20" id="non-parametric-2">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">8. Ранговый суммарный тест для двух независимых выборок (Непараметрический)</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">Альтернатива U-тесту Манна-Уитни для данных, не соответствующих предположению о нормальности.</p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">8.1 Рабочий процесс</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Перейдите в <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Non-parametric → 2 Independent Samples</span>.</p>
+<div class="mb-6"><img alt="Non-Parametric 2 Samples" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Non-Parametric Test (2 Ind. Samples)1.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 8.1: Настройка теста для двух независимых выборок</p></div>
+</div>
+</section>
+<section class="mb-20 scroll-mt-20" id="non-parametric-k">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">9. Критерий Краскела-Уоллиса (K независимых выборок)</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">Эквивалент H-теста Краскела-Уоллиса. Генерирует порядковые или ненормально распределенные непрерывные данные для трех или более независимых групп.</p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">9.1 Рабочий процесс</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Перейдите в <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Non-parametric → K Independent Samples</span>.</p>
+<div class="mb-6"><img alt="Non-Parametric K Samples" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Non-Parametric Test (K Ind. Samples)1.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 9.1: Настройка критерия Краскела-Уоллиса</p></div>
+</div>
+</section>
+<section class="mb-20 scroll-mt-20" id="quartile">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">10. Генерация квартильных данных</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">Разделяет упорядоченный по рангам набор данных на четыре равные части. Полезно для оценки разброса и центральной тенденции данных.</p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">10.1 Рабочий процесс</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Перейдите в <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Quartile Data</span>.</p>
+<div class="mb-6"><img alt="Quartile Configuration" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Quartile1.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 10.1: Настройка квартильных данных</p></div>
+</div>
+</section>
+<section class="mb-20 scroll-mt-20" id="binary-logistic">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">11. Генерация данных для бинарной логистической регрессии</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">Необходим для задач классификации, где результат является дихотомическим. Широко используется в эпидемиологии.</p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">11.1 Рабочий процесс</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Перейдите в <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Regression → Binary Logistic</span>.</p>
+<div class="mb-6"><img alt="Logistic Regression" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Binary Logistic1.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 11.1: Настройка бинарной логистической регрессии</p></div>
+</div>
+</section>
+<section class="mb-20 scroll-mt-20" id="multiple-linear">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">12. Генерация данных для множественной линейной регрессии</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">Основной инструмент прогнозного моделирования.</p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">12.1 Рабочий процесс</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Перейдите в <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Regression → Linear Regression</span>.</p>
+<div class="mb-6"><img alt="Linear Regression" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Multiple Linear Regression1.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 12.1: Настройка множественной линейной регрессии</p></div>
+</div>
+</section>
+<section class="mb-20 scroll-mt-20" id="cox-regression">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">13. Генерация данных для регрессии пропорциональных рисков Кокса</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">Золотой стандарт анализа выживаемости. Моделирует данные времени до события с учетом цензурирования справа.</p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">13.1 Рабочий процесс</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Перейдите в <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Regression → Cox Regression</span>.</p>
+<div class="mb-6"><img alt="Cox Regression" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Cox Regression1.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 13.1: Настройка регрессии Кокса</p></div>
+</div>
+</section>
+<section class="mb-20 scroll-mt-20" id="correlation">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">14. Генерация данных для корреляционного анализа</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">Моделирует бивариантные связи (Пирсона или Спирмена) и частную корреляцию.</p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">14.1 Рабочий процесс</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Перейдите в <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Correlation</span>.</p>
+<div class="mb-6"><img alt="Correlation Config" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Correlation1.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 14.1: Настройка корреляционного анализа</p></div>
+</div>
+</section>
+<section class="mb-20 scroll-mt-20" id="roc-curve">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">15. Генерация данных для анализа ROC-кривых</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">Оценивает диагностическую способность тестовой переменной различать два состояния.</p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">15.1 Рабочий процесс</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Перейдите в <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → ROC Curve</span>.</p>
+<div class="mb-6"><img alt="ROC Curve" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/ROC Curve1.png"/><p class="text-xs text-gray-400 mt-2 text-center">Рисунок 15.1: Настройка ROC-кривой</p></div>
+</div>
+</section>
+<section class="mb-20 scroll-mt-20" id="export-import">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">16. Сохранение и экспорт настроек конфигурации</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">Для оптимизации повторяющихся задач моделирования приложение предоставляет мощный механизм сохранения состояния конфигурации.</p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">16.1 Сохранение/Восстановление</h3>
+<ul class="list-disc pl-5 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>Экспорт конфигурации:</strong> Перейдите в <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">File → Export Configuration</span> для сохранения всех параметров в файл `.json`.</li>
+<li><strong>Импорт конфигурации:</strong> Перейдите в <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">File → Import Configuration</span> и выберите ранее сохраненный файл конфигурации.</li>
+</ul>
+</div>
+</section>
+<div class="mt-12 pt-8 border-t border-gray-200 flex justify-between">
+<a class="text-scientific-blue font-medium hover:underline flex items-center" href="../index.html">
+<svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        На главную
+                    </a>
+</div>
+</div>
+</main>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const button = document.getElementById('lang-menu-button');
+            const dropdown = document.getElementById('lang-dropdown');
+            let isDropdownOpen = false;
+            button.addEventListener('click', function (event) {
+                event.stopPropagation();
+                isDropdownOpen = !isDropdownOpen;
+                if (isDropdownOpen) { dropdown.classList.remove('hidden'); } else { dropdown.classList.add('hidden'); }
+            });
+            document.addEventListener('click', function (event) {
+                if (isDropdownOpen && !dropdown.contains(event.target)) { isDropdownOpen = false; dropdown.classList.add('hidden'); }
+            });
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('aside nav a');
+            const mainArea = document.querySelector('main');
+            mainArea.addEventListener('scroll', () => {
+                let current = '';
+                const mainOffset = mainArea.offsetTop;
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - mainOffset;
+                    if (mainArea.scrollTop >= sectionTop - 150) { current = section.getAttribute('id'); }
+                });
+                if (mainArea.scrollHeight - mainArea.scrollTop <= mainArea.clientHeight + 10) { current = sections[sections.length - 1].getAttribute('id'); }
+                navLinks.forEach(link => {
+                    link.classList.remove('sidebar-active', 'text-gray-900', 'bg-gray-100');
+                    link.classList.add('text-gray-600');
+                    if (link.getAttribute('href') === `#${current}`) { link.classList.add('sidebar-active'); link.classList.remove('text-gray-600'); }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

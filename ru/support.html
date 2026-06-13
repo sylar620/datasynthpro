@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ru">
+<head>
+<script>
+        (function () {
+            var pref = localStorage.getItem('preferredLang');
+            var browserLang = navigator.language || navigator.userLanguage;
+            var shouldGoToEn = (pref === 'en') || (!pref && !browserLang.toLowerCase().startsWith('zh') && !browserLang.toLowerCase().startsWith('fr') && !browserLang.toLowerCase().startsWith('pt') && !browserLang.toLowerCase().startsWith('es') && !browserLang.toLowerCase().startsWith('de') && !browserLang.toLowerCase().startsWith('ru'));
+            if (shouldGoToEn && window.location.pathname.includes('/ru')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = '../' + currentFile + window.location.search + window.location.hash;
+            }
+        })();
+    </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Найдите ответы на часто задаваемые вопросы об установке, лицензировании и конфиденциальности DataSynth Pro." name="description"/>
+<title>Поддержка и FAQ | DataSynth Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-P31H1FL4HS"></script>
+<script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-P31H1FL4HS');</script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7928268474606981"></script>
+<link href="https://www.datasynthpro.com/ru/support.html" rel="canonical"/>
+<link href="https://www.datasynthpro.com/support.html" hreflang="en" rel="alternate"/>
+<link href="https://www.datasynthpro.com/zh/support.html" hreflang="zh-CN" rel="alternate"/>
+<link href="https://www.datasynthpro.com/fr/support.html" hreflang="fr" rel="alternate"/>
+<link href="https://www.datasynthpro.com/pt/support.html" hreflang="pt" rel="alternate"/>
+<link href="https://www.datasynthpro.com/es/support.html" hreflang="es" rel="alternate"/>
+<link href="https://www.datasynthpro.com/de/support.html" hreflang="de" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ru/support.html" hreflang="ru" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ja/support.html" hreflang="ja" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ko/support.html" hreflang="ko" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ar/support.html" hreflang="ar" rel="alternate"/>
+<link href="https://www.datasynthpro.com/support.html" hreflang="x-default" rel="alternate"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.datasynthpro.com/ru/support.html" property="og:url"/>
+<meta content="Поддержка и FAQ | DataSynth Pro" property="og:title"/>
+<meta content="Профессиональный офлайн-генератор синтетических данных для исследователей и аналитиков." property="og:description"/>
+<meta content="https://www.datasynthpro.com/image/home.png" property="og:image"/>
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="https://www.datasynthpro.com/ru/support.html" property="twitter:url"/>
+<meta content="Поддержка и FAQ | DataSynth Pro" property="twitter:title"/>
+<meta content="Профессиональный офлайн-генератор синтетических данных для исследователей и аналитиков." property="twitter:description"/>
+<meta content="https://www.datasynthpro.com/image/home.png" property="twitter:image"/>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased selection:bg-scientific-blue selection:text-white flex flex-col min-h-screen">
+<nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<a class="flex-shrink-0 flex items-center gap-2 cursor-pointer" href="../index.html">
+<div class="w-8 h-8 rounded bg-scientific-blue flex items-center justify-center text-white font-bold text-xl">S</div>
+<span class="font-bold text-xl tracking-tight text-gray-900">DataSynth Pro</span>
+</a>
+<div class="relative md:hidden inline-block text-left">
+<div>
+<button aria-expanded="true" aria-haspopup="true" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-3 py-1.5 bg-white text-xs font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-scientific-blue transition-all" id="mobile-lang-menu-button" type="button">
+<svg class="mr-1 h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                            Русский
+                            <svg aria-hidden="true" class="-mr-1 ml-1 h-4 w-4" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+<div aria-labelledby="mobile-lang-menu-button" aria-orientation="vertical" class="origin-top-right absolute right-0 top-full mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden focus:outline-none transition-opacity duration-200 z-50" id="mobile-lang-dropdown" role="menu" tabindex="-1">
+<div class="py-1" role="none">
+
+
+
+
+
+
+
+
+
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../support.html" onclick="localStorage.setItem('preferredLang', 'en');" role="menuitem" tabindex="-1">English</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../fr/support.html" onclick="localStorage.setItem('preferredLang', 'fr');" role="menuitem" tabindex="-1">Français</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../pt/support.html" onclick="localStorage.setItem('preferredLang', 'pt');" role="menuitem" tabindex="-1">Português</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../es/support.html" onclick="localStorage.setItem('preferredLang', 'es');" role="menuitem" tabindex="-1">Español</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../de/support.html" onclick="localStorage.setItem('preferredLang', 'de');" role="menuitem" tabindex="-1">Deutsch</a>
+<a class="block px-4 py-2 text-xs text-scientific-blue bg-gray-50 font-medium" href="support.html" onclick="localStorage.setItem('preferredLang', 'ru');" role="menuitem" tabindex="-1">Русский</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../zh/support.html" onclick="localStorage.setItem('preferredLang', 'zh');" role="menuitem" tabindex="-1">简体中文</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ja/support.html" onclick="localStorage.setItem('preferredLang', 'ja');" role="menuitem" tabindex="-1">日本語</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ko/support.html" onclick="localStorage.setItem('preferredLang', 'ko');" role="menuitem" tabindex="-1">한국어</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ar/support.html" onclick="localStorage.setItem('preferredLang', 'ar');" role="menuitem" tabindex="-1">العربية</a>
+</div>
+</div>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-sm font-medium text-gray-600 hover:text-scientific-blue transition-colors" href="../index.html">Главная</a>
+<a class="text-sm font-medium text-gray-600 hover:text-scientific-blue transition-colors" href="../docs.html">Документация</a>
+<a class="text-sm font-medium text-gray-600 hover:text-scientific-blue transition-colors" href="download.html">Скачать</a>
+<a class="text-sm font-medium text-gray-600 hover:text-scientific-blue transition-colors" href="support.html">Поддержка</a>
+<a class="text-sm font-medium text-gray-600 hover:text-scientific-blue transition-colors" href="../license.html">Активировать лицензию</a>
+<div class="relative inline-block text-left">
+<div>
+<button aria-expanded="true" aria-haspopup="true" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-scientific-blue transition-all" id="lang-menu-button" type="button">
+<svg class="mr-2 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                Русский
+                                <svg aria-hidden="true" class="-mr-1 ml-2 h-5 w-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+<div aria-labelledby="lang-menu-button" aria-orientation="vertical" class="origin-top-right absolute right-0 top-full mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden focus:outline-none transition-opacity duration-200" id="lang-dropdown" role="menu" tabindex="-1">
+<div class="py-1" role="none">
+
+
+
+
+
+
+
+
+
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../support.html" onclick="localStorage.setItem('preferredLang', 'en');" role="menuitem" tabindex="-1">English</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../fr/support.html" onclick="localStorage.setItem('preferredLang', 'fr');" role="menuitem" tabindex="-1">Français</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../pt/support.html" onclick="localStorage.setItem('preferredLang', 'pt');" role="menuitem" tabindex="-1">Português</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../es/support.html" onclick="localStorage.setItem('preferredLang', 'es');" role="menuitem" tabindex="-1">Español</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../de/support.html" onclick="localStorage.setItem('preferredLang', 'de');" role="menuitem" tabindex="-1">Deutsch</a>
+<a class="block px-4 py-2 text-sm text-scientific-blue bg-gray-50 font-medium" href="support.html" onclick="localStorage.setItem('preferredLang', 'ru');" role="menuitem" tabindex="-1">Русский</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../zh/support.html" onclick="localStorage.setItem('preferredLang', 'zh');" role="menuitem" tabindex="-1">简体中文</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ja/support.html" onclick="localStorage.setItem('preferredLang', 'ja');" role="menuitem" tabindex="-1">日本語</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ko/support.html" onclick="localStorage.setItem('preferredLang', 'ko');" role="menuitem" tabindex="-1">한국어</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ar/support.html" onclick="localStorage.setItem('preferredLang', 'ar');" role="menuitem" tabindex="-1">العربية</a>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center justify-center px-5 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-scientific-blue hover:bg-scientific-hover shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-scientific-blue" href="../index.html#pricing">
+<svg class="mr-2 -ml-1 h-4 w-4" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Получить лицензию
+                    </a>
+</div>
+</div>
+</div>
+</nav>
+<main class="flex-grow pt-32 pb-24 relative overflow-hidden">
+<div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+<div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"></div>
+</div>
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h1 class="text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">Часто задаваемые вопросы</h1>
+<p class="mt-4 text-lg text-gray-600">Найдите ответы на распространенные вопросы ниже.</p>
+</div>
+<div class="space-y-8">
+<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Почему при открытии программы появляется сообщение «You must install .NET Desktop Runtime»?</h3>
+<div class="prose max-w-none text-gray-600">
+<p class="mb-6 leading-relaxed">DataSynth Pro создан на основе надежного .NET 8.0 для максимальной производительности и точности. Если в вашей системе Windows не установлен этот компонент, вы увидите данное сообщение. Просто нажмите кнопку «Download it now» в окне сообщения, следуйте инструкциям установщика Microsoft и перезапустите DataSynth Pro.</p>
+<img alt=".NET Desktop Runtime Prompt" class="rounded-xl shadow-md border border-gray-100 max-w-full sm:max-w-lg mx-auto md:mx-0 object-cover" src="../image/help1.png"/>
+</div>
+</div>
+<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Как найти мой машинный код?</h3>
+<div class="prose max-w-none text-gray-600">
+<p class="leading-relaxed">Вы можете нажать кнопку Register (Регистрация) в главном интерфейсе программы, и машинный код отобразится в окне.</p>
+</div>
+</div>
+<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Можно ли использовать программу офлайн?</h3>
+<div class="prose max-w-none text-gray-600">
+<p class="leading-relaxed">Да, absolutely. DataSynth Pro разработан для работы на 100% офлайн. Мы ставим конфиденциальность ваших данных на первое место, поэтому в программе нет телеметрии или требований к подключению к Интернету. Вы можете безопасно генерировать конфиденциальные клинические или финансовые структуры непосредственно на вашем локальном компьютере.</p>
+</div>
+</div>
+<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Данные, генерируемые программой, каждый раз разные?</h3>
+<div class="prose max-w-none text-gray-600">
+<p class="leading-relaxed">Да, данные, генерируемые программой, каждый раз разные. Даже если заданы одинаковые целевые значения, математически существует бесконечное множество возможных решений. Вы можете использовать программу с уверенностью — данные не будут идентичны данным других пользователей.</p>
+</div>
+</div>
+<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Можно ли использовать на Apple macOS?</h3>
+<div class="prose max-w-none text-gray-600">
+<p class="leading-relaxed">Да, пользователи Apple macOS могут использовать эту программу, запустив Windows через виртуальную машину. Программное обеспечение виртуальной машины является открытым и может быть загружено бесплатно.</p>
+</div>
+</div>
+<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Почему система сообщает «Smart App Control заблокировал приложение, которое может быть небезопасным»?</h3>
+<div class="prose max-w-none text-gray-600">
+<p class="leading-relaxed">Программа не оплачивала сборы поставщикам безопасности, поэтому может быть ошибочно заблокирована. Вы можете решить эту проблему, настроив следующие параметры: Система &gt; Конфиденциальность и безопасность &gt; Безопасность Windows &gt; Управление приложениями и браузером &gt; Параметры Smart App Control &gt; Выкл. Если другое программное обеспечение безопасности блокирует программу, добавьте ее в список доверенных/разрешенных.</p>
+</div>
+</div>
+</div>
+<div class="mt-16 bg-white rounded-2xl shadow-sm border border-gray-100 p-8 sm:p-10 text-center hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-gradient-to-br from-scientific-blue to-blue-400 rounded-full opacity-10 blur-xl"></div>
+<div class="absolute bottom-0 left-0 -mb-4 -ml-4 w-24 h-24 bg-gradient-to-tr from-scientific-blue to-blue-400 rounded-full opacity-10 blur-xl"></div>
+<h2 class="text-2xl font-bold text-gray-900 mb-4 relative z-10">Всё ещё нужна помощь?</h2>
+<p class="text-lg text-gray-600 mb-8 relative z-10">Если вы не нашли ответа на свой вопрос, свяжитесь с нашей службой поддержки.</p>
+<a class="inline-flex items-center justify-center px-6 py-3 border border-gray-200 text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 hover:text-scientific-blue transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-scientific-blue relative z-10" href="mailto:datasynthpro@gmail.com">
+<svg class="mr-2 -ml-1 h-5 w-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                    datasynthpro@gmail.com
+                </a>
+</div>
+</div>
+</main>
+<footer class="bg-white border-t border-gray-200 mt-auto">
+<div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+<div class="md:flex md:items-center md:justify-between">
+<div class="flex justify-center space-x-6 md:order-2">
+<a class="text-gray-400 hover:text-gray-500" href="../docs.html"><span class="sr-only">Документация</span>Документация</a>
+<a class="text-gray-400 hover:text-gray-500" href="support.html"><span class="sr-only">Поддержка</span>Поддержка</a>
+<a class="text-gray-400 hover:text-gray-500" href="../license.html"><span class="sr-only">Активировать лицензию</span>Активировать лицензию</a>
+</div>
+<div class="mt-8 md:mt-0 md:order-1">
+<p class="text-center text-base text-gray-400">© 2026 DataSynth Pro. Все права защищены.</p>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const button = document.getElementById('lang-menu-button');
+            const dropdown = document.getElementById('lang-dropdown');
+            let isDropdownOpen = false;
+            if (button && dropdown) {
+                button.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    isDropdownOpen = !isDropdownOpen;
+                    if (isDropdownOpen) { dropdown.classList.remove('hidden'); setTimeout(() => dropdown.classList.remove('opacity-0', 'scale-95'), 10); }
+                    else { closeDropdown(); }
+                });
+            }
+            const mobileButton = document.getElementById('mobile-lang-menu-button');
+            const mobileDropdown = document.getElementById('mobile-lang-dropdown');
+            let isMobileDropdownOpen = false;
+            if (mobileButton && mobileDropdown) {
+                mobileButton.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    isMobileDropdownOpen = !isMobileDropdownOpen;
+                    if (isMobileDropdownOpen) { mobileDropdown.classList.remove('hidden'); setTimeout(() => mobileDropdown.classList.remove('opacity-0', 'scale-95'), 10); }
+                    else { closeMobileDropdown(); }
+                });
+            }
+            document.addEventListener('click', function (event) {
+                if (isDropdownOpen && dropdown && !dropdown.contains(event.target)) { closeDropdown(); }
+                if (isMobileDropdownOpen && mobileDropdown && !mobileDropdown.contains(event.target)) { closeMobileDropdown(); }
+            });
+            function closeDropdown() { isDropdownOpen = false; if (dropdown) dropdown.classList.add('hidden'); }
+            function closeMobileDropdown() { isMobileDropdownOpen = false; if (mobileDropdown) mobileDropdown.classList.add('hidden'); }
+            window.addEventListener('scroll', () => {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 10) { nav.classList.add('shadow-sm'); } else { nav.classList.remove('shadow-sm'); }
+            });
+        });
+    </script>
+</body>
+</html>

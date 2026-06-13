@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt">
+<head>
+<script>
+        (function () {
+            var pref = localStorage.getItem('preferredLang');
+            var browserLang = navigator.language || navigator.userLanguage;
+
+            var shouldGoToZh = (pref === 'zh') || (!pref && browserLang.toLowerCase().startsWith('zh'));
+            var shouldGoToFr = (pref === 'fr') || (!pref && browserLang.toLowerCase().startsWith('fr'));
+            var shouldGoToPt = (pref === 'pt') || (!pref && browserLang.toLowerCase().startsWith('pt'));
+            var shouldGoToEs = (pref === 'es') || (!pref && browserLang.toLowerCase().startsWith('es'));
+            var shouldGoToEn = (pref === 'en') || (!pref && !browserLang.toLowerCase().startsWith('zh') && !browserLang.toLowerCase().startsWith('fr') && !browserLang.toLowerCase().startsWith('pt') && !browserLang.toLowerCase().startsWith('es'));
+
+            if (shouldGoToZh && window.location.pathname.includes('/pt')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = '../zh/' + currentFile + window.location.search + window.location.hash;
+            }             else if (shouldGoToFr && window.location.pathname.includes('/pt')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = '../fr/' + currentFile + window.location.search + window.location.hash;
+            }             else if (shouldGoToEs && window.location.pathname.includes('/pt')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = '../es/' + currentFile + window.location.search + window.location.hash;
+            }             else if (shouldGoToEn && window.location.pathname.includes('/pt')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = '../' + currentFile + window.location.search + window.location.hash;
+            } 
+        })();
+    </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DataSynth Pro | Simulação de Dados Estatísticos de Nível Académico</title>
+<meta content="Gerador de dados sintéticos profissional offline para investigadores e analistas. Crie conjuntos de dados estatísticos altamente realistas para estudos sociológicos, médicos e financeiros com precisão incomparável." name="description"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Generated CSS -->
+<link href="../styles.css" rel="stylesheet"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-P31H1FL4HS"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-P31H1FL4HS');
+    </script>
+<!-- Google Adsense -->
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7928268474606981"></script>
+<!-- SEO Canonical and Hreflang -->
+<link href="https://www.datasynthpro.com/pt/" rel="canonical"/>
+<link href="https://www.datasynthpro.com/" hreflang="en" rel="alternate"/>
+<link href="https://www.datasynthpro.com/zh/" hreflang="zh-CN" rel="alternate"/>
+<link href="https://www.datasynthpro.com/fr/" hreflang="fr" rel="alternate"/>
+<link href="https://www.datasynthpro.com/pt/" hreflang="pt" rel="alternate"/>
+<link href="https://www.datasynthpro.com/es/" hreflang="es" rel="alternate"/>
+<link href="https://www.datasynthpro.com/de/" hreflang="de" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ru/" hreflang="ru" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ja/" hreflang="ja" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ko/" hreflang="ko" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ar/" hreflang="ar" rel="alternate"/>
+<link href="https://www.datasynthpro.com/" hreflang="x-default" rel="alternate"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://www.datasynthpro.com/fr/" property="og:url"/>
+<meta content="DataSynth Pro | Simulação de Dados Estatísticos de Nível Académico" property="og:title"/>
+<meta content="Gerador de dados sintéticos profissional offline para investigadores e analistas. Crie conjuntos de dados estatísticos altamente realistas para estudos sociológicos, médicos e financeiros com precisão incomparável." property="og:description"/>
+<meta content="https://www.datasynthpro.com/image/home.png" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="https://www.datasynthpro.com/fr/" property="twitter:url"/>
+<meta content="DataSynth Pro | Simulação de Dados Estatísticos de Nível Académico" property="twitter:title"/>
+<meta content="Gerador de dados sintéticos profissional offline para investigadores e analistas. Crie conjuntos de dados estatísticos altamente realistas para estudos sociológicos, médicos e financeiros com precisão incomparável." property="twitter:description"/>
+<meta content="https://www.datasynthpro.com/image/home.png" property="twitter:image"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "DataSynth Pro",
+  "operatingSystem": "Windows",
+  "applicationCategory": "ScientificApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "99.00",
+    "priceCurrency": "USD"
+  },
+  "description": "Gerador de dados sintéticos profissional offline para investigadores e analistas. Crie conjuntos de dados estatísticos altamente realistas para estudos sociológicos, médicos e financeiros com precisão incomparável."
+}
+</script>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased selection:bg-scientific-blue selection:text-white">
+<!-- Navbar -->
+<nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<!-- Logo -->
+<div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+<div class="w-8 h-8 rounded bg-scientific-blue flex items-center justify-center text-white font-bold text-xl">
+                        S
+                    </div>
+<span class="font-bold text-xl tracking-tight text-gray-900">DataSynth Pro</span>
+</div>
+<!-- Mobile Language Switcher -->
+<div class="relative md:hidden inline-block text-left">
+<div>
+<button aria-expanded="true" aria-haspopup="true" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-3 py-1.5 bg-white text-xs font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-scientific-blue transition-all" id="mobile-lang-menu-button" type="button">
+<svg class="mr-1 h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                            Português
+                            <svg aria-hidden="true" class="-mr-1 ml-1 h-4 w-4" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+<div aria-labelledby="mobile-lang-menu-button" aria-orientation="vertical" class="origin-top-right absolute right-0 top-full mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden focus:outline-none transition-opacity duration-200 z-50" id="mobile-lang-dropdown" role="menu" tabindex="-1">
+<div class="py-1" role="none">
+
+
+
+
+
+
+
+
+
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../index.html" onclick="localStorage.setItem('preferredLang', 'en');" role="menuitem" tabindex="-1">English</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../fr/index.html" onclick="localStorage.setItem('preferredLang', 'fr');" role="menuitem" tabindex="-1">Français</a>
+<a class="block px-4 py-2 text-xs text-scientific-blue bg-gray-50 font-medium" href="index.html" onclick="localStorage.setItem('preferredLang', 'pt');" role="menuitem" tabindex="-1">Português</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../es/index.html" onclick="localStorage.setItem('preferredLang', 'es');" role="menuitem" tabindex="-1">Español</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../de/index.html" onclick="localStorage.setItem('preferredLang', 'de');" role="menuitem" tabindex="-1">Deutsch</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ru/index.html" onclick="localStorage.setItem('preferredLang', 'ru');" role="menuitem" tabindex="-1">Русский</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../zh/index.html" onclick="localStorage.setItem('preferredLang', 'zh');" role="menuitem" tabindex="-1">简体中文</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ja/index.html" onclick="localStorage.setItem('preferredLang', 'ja');" role="menuitem" tabindex="-1">日本語</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ko/index.html" onclick="localStorage.setItem('preferredLang', 'ko');" role="menuitem" tabindex="-1">한국어</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ar/index.html" onclick="localStorage.setItem('preferredLang', 'ar');" role="menuitem" tabindex="-1">العربية</a>
+</div>
+</div>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-sm font-medium text-gray-600 hover:text-scientific-blue transition-colors" href="#">Início</a>
+<a class="text-sm font-medium text-gray-600 hover:text-scientific-blue transition-colors" href="docs.html">Documentação</a>
+<a class="text-sm font-medium text-gray-600 hover:text-scientific-blue transition-colors" href="download.html">Baixar</a>
+<a class="text-sm font-medium text-gray-600 hover:text-scientific-blue transition-colors" href="support.html">Suporte</a>
+<a class="text-sm font-medium text-gray-600 hover:text-scientific-blue transition-colors" href="license.html">Ativar Licença</a>
+<!-- Language Switcher -->
+<div class="relative inline-block text-left">
+<div>
+<button aria-expanded="true" aria-haspopup="true" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-scientific-blue transition-all" id="lang-menu-button" type="button">
+<svg class="mr-2 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                                Português
+                                <svg aria-hidden="true" class="-mr-1 ml-2 h-5 w-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+<div aria-labelledby="lang-menu-button" aria-orientation="vertical" class="origin-top-right absolute right-0 top-full mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden focus:outline-none transition-opacity duration-200" id="lang-dropdown" role="menu" tabindex="-1">
+<div class="py-1" role="none">
+
+
+
+
+
+
+
+
+
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../index.html" onclick="localStorage.setItem('preferredLang', 'en');" role="menuitem" tabindex="-1">English</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../fr/index.html" onclick="localStorage.setItem('preferredLang', 'fr');" role="menuitem" tabindex="-1">Français</a>
+<a class="block px-4 py-2 text-sm text-scientific-blue bg-gray-50 font-medium" href="index.html" onclick="localStorage.setItem('preferredLang', 'pt');" role="menuitem" tabindex="-1">Português</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../es/index.html" onclick="localStorage.setItem('preferredLang', 'es');" role="menuitem" tabindex="-1">Español</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../de/index.html" onclick="localStorage.setItem('preferredLang', 'de');" role="menuitem" tabindex="-1">Deutsch</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ru/index.html" onclick="localStorage.setItem('preferredLang', 'ru');" role="menuitem" tabindex="-1">Русский</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../zh/index.html" onclick="localStorage.setItem('preferredLang', 'zh');" role="menuitem" tabindex="-1">简体中文</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ja/index.html" onclick="localStorage.setItem('preferredLang', 'ja');" role="menuitem" tabindex="-1">日本語</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ko/index.html" onclick="localStorage.setItem('preferredLang', 'ko');" role="menuitem" tabindex="-1">한국어</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ar/index.html" onclick="localStorage.setItem('preferredLang', 'ar');" role="menuitem" tabindex="-1">العربية</a>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center justify-center px-5 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-scientific-blue hover:bg-scientific-hover shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-scientific-blue" href="#pricing">
+<svg class="mr-2 -ml-1 h-4 w-4" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                        Licença Vitalícia
+                    </a>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<div class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+<!-- Background decorative elements -->
+<div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+<div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl">
+<span class="block text-transparent bg-clip-text bg-gradient-to-r from-scientific-blue to-scientific-600 mb-2">Simule a realidade</span>
+<span class="block">Acelere a pesquisa</span>
+</h1>
+<p class="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-gray-600 font-light leading-relaxed">
+                Melhore as suas análises estatísticas com conjuntos de dados sintéticos de nível académico. Projetado para sociologia, gestão, estatística, medicina, finanças e muito mais. Gere dados precisos e estatisticamente válidos, totalmente offline.
+            </p>
+<div class="mt-10 flex flex-col sm:flex-row sm:flex-nowrap justify-center items-center gap-4 max-w-sm mx-auto sm:max-w-none">
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-medium rounded-xl text-white bg-scientific-blue hover:bg-scientific-hover md:text-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 h-[52px]" href="#pricing">
+                    Obter Licença Vitalícia
+                </a>
+<!-- Windows Download Button -->
+<a class="w-full sm:w-auto h-[52px] inline-flex items-center justify-center px-6 py-3.5 border border-transparent text-base font-semibold rounded-xl text-white bg-[#111318] hover:bg-[#22252e] shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 text-center" href="https://github.com/sylar620/datasynthpro/releases/download/v1.2/DataSynth_Pro.exe">
+    <svg class="mr-2 h-5 w-5 text-white fill-current" viewBox="0 0 24 24">
+        <path d="M0 3.449L9.75 2.1v9.45H0V3.449zM0 12.45h9.75v9.45L0 20.551v-8.102zM10.95 1.936L24 0v11.55H10.95V1.936zM10.95 12.45H24v11.55l-13.05-1.936V12.45z"/>
+    </svg>
+    Baixar para Windows
+</a>
+
+<!-- Mac Download Button with Dropdown -->
+<div class="relative w-full sm:w-auto inline-block group" id="mac-dropdown-container">
+    <button id="mac-hero-btn" class="w-full sm:w-auto h-[52px] inline-flex items-center justify-center px-6 py-3.5 border border-transparent text-base font-semibold rounded-xl text-white bg-[#111318] hover:bg-[#22252e] shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 focus:outline-none text-center">
+        <svg class="mr-2 h-[28px] w-[28px] text-white fill-current" viewBox="0 0 24 24">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.22.67-2.94 1.5-.64.73-1.2 1.87-1.05 2.97 1.11.09 2.26-.55 2.9-1.41z"/>
+        </svg>
+        Baixar para Mac
+        <svg class="ml-1.5 h-4 w-4 text-gray-400 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+        </svg>
+    </button>
+    <!-- Dropdown Menu Wrapper -->
+    <div id="mac-hero-menu" class="absolute left-1/2 -translate-x-1/2 pt-2 w-56 opacity-0 pointer-events-none transform scale-95 origin-top transition-all duration-200 z-50 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:scale-100 flex flex-col">
+        <!-- Inner Card menu content with styling -->
+        <div class="bg-white border border-gray-100 shadow-2xl rounded-2xl py-2.5 flex flex-col">
+            <a href="https://github.com/sylar620/datasynthpro/releases/download/v1.2/DataSynth_Pro_mac_arm64.dmg" class="px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#111318] font-semibold text-center transition-colors">
+                Download for Apple Silicon
+            </a>
+            <div class="h-px bg-gray-100 mx-3"></div>
+            <a href="https://github.com/sylar620/datasynthpro/releases/download/v1.2/DataSynth_Pro_mac_x64.dmg" class="px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#111318] font-semibold text-center transition-colors">
+                Download for Intel
+            </a>
+        </div>
+    </div>
+</div>
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 border-transparent text-base font-medium text-scientific-blue hover:text-scientific-hover md:text-lg transition-all" href="docs.html">
+                    Ver documentação <span aria-hidden="true" class="ml-2">→</span>
+</a>
+</div>
+</div>
+<!-- Dashboard Preview -->
+<div class="mt-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<img alt="Interface DataSynth Pro" class="rounded-xl shadow-2xl w-full object-cover" src="../image/home.png"/>
+</div>
+</div>
+<!-- Features Section -->
+<div class="py-24 bg-white sm:py-32">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="mx-auto max-w-2xl text-center">
+<h2 class="text-base font-semibold leading-7 text-scientific-blue">Metodologias Avançadas</h2>
+<p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Desenvolvido para Rigor Académico</p>
+<p class="mt-6 text-lg leading-8 text-gray-600">Projetado para atender aos requisitos estritos de pesquisas revisadas por pares e modelagem estatística complexa em várias disciplinas.</p>
+</div>
+<div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+<dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+<!-- Feature 1 -->
+<div class="flex flex-col items-start bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
+<div class="rounded-lg bg-scientific-blue p-3 mb-6">
+<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 19.5 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<dt class="text-xl font-semibold leading-7 text-gray-900">Precisão de nível académico</dt>
+<dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+<p class="flex-auto">Controle a distribuição, a média, o desvio padrão e os p-values precisos. Garanta a reprodutibilidade dos seus protocolos experimentais e valide as suas hipóteses analíticas com facilidade.</p>
+</dd>
+</div>
+<!-- Feature 2 -->
+<div class="flex flex-col items-start bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
+<div class="rounded-lg bg-scientific-blue p-3 mb-6">
+<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<dt class="text-xl font-semibold leading-7 text-gray-900">100% offline e seguro</dt>
+<dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+<p class="flex-auto">Zero telemetria de dados. Gere estruturas clínicas ou financeiras sensíveis diretamente na sua máquina local, garantindo conformidade absoluta com os regulamentos de privacidade de dados (por exemplo, RGPD, HIPAA).</p>
+</dd>
+</div>
+<!-- Feature 3 -->
+<div class="flex flex-col items-start bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
+<div class="rounded-lg bg-scientific-blue p-3 mb-6">
+<svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<dt class="text-xl font-semibold leading-7 text-gray-900">Modelos estatísticos versáteis</dt>
+<dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+<p class="flex-auto">Desde testes t e ANOVA fundamentais até modelos multivariados avançados, como regressão de Cox, regressão logística e análise de curva ROC, cobrindo diversas necessidades de pesquisa.</p>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</div>
+<!-- Interface Showcase Section -->
+<div class="bg-gray-50 py-24 sm:py-32 overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Configuração intuitiva de parâmetros</h2>
+<p class="mt-6 text-lg leading-8 text-gray-600">
+                        Especifique parâmetros experimentais de forma intuitiva. Defina tamanhos de amostra, médias, desvios padrão e resultados esperados sem programar. O nosso motor sofisticado lida com a síntese matemática subjacente.
+                    </p>
+<ul class="mt-8 space-y-4 text-gray-600">
+<li class="flex gap-x-3">
+<svg class="h-6 w-5 flex-none text-scientific-blue" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" fill-rule="evenodd"></path>
+</svg>
+<span>Formatos de exportação compatíveis com SPSS</span>
+</li>
+<li class="flex gap-x-3">
+<svg class="h-6 w-5 flex-none text-scientific-blue" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" fill-rule="evenodd"></path>
+</svg>
+<span>Pré-visualização em tempo real e validação estatística</span>
+</li>
+<li class="flex gap-x-3">
+<svg class="h-6 w-5 flex-none text-scientific-blue" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" fill-rule="evenodd"></path>
+</svg>
+<span>Suporte para dados contínuos, categóricos e de sobrevivência</span>
+</li>
+</ul>
+<div class="mt-10">
+<a class="text-sm font-semibold leading-6 text-scientific-blue flex items-center group" href="docs.html">
+                            Explorar todos os módulos
+                            <svg class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</a>
+</div>
+</div>
+<div class="relative">
+<img alt="Configuration du module ANOVA" class="rounded-xl shadow-2xl" src="../image/One-Way ANOVA1.png"/>
+<div class="absolute -bottom-8 -left-8 bg-white p-4 rounded-xl shadow-xl ring-1 ring-gray-900/5 max-w-xs hidden md:block">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
+<svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<p class="text-sm font-medium text-gray-900">P-value alvo atingida</p>
+<p class="text-xs text-gray-500">P &lt; 0,001</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pricing Section -->
+<section class="bg-white py-24 sm:py-32 scroll-mt-16" id="pricing">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="mx-auto max-w-2xl sm:text-center">
+<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Preços simples e transparentes</h2>
+<p class="mt-6 text-lg leading-8 text-gray-600">Impulsione as suas pesquisas hoje. Pague uma vez, use para sempre.</p>
+</div>
+<div class="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none shadow-xl">
+<div class="p-8 sm:p-10 lg:flex-auto">
+<h3 class="text-2xl font-bold tracking-tight text-gray-900">Licença profissional vitalícia</h3>
+<p class="mt-6 text-base leading-7 text-gray-600">Ideal para investigadores, analistas e estudantes que necessitam de uma geração confiável de dados sintéticos offline.</p>
+<div class="mt-10 flex items-center gap-x-4">
+<h4 class="flex-none text-sm font-semibold leading-6 text-scientific-blue">O que está incluído</h4>
+<div class="h-px flex-auto bg-gray-100"></div>
+</div>
+<ul class="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6" role="list">
+<li class="flex gap-x-3">
+<svg aria-hidden="true" class="h-6 w-5 flex-none text-scientific-blue" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" fill-rule="evenodd"></path>
+</svg>
+                            Utilização gratuita vitalícia
+                        </li>
+<li class="flex gap-x-3">
+<svg aria-hidden="true" class="h-6 w-5 flex-none text-scientific-blue" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" fill-rule="evenodd"></path>
+</svg>
+                            Todos os 14 módulos estatísticos
+                        </li>
+<li class="flex gap-x-3">
+<svg aria-hidden="true" class="h-6 w-5 flex-none text-scientific-blue" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" fill-rule="evenodd"></path>
+</svg>
+                            Atualizações secundárias gratuitas
+                        </li>
+<li class="flex gap-x-3">
+<svg aria-hidden="true" class="h-6 w-5 flex-none text-scientific-blue" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" fill-rule="evenodd"></path>
+</svg>
+                            Garantia de 100% de privacidade
+                        </li>
+</ul>
+</div>
+<div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
+<div class="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16 h-full">
+<div class="mx-auto max-w-xs px-8">
+<p class="text-base font-semibold text-gray-600">Pagamento único</p>
+<p class="mt-6 flex items-baseline justify-center gap-x-2">
+<span class="text-5xl font-bold tracking-tight text-gray-900">99 $</span>
+<span class="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
+</p>
+<a class="mt-10 block w-full rounded-md bg-scientific-blue px-3 py-3.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-scientific-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-scientific-blue transition-all transform hover:-translate-y-0.5" href="https://buy.stripe.com/fZueVd6B36ztcXXauQ8Ra00">Comprar agora com Stripe</a>
+<p class="mt-6 text-xs leading-5 text-gray-600">Processamento de pagamento seguro via Stripe.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-white border-t border-gray-200">
+<div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+<div class="md:flex md:items-center md:justify-between">
+<div class="flex justify-center space-x-6 md:order-2">
+<a class="text-gray-400 hover:text-gray-500" href="docs.html">
+<span class="sr-only">Documentação</span>
+                        Documentação
+                    </a>
+<a class="text-gray-400 hover:text-gray-500" href="support.html">
+<span class="sr-only">Suporte</span>
+                        Suporte
+                    </a>
+<a class="text-gray-400 hover:text-gray-500" href="license.html">
+<span class="sr-only">Ativar Licença</span>
+                        Ativar Licença
+                    </a>
+</div>
+<div class="mt-8 md:mt-0 md:order-1">
+<p class="text-center text-base text-gray-400">
+                        © 2026 DataSynth Pro. Todos os direitos reservados.
+                    </p>
+</div>
+</div>
+</div>
+</footer>
+<!-- Interactive Scripts -->
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Desktop Language Dropdown Logic
+            const button = document.getElementById('lang-menu-button');
+            const dropdown = document.getElementById('lang-dropdown');
+            let isDropdownOpen = false;
+
+            if (button && dropdown) {
+                button.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    isDropdownOpen = !isDropdownOpen;
+                    if (isDropdownOpen) {
+                        dropdown.classList.remove('hidden');
+                        setTimeout(() => dropdown.classList.remove('opacity-0', 'scale-95'), 10);
+                    } else {
+                        closeDropdown();
+                    }
+                });
+            }
+
+            // Mobile Language Dropdown Logic
+            const mobileButton = document.getElementById('mobile-lang-menu-button');
+            const mobileDropdown = document.getElementById('mobile-lang-dropdown');
+            let isMobileDropdownOpen = false;
+
+            if (mobileButton && mobileDropdown) {
+                mobileButton.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    isMobileDropdownOpen = !isMobileDropdownOpen;
+                    if (isMobileDropdownOpen) {
+                        mobileDropdown.classList.remove('hidden');
+                        setTimeout(() => mobileDropdown.classList.remove('opacity-0', 'scale-95'), 10);
+                    } else {
+                        closeMobileDropdown();
+                    }
+                });
+            }
+
+            document.addEventListener('click', function (event) {
+                if (isDropdownOpen && dropdown && !dropdown.contains(event.target)) {
+                    closeDropdown();
+                }
+                if (isMobileDropdownOpen && mobileDropdown && !mobileDropdown.contains(event.target)) {
+                    closeMobileDropdown();
+                }
+            });
+
+            function closeDropdown() {
+                isDropdownOpen = false;
+                if (dropdown) dropdown.classList.add('hidden');
+            }
+
+            function closeMobileDropdown() {
+                isMobileDropdownOpen = false;
+                if (mobileDropdown) mobileDropdown.classList.add('hidden');
+            }
+
+            // Navbar blur effect on scroll
+            window.addEventListener('scroll', () => {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 10) {
+                    nav.classList.add('shadow-sm');
+                } else {
+                    nav.classList.remove('shadow-sm');
+                }
+            });
+
+            // Mac Hero Button Dropdown toggle for click
+            const macHeroBtn = document.getElementById('mac-hero-btn');
+            const macHeroMenu = document.getElementById('mac-hero-menu');
+            if (macHeroBtn && macHeroMenu) {
+                macHeroBtn.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    const isOpen = macHeroMenu.classList.contains('opacity-100');
+                    if (isOpen) {
+                        closeMacMenu();
+                    } else {
+                        openMacMenu();
+                    }
+                });
+                
+                document.addEventListener('click', function (event) {
+                    if (macHeroMenu.classList.contains('opacity-100') && !macHeroMenu.contains(event.target) && event.target !== macHeroBtn) {
+                        closeMacMenu();
+                    }
+                });
+            }
+
+            function openMacMenu() {
+                macHeroMenu.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
+                macHeroMenu.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
+            }
+
+            function closeMacMenu() {
+                macHeroMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+                macHeroMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+<head>
+<script>
+        (function () {
+            var pref = localStorage.getItem('preferredLang');
+            var browserLang = navigator.language || navigator.userLanguage;
+
+            var shouldGoToZh = (pref === 'zh') || (!pref && browserLang.toLowerCase().startsWith('zh'));
+            var shouldGoToFr = (pref === 'fr') || (!pref && browserLang.toLowerCase().startsWith('fr'));
+            var shouldGoToPt = (pref === 'pt') || (!pref && browserLang.toLowerCase().startsWith('pt'));
+            var shouldGoToEs = (pref === 'es') || (!pref && browserLang.toLowerCase().startsWith('es'));
+            var shouldGoToDe = (pref === 'de') || (!pref && browserLang.toLowerCase().startsWith('de'));
+            var shouldGoToRu = (pref === 'ru') || (!pref && browserLang.toLowerCase().startsWith('ru'));
+            var shouldGoToJa = (pref === 'ja') || (!pref && browserLang.toLowerCase().startsWith('ja'));
+            var shouldGoToKo = (pref === 'ko') || (!pref && browserLang.toLowerCase().startsWith('ko'));
+            var shouldGoToAr = (pref === 'ar') || (!pref && browserLang.toLowerCase().startsWith('ar'));
+            var shouldGoToEn = (pref === 'en') || (!pref && !browserLang.toLowerCase().startsWith('zh') && !browserLang.toLowerCase().startsWith('fr') && !browserLang.toLowerCase().startsWith('pt') && !browserLang.toLowerCase().startsWith('es') && !browserLang.toLowerCase().startsWith('de') && !browserLang.toLowerCase().startsWith('ru') && !browserLang.toLowerCase().startsWith('ja') && !browserLang.toLowerCase().startsWith('ko') && !browserLang.toLowerCase().startsWith('ar'));
+
+            if (shouldGoToZh && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'zh/' + currentFile + window.location.search + window.location.hash;
+            }             else if (shouldGoToFr && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'fr/' + currentFile + window.location.search + window.location.hash;
+            }             else if (shouldGoToPt && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'pt/' + currentFile + window.location.search + window.location.hash;
+            }             else if (shouldGoToEs && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'es/' + currentFile + window.location.search + window.location.hash;
+            }             else if (shouldGoToDe && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'de/' + currentFile + window.location.search + window.location.hash;
+            }             else if (shouldGoToRu && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'ru/' + currentFile + window.location.search + window.location.hash;
+            }             else if (shouldGoToJa && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'ja/' + currentFile + window.location.search + window.location.hash;
+            }             else if (shouldGoToKo && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'ko/' + currentFile + window.location.search + window.location.hash;
+            }             else if (shouldGoToAr && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'ar/' + currentFile + window.location.search + window.location.hash;
+            } 
+        })();
+    </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Learn how to configure parameters and generate academic-grade synthetic statistical datasets offline with DataSynth Pro." name="description"/>
+<title>Documentation | DataSynth Pro</title>
+<!-- Tailwind CSS -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Generated CSS -->
+<link href="./styles.css" rel="stylesheet"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-P31H1FL4HS"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-P31H1FL4HS');
+    </script>
+<!-- SEO Canonical and Hreflang -->
+<link href="https://www.datasynthpro.com/docs.html" rel="canonical"/>
+<link href="https://www.datasynthpro.com/docs.html" hreflang="en" rel="alternate"/>
+<link href="https://www.datasynthpro.com/zh/docs.html" hreflang="zh-CN" rel="alternate"/>
+<link href="https://www.datasynthpro.com/fr/docs.html" hreflang="fr" rel="alternate"/>
+<link href="https://www.datasynthpro.com/pt/docs.html" hreflang="pt" rel="alternate"/>
+<link href="https://www.datasynthpro.com/es/docs.html" hreflang="es" rel="alternate"/>
+<link href="https://www.datasynthpro.com/de/docs.html" hreflang="de" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ru/docs.html" hreflang="ru" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ja/docs.html" hreflang="ja" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ko/docs.html" hreflang="ko" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ar/docs.html" hreflang="ar" rel="alternate"/>
+<link href="https://www.datasynthpro.com/docs.html" hreflang="x-default" rel="alternate"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://www.datasynthpro.com/docs.html" property="og:url"/>
+<meta content="Documentation | DataSynth Pro" property="og:title"/>
+<meta content="Professional offline synthetic data generator for researchers and analysts." property="og:description"/>
+<meta content="https://www.datasynthpro.com/image/home.png" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="https://www.datasynthpro.com/docs.html" property="twitter:url"/>
+<meta content="Documentation | DataSynth Pro" property="twitter:title"/>
+<meta content="Professional offline synthetic data generator for researchers and analysts." property="twitter:description"/>
+<meta content="https://www.datasynthpro.com/image/home.png" property="twitter:image"/>
+</head>
+<body class="bg-white text-gray-900 antialiased h-screen overflow-hidden flex flex-col selection:bg-scientific-blue selection:text-white">
+<!-- Top Navbar -->
+<nav class="w-full z-50 glass-nav h-16 flex-shrink-0">
+<div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
+<!-- Logo -->
+<a class="flex-shrink-0 flex items-center gap-2 cursor-pointer" href="index.html">
+<div class="w-7 h-7 rounded bg-scientific-blue flex items-center justify-center text-white font-bold text-lg">
+                    S</div>
+<span class="font-semibold text-lg tracking-tight text-gray-900 hidden sm:block">DataSynth Pro
+                    Docs</span>
+</a>
+<!-- Right Nav Items -->
+<div class="flex items-center space-x-6">
+<!-- Back to Home -->
+<a class="inline-flex items-center text-xs font-medium text-gray-600 hover:text-scientific-blue transition-colors" href="index.html">
+<svg class="mr-1 h-4 w-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+                    Home
+                </a>
+<!-- Language Switcher -->
+<div class="relative inline-block text-left">
+<div>
+<button aria-expanded="true" aria-haspopup="true" class="inline-flex justify-center w-full rounded border border-gray-300 shadow-sm px-3 py-1.5 bg-white text-xs font-medium text-gray-700 hover:bg-gray-50 focus:outline-none z-50" id="lang-menu-button" type="button">
+<svg class="mr-1.5 h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                                English
+                                <svg class="-mr-1 ml-1 h-5 w-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+<div class="origin-top-right absolute right-0 top-full mt-2 w-32 rounded shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden focus:outline-none z-50" id="lang-dropdown">
+<div class="py-1">
+
+
+
+
+
+
+
+
+
+<a class="block px-4 py-2 text-sm text-scientific-blue bg-gray-50 font-medium" href="docs.html" onclick="localStorage.setItem('preferredLang', 'en');">English</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="fr/docs.html" onclick="localStorage.setItem('preferredLang', 'fr');">Français</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="pt/docs.html" onclick="localStorage.setItem('preferredLang', 'pt');">Português</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="es/docs.html" onclick="localStorage.setItem('preferredLang', 'es');">Español</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="de/docs.html" onclick="localStorage.setItem('preferredLang', 'de');">Deutsch</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="ru/docs.html" onclick="localStorage.setItem('preferredLang', 'ru');">Русский</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="zh/docs.html" onclick="localStorage.setItem('preferredLang', 'zh');">简体中文</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="ja/docs.html" onclick="localStorage.setItem('preferredLang', 'ja');">日本語</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="ko/docs.html" onclick="localStorage.setItem('preferredLang', 'ko');">한국어</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="ar/docs.html" onclick="localStorage.setItem('preferredLang', 'ar');">العربية</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Layout -->
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-gray-50 border-r border-gray-200 overflow-y-auto flex-shrink-0 hidden md:block">
+<nav class="px-3 py-6 space-y-1">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Getting Started</p>
+<a class="sidebar-active group flex items-center px-3 py-2 text-sm rounded-md transition-colors font-medium" href="#overview">1. Generating Indicators</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">T-Tests</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#independent-t-test">2. Independent T-Test</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#paired-t-test">3. Paired T-Test</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">Other Basic Tests</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#chi-square">4. Chi-Square Test</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">ANOVA</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#one-way-anova">5. One-Way ANOVA</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#two-way-anova">6. Two-Way ANOVA</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#repeated-anova">7. Repeated Measures</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">Non-Parametric</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#non-parametric-2">8. 2 Ind. Samples</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#non-parametric-k">9. K Ind. Samples</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">Other Analyses</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#quartile">10. Quartile Analysis</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#binary-logistic">11. Binary Logistic</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#multiple-linear">12. Multiple Linear</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#cox-regression">13. Cox Regression</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#correlation">14. Correlation</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#roc-curve">15. ROC Curve</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">System Config</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#export-import">16. Export/Import</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-white p-6 md:p-10 lg:p-12 scroll-smooth">
+<div class="max-w-4xl mx-auto">
+<!-- Section: Overview -->
+<section class="mb-20 scroll-mt-20" id="overview">
+<h1 class="text-4xl font-extrabold text-gray-900 tracking-tight mb-4">Documentation &amp; User Guide</h1>
+<p class="text-lg text-gray-600 mb-10 leading-relaxed">
+                        Welcome to the official documentation for DataSynth Pro. This comprehensive manual provides detailed guidance on configuring parameters for various statistical modules to synthesize robust, academically viable, and statistically valid datasets completely offline.
+                    </p>
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">1. Generating Multiple Indicators Simultaneously</h2>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.1 Prerequisites &amp; Launching</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Double-click the executable file to launch the application. The software requires the Microsoft .NET 8.0 Runtime Framework. If it is not installed on your computer, please follow the prompts to download and install it, then reopen the program.
+                        </p>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4 rounded-r">
+<p class="text-sm text-blue-700">
+<strong>Security Notice:</strong> If your antivirus software flags the executable as a false positive, please add it to your local exclusion or whitelist to ensure uninterrupted operation.
+                            </p>
+</div>
+<div class="mb-6">
+<img alt="Figure: User Interface / Operations (Main Interface)" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/main_interface.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 1.1: User Interface / Operations (Main Interface)</p>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.2 Parameter Configuration</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            By default, the application pre-populates two continuous variables, 'Age' and 'Gender', to serve as quick references. The group designation defaults to 'Control Group', and the sample size is set to '100' cases. If your study requires multiple groups, you can generate and export each group's dataset sequentially by updating the parameters for each run.
+                        </p>
+<ul class="list-disc pl-5 mb-4 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>Adding Continuous Numerical Variables:</strong> To add a new quantitative variable, click the <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Numeric</span> button. You can then specify the Indicator Name (e.g., 'Body Mass Index' or 'BMI'), Mean, Standard Deviation, and Decimal Places. The Minimum and Maximum boundary fields are optional and can be left blank if you do not have specific value limitations.</li>
+<li><strong>Data Distribution Settings:</strong> By default, generated numerical metrics follow a normal distribution. If you require non-normally distributed data, simply set the <span class="text-scientific-blue font-semibold">Normal Distribution</span> option to <span class="text-red-500 font-semibold">No</span>.</li>
+</ul>
+<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6 rounded-r">
+<p class="text-sm text-yellow-700">
+<strong>Distribution Tuning:</strong> A normal distribution relies on a natural variance range; restricting the Minimum and Maximum boundaries too tightly will truncate the normal curve and may result in non-normally distributed values. If this occurs, try widening the boundaries or removing the Min/Max limits entirely.
+                            </p>
+</div>
+<div class="mb-6">
+<img alt="Figure: User Interface / Operations for Adding Variables" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/adding_variables.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 1.2: User Interface / Operations for Adding Variables</p>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.3 Adding Categorical Variables</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Click the <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Categorical</span> button to continue adding qualitative variables (e.g., 'Hypertension'). You can input category names and their corresponding target distributions or proportions. The sum of the categorical proportions will be scaled dynamically to match your configured sample size.
+                        </p>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.4 Executing Generation</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Click the <span class="bg-scientific-blue text-white px-3 py-1 rounded text-xs font-semibold">Generate</span> button to synthesize the requested number of records. Once calculated, a descriptive statistics summary window will pop up, enabling you to verify whether the actual generated values align with your configured parameters.
+                        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<div>
+<img alt="Figure: User Interface / Operations for Executing Generation" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/executing_generation.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 1.3: User Interface / Operations for Executing Generation</p>
+</div>
+<div>
+<img alt="Figure: User Interface / Operations for Displaying Data" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/displaying_data.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 1.4: User Interface / Operations for Displaying Data</p>
+</div>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.5 Exporting and Verifying</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Click the <span class="bg-scientific-blue text-white px-3 py-1 rounded text-xs font-semibold">Save</span> button to export the generated dataset as a standard Excel file. If you open the exported spreadsheet and calculate the descriptive statistics for 'Age' (rounded to two decimal places) using standard Excel formulas, the actual mean and standard deviation will perfectly match your initial settings.
+                        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<div class="space-y-4">
+<div>
+<img alt="Figure: User Interface / Operations for Exporting Tables" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/exporting_tables.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 1.5: Exporting Generated Tables to Excel</p>
+</div>
+<div>
+<img alt="Figure: User Interface / Operations for Calculating Mean" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/calculating_mean.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 1.6: Excel Operations for Calculating Mean</p>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<img alt="Figure: User Interface / Operations for Calculating Standard Deviation" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/calculating_std.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 1.7: Excel Operations for Calculating Standard Deviation</p>
+</div>
+<div>
+<img alt="Figure: User Interface with Calculation Results Identical to Initial Settings" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/calculation_results.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 1.8: Verification Results Identical to Initial Settings</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.6 Computational Efficiency</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Equipped with a high-performance optimization engine, the software can generate datasets containing thousands or tens of thousands of records in seconds. If the system fails to converge after maximum iterations, please double-check the statistical plausibility of your configuration, or try running the query without Min/Max limits. The program supports decimal precision of up to 8 places to meet specialized scientific research needs.
+                        </p>
+<div class="bg-gray-50 border border-gray-200 p-4 rounded-xl">
+<p class="text-sm font-semibold text-gray-700 mb-1">Tips &amp; Recommendations:</p>
+<p class="text-sm text-gray-600 leading-relaxed">
+                                • <strong>Normal Distribution Preference:</strong> Data defaults to a normal distribution for seamless downstream analysis (e.g., Independent Samples t-Tests). If you prefer non-parametric or custom-distributed datasets, simply switch the Normal Distribution setting to No.
+                            </p>
+</div>
+</div>
+</section>
+<!-- Section: Independent T-Test -->
+<section class="mb-20 scroll-mt-20" id="independent-t-test">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">2. Independent Samples t-Test</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        Designed for cross-sectional studies comparing the means of two distinct groups. Widely utilized in clinical trials (e.g., drug efficacy between Treatment and Placebo groups) and sociological surveys.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">2.1 Workflow</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Navigate to <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Independent T-Test</span>. The configuration window will appear as shown below:
+                        </p>
+<div class="mb-6">
+<img alt="T-Test Configuration" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Independent T-Test1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 2.1: User Interface / Operations for Independent T-Test</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">2.2 Parameters</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            The program pre-populates sample setups for a 'Control Group' and an 'Experimental Group' as references. Input the Sample Size, Mean, and Standard Deviation for each group to preview the calculated t-value and p-value in real time. Min and Max parameters are optional.
+                        </p>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                            Clicking the Generate Button will create raw datasets for both groups in the preview table below, and the final t-value and p-value will adjust to reflect the actual generated data, using Levene's Test for Equality of Variances.
+                        </p>
+<div>
+<img alt="T-Test Results" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Independent T-Test2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 2.2: User Interface / Operations for Displaying Independent Samples T-Test Data</p>
+</div>
+</div>
+</section>
+<!-- Section: Paired T-Test -->
+<section class="mb-20 scroll-mt-20" id="paired-t-test">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">3. Paired Samples t-Test</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        Employed for longitudinal or crossover studies where the same subjects are measured twice (e.g., Pre-test vs. Post-test). Focuses on synthesizing the mean difference between paired observations.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">3.1 Workflow</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Navigate to <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Paired T-Test</span>. The workspace layout is shown below:
+                        </p>
+<div class="mb-6">
+<img alt="Paired T-Test Configuration" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Paired T-Test1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 3.1: User Interface / Operations for Paired T-Test</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">3.2 Simulation Logic</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            The software defaults to two paired variables, Paired Var1 and Paired Var2. You can define the Mean and Standard Deviation for each variable, set the overall Sample Size, and establish a target p-value range for the paired t-test. The engine will iteratively compute a compliant dataset.
+                        </p>
+<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6 rounded-r">
+<p class="text-sm text-yellow-700">
+<strong>Convergence Adaptation:</strong> If the configured means are mathematically inconsistent with the targeted p-value (e.g., if the two means are highly distinct but you request a non-significant p &gt; 0.05), the program will hold the first group's parameters constant and dynamically adjust the second group's mean to achieve the target p-value.
+                            </p>
+</div>
+<div>
+<img alt="Paired T-Test Results" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Paired T-Test2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 3.2: User Interface / Operations for Displaying Paired Samples T-Test Data</p>
+</div>
+</div>
+</section>
+<!-- Section: Chi-Square Test -->
+<section class="mb-20 scroll-mt-20" id="chi-square">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">4. Chi-Square Test</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        Determines if there is a significant association between two categorical variables. Widely used for demographic cross-tabulations.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">4.1 Workflow</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Navigate to <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Chi-Square Test</span>. The configuration pane opens as follows:
+                        </p>
+<div class="mb-6">
+<img alt="Chi-Square Setup" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Chi-Square1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 4.1: User Interface / Operations for Chi-Square Test</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">4.2 Contingency Matrix</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            The interface defaults to a standard 2x2 contingency table for Chi-Square calculations, where group and category names are fully editable. Fill in the observed frequencies (counts) for each cell, and the computed Chi-Square value and p-value will update in real time.
+                        </p>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            You can dynamically add groups (rows) or categories (columns) to accommodate larger models. Click <span class="text-scientific-blue font-semibold">Generate</span> button to produce individual raw records matching these frequencies, and click <span class="text-scientific-blue font-semibold">Save</span> to export the dataset to Excel.
+                        </p>
+<div>
+<img alt="Chi-Square Results" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Chi-Square2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 4.2: User Interface / Operations for Displaying Chi-Square Test Data</p>
+</div>
+</div>
+</section>
+<!-- Section: One-Way ANOVA -->
+<section class="mb-20 scroll-mt-20" id="one-way-anova">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">5. One-Way ANOVA</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        Utilized when comparing the means of three or more independent groups. The algorithm synthesizes intra-group variance and inter-group differences to meet target F-values.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">5.1 Workflow</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Navigate to <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → ANOVA → One-Way ANOVA</span>. The workspace layout is as follows:
+                        </p>
+<div class="mb-6">
+<img alt="ANOVA Configuration" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/One-Way ANOVA1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 5.1: User Interface / Operations for One-Way ANOVA</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">5.2 Configuration</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            The system pre-loads parameters for three groups: 'Control Group', 'Experimental Group', and 'Treatment Group'. Simply input the Sample Size, Mean, and Standard Deviation for each group to instantly preview the overall F-statistic, p-value, and Tukey's HSD post-hoc multiple comparison results.
+                        </p>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Click <span class="text-scientific-blue font-semibold">Generate</span> button to compute and preview raw individual records below. The overall F-value and p-value will automatically update to represent the actual generated values.
+                        </p>
+<div>
+<img alt="ANOVA Output Data" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/One-Way ANOVA2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 5.2: User Interface / Operations for Displaying One-Way ANOVA Data</p>
+</div>
+</div>
+</section>
+<!-- Section: Two-Way ANOVA -->
+<section class="mb-20 scroll-mt-20" id="two-way-anova">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">6. Two-Way ANOVA</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        Examines the influence of two independent categorical variables on one continuous dependent variable. Essential for factorial designs to evaluate main effects and interaction effects.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">6.1 Workflow</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Navigate to <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → ANOVA → Two-Way ANOVA</span>. The configuration pane is displayed below:
+                        </p>
+<div class="mb-6">
+<img alt="Two-Way ANOVA Setup" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Two-Way ANOVA1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 6.1: User Interface / Operations for Two-Way ANOVA</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">6.2 Factors &amp; Interactions</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            The tool defaults to two factors: 'Time' (2 levels) and 'Concentration' (2 levels). Click <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Add Group</span> to configure more levels if a factor contains multiple classifications.
+                        </p>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            By filling in the Sample Size, Mean, and Standard Deviation for each cell, you can preview the F-statistics and p-values for the main effect of Time, the main effect of Concentration, and their interaction effect (Time × Concentration). Click <span class="text-scientific-blue font-semibold">Generate</span> button to construct the matching individual raw records in the preview pane.
+                        </p>
+<div>
+<img alt="Two-Way ANOVA Interaction Data" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Two-Way ANOVA2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 6.2: User Interface / Operations for Displaying Two-Way ANOVA Data</p>
+</div>
+</div>
+</section>
+<!-- Section: Repeated Measures ANOVA -->
+<section class="mb-20 scroll-mt-20" id="repeated-anova">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">7. One-Way Repeated Measures ANOVA</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        The extension of Paired T-Test to three or more time points. Ideal for longitudinal tracking over extended periods (e.g., baseline, month 1, month 3).
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">7.1 Workflow</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Navigate to <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → ANOVA → Repeated Measures ANOVA</span>. The workspace layout is shown below:
+                        </p>
+<div class="mb-6">
+<img alt="Repeated Measures Setup" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Repeated Measures ANOVA1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 7.1: User Interface / Operations for One-Way Repeated Measures ANOVA</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">7.2 Repeated Observations</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            The system defaults to three observation time points. You can easily scale this up by clicking the <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Add Time Point</span> button. Input the Mean and Standard Deviation for each time point and define your target p-value range.
+                        </p>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Click <span class="text-scientific-blue font-semibold">Generate</span> button to synthesize compliant values.
+                        </p>
+<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6 rounded-r">
+<p class="text-sm text-yellow-700">
+<strong>Engine Compression:</strong> If the difference between time points is mathematically massive (indicating a highly significant p-value) but your target range is set to p &gt; 0.05, the engine will automatically compress the variances and mean differences among time points to meet your exact target p-value. A pop-up dialog will present the actual statistics of the synthesized dataset.
+                            </p>
+</div>
+<div>
+<img alt="Repeated Measures Results" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Repeated Measures ANOVA2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 7.2: User Interface / Operations for Displaying Repeated Measures ANOVA Data</p>
+</div>
+</div>
+</section>
+<!-- Section: Non-Parametric Test (2 Ind. Samples) -->
+<section class="mb-20 scroll-mt-20" id="non-parametric-2">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">8. Two Independent Samples Rank Sum Test (Non-parametric)</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        Mann-Whitney U test alternative for data that fails normality assumptions. Evaluates median differences based on rank-order logic on continuous or ordinal variables.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">8.1 Workflow</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Navigate to <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Non-parametric → 2 Independent Samples</span>. The configuration workspace is shown below:
+                        </p>
+<div class="mb-6">
+<img alt="Non-Parametric 2 Samples Config" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Non-Parametric Test (2 Ind. Samples)1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 8.1: User Interface / Operations for Two Independent Samples Rank Sum Test</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">8.2 Setup</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            The program defaults to two reference groups. Since non-parametric methods are designed for non-normally distributed data, the Normal Distribution option is set to <span class="text-red-500 font-semibold">No</span> by default. Using the Mann-Whitney U Test, you can define a target p-value range. Click <span class="text-scientific-blue font-semibold">Generate</span> button to synthesize raw observations that statistically comply with this threshold.
+                        </p>
+<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6 rounded-r">
+<p class="text-sm text-yellow-700">
+<strong>Rank Sum Generation Logic:</strong> Non-parametric tests analyze group differences by pooling all observations and assigning ranks. Therefore, if the configured parameters of the two groups are highly distinct (naturally yielding a very small p-value) but you set a target threshold of p &gt; 0.05, the engine will automatically reduce the divergence between groups to satisfy your target. The final calculated means and standard deviations will be displayed in a pop-up dialog.
+                            </p>
+</div>
+<div>
+<img alt="Non-Parametric 2 Samples Output" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Non-Parametric Test (2 Ind. Samples)2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 8.2: User Interface / Operations for Displaying Two Independent Samples Rank Sum Test Data</p>
+</div>
+</div>
+</section>
+<!-- Section: Non-Parametric Test (K Ind. Samples) -->
+<section class="mb-20 scroll-mt-20" id="non-parametric-k">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">9. Kruskal-Wallis Test (K Independent Samples Non-parametric)</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        Kruskal-Wallis H test equivalent. Generates ordinal or non-normally distributed continuous data across three or more independent groups.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">9.1 Workflow</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Navigate to <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Non-parametric → K Independent Samples</span>. The configuration workspace is shown below:
+                        </p>
+<div class="mb-6">
+<img alt="Non-Parametric K Samples Config" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Non-Parametric Test (K Ind. Samples)1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 9.1: User Interface / Operations for Kruskal-Wallis Test</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">9.2 Multi-Group Ranking</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            The program defaults to three reference groups and performs a Kruskal-Wallis Test. Just like the two-group test, because calculations are rank-based on a pooled dataset, if the configured multi-group parameters have massive discrepancies (yielding highly significant p-values) but you request a target of p &gt; 0.05, the simulation engine will automatically compress the inter-group differences. The resulting statistics will be summarized in a pop-up window.
+                        </p>
+<div>
+<img alt="Non-Parametric K Samples Output" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Non-Parametric Test (K Ind. Samples)2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 9.2: User Interface / Operations for Displaying Kruskal-Wallis Test Data</p>
+</div>
+</div>
+</section>
+<!-- Section: Quartile Analysis -->
+<section class="mb-20 scroll-mt-20" id="quartile">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">10. Quartile Data Generation</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        Divides a rank-ordered dataset into four equal parts. Useful for evaluating the spread and central tendency of data, highlighting the median, and detecting outliers.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">10.1 Workflow</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Navigate to <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Quartile Data</span>. The layout is illustrated below:
+                        </p>
+<div class="mb-6">
+<img alt="Quartile Configuration" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Quartile1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 10.1: User Interface / Operations for Quartile Data</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">10.2 Parameter Definition</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Define your targeted Sample Size, Q1 (25th percentile), Q2 (Median / 50th percentile), and Q3 (75th percentile). Min/Max boundaries can be left blank if there are no specific constraints. Choose your decimal precision and click <span class="text-scientific-blue font-semibold">Generate</span> button to produce observations meeting these exact quartile boundaries.
+                        </p>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<strong>Summary:</strong> Configure sample sizes and target values for Q1, Q2, and Q3. Optional parameters include Minimum, Maximum, and Decimal Places. Click <span class="text-scientific-blue font-semibold">Generate</span> button to compute and display raw observations matching the targeted quartile structure. For multi-group setups, you may also lock in a targeted inter-group p-value range.
+                        </p>
+<div>
+<img alt="Quartile Output Data" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Quartile2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 10.2: User Interface / Operations for Displaying Quartile Data</p>
+</div>
+</div>
+</section>
+<!-- Section: Binary Logistic Regression -->
+<section class="mb-20 scroll-mt-20" id="binary-logistic">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">11. Binary Logistic Regression Data Generation</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        Essential for classification problems where the outcome is dichotomous (DV=0 or DV=1). Highly prevalent in epidemiology for risk factor identification (e.g., Disease vs. Healthy).
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">11.1 Workflow</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Navigate to <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Regression → Binary Logistic</span>.
+                        </p>
+<div class="mb-6">
+<img alt="Logistic Regression Configuration" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Binary Logistic1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 11.1: User Interface / Operations for Binary Logistic Regression</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">11.2 Design</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            By default, two continuous independent variables are set up as references. In a binary logistic model, the dependent variable has exactly two outcomes (0 and 1). Accordingly, the dependent variable is structured as 0 and 1 groups, defaulting to a sample size of 100 cases per category (which can be customized).
+                        </p>
+<ul class="list-disc pl-5 mb-4 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>Variable Setup:</strong> Click <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Numeric</span> to add continuous independent variables (e.g., 'Age', 'BMI'). Enter the Variable Name, Mean, Standard Deviation, Decimal Places, and target p-value range (this specifies the target significance level you want the variable to achieve in the final logistic regression model). Min/Max constraints are optional.</li>
+<li><strong>Generation &amp; Validation:</strong> Click <span class="text-scientific-blue font-semibold">Generate</span> button to run the synthesis algorithm. The system will iteratively compute a dataset where the logistic regression model yields p-values matching your configuration.</li>
+</ul>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                            A detailed Regression Analysis Report matching IBM SPSS formatting will automatically pop up. Closing this report displays the raw dataset in the preview table, ready to be exported to Excel.
+                        </p>
+<div>
+<img alt="Logistic Regression Output" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Binary Logistic2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 11.2: User Interface / Operations for Displaying Binary Logistic Regression Data</p>
+</div>
+</div>
+</section>
+<!-- Section: Multiple Linear Regression -->
+<section class="mb-20 scroll-mt-20" id="multiple-linear">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">12. Multiple Linear Regression Data Generation</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        A core predictive modeling tool. It synthesizes a continuous Dependent Variable (Y) influenced by multiple Independent Variables (X), which can be continuous numerical, quartiles, ordered categorical (ordinal), or unordered categorical (nominal).
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">12.1 Workflow</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Navigate to <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Regression → Linear Regression</span>.
+                        </p>
+<div class="mb-6">
+<img alt="Linear Regression Settings" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Multiple Linear Regression1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 12.1: User Interface / Operations for Multiple Linear Regression</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">12.2 Model Settings</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            The interface pre-loads a continuous dependent variable ('Blood Glucose Fluctuation') and two independent variables ('Total Cholesterol' as numerical, 'Gender' as categorical) with a default sample size of 200 cases. You can configure a target R-squared (R²) range (e.g., 0.4 to 0.6).
+                        </p>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                            Click <span class="text-scientific-blue font-semibold">Generate</span> button to run the regression model. A validation report matching SPSS output will pop up. Closing this report returns you to the raw data preview table, which can be saved as an Excel spreadsheet.
+                        </p>
+<div>
+<img alt="Linear Regression Data Preview" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Multiple Linear Regression2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 12.2: User Interface / Operations for Displaying Multiple Linear Regression Data</p>
+</div>
+</div>
+</section>
+<!-- Section: Cox Regression -->
+<section class="mb-20 scroll-mt-20" id="cox-regression">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">13. Cox Proportional Hazards Regression Data Generation</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        The gold standard for survival analysis. Simulates time-to-event data while accounting for right-censoring, allowing researchers to evaluate the effect of covariates on survival times.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">13.1 Workflow &amp; Technical Guidelines</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Navigate to <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Regression → Cox Regression</span>.
+                        </p>
+<div class="mb-6">
+<img alt="Cox Regression Configuration" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Cox Regression1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 13.1: User Interface / Operations for Cox Proportional Hazards Regression</p>
+</div>
+<ul class="list-disc pl-5 mb-4 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>Total Sample Size (N):</strong> The overall number of subjects/patients (e.g., 200 subjects).</li>
+<li><strong>Observed Events (Outcome Events):</strong> The count of positive cases that experienced the terminal outcome (e.g., death, recurrence, or event failure) during the follow-up period. <em>Note: The number of events must be strictly less than the total sample size.</em></li>
+<li><strong>Survival Time Range (T):</strong> Define [Min Follow-up] to [Max Follow-up] bounds of survival duration (e.g., 1~60 months), label time in days, months, or years, and define the numerical decimal precision.</li>
+</ul>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4 rounded-r">
+<p class="text-sm text-blue-700">
+<strong>Statistical EPV Rule (Events Per Variable):</strong> To guarantee the mathematical stability and reliability of a Cox Proportional Hazards model, it is highly recommended that the ratio of observed outcome events to the number of independent variables (EPV) is at least 10 to 20. If your model fails to converge, try increasing either the overall Sample Size or the number of Observed Events.
+                            </p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">13.2 Constructing Research Variables</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Click corresponding buttons at the bottom of the variable card to construct independent covariates:
+                        </p>
+<ul class="list-disc pl-5 mb-4 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>Continuous Numerical Variables:</strong> Click <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Numeric</span> to add continuous covariates (e.g., Age, BMI, clinical biomarkers). Fill in Mean, Standard Deviation (required), and optionally Min/Max boundaries to restrict outlier bounds and decimal precision.</li>
+<li><strong>Categorical Variables:</strong> Click <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Categorical</span> to add nominal/ordinal covariates (e.g., Gender, Satisfaction Score). Input the exact target frequency for each category. <em>Note: The sum of counts across all categories must strictly equal the Total Sample Size to run.</em></li>
+<li><strong>Quartile Variables:</strong> Click <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Quartile</span> to add quartile-structured variables, filling in Q1, Q2 (Median), and Q3 target parameters.</li>
+</ul>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<strong>Target Parameters:</strong> Every variable card contains two powerful target parameters at the bottom:
+                        </p>
+<ol class="list-decimal pl-5 mb-6 text-gray-600 space-y-1 leading-relaxed">
+<li><strong>Regression p-value:</strong> Choose significance targets (e.g., p &gt; 0.05, p &lt; 0.05, p &lt; 0.01, or p &lt; 0.001).</li>
+<li><strong>Hazard Ratio (HR) Direction:</strong> Choose either HR &gt; 1 (a risk factor, indicating increased hazard rate) or HR &lt; 1 (a protective factor, indicating reduced hazard rate).</li>
+</ol>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">13.3 Executing Data Generation and Saving</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Once all parameters are filled, click <span class="text-scientific-blue font-semibold">Generate</span> button at the bottom of the window. The backend will execute highly concurrent iterative simulations. An authoritative and comprehensive Cox Proportional Hazards Regression Analysis Report will automatically pop up, mirroring the exact statistics and styling calculated by IBM SPSS.
+                        </p>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                            Click <span class="text-scientific-blue font-semibold">Save</span> button to export the synthesized raw dataset into an Excel file, which can easily be imported into SPSS or other professional statistical suites for verification.
+                        </p>
+<div>
+<img alt="Cox Regression Results" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Cox Regression2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 13.2: User Interface / Operations for Displaying Cox Proportional Hazards Regression Data</p>
+</div>
+</div>
+</section>
+<!-- Section: Correlation Analysis -->
+<section class="mb-20 scroll-mt-20" id="correlation">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">14. Generating Data for Correlation Analysis</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        Simulates bivariate relationships (Pearson or Spearman) and Partial Correlation by enforcing target correlation coefficients (r-values) and significance levels.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">14.1 Workflow</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Navigate to <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Correlation</span>.
+                        </p>
+<div class="mb-6">
+<img alt="Correlation Config" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Correlation1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 14.1: User Interface / Operations for Correlation Analysis</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">14.2 Parameters</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            The system pre-loads two variable sets for quick reference. You can easily add more variables, supporting continuous (mean/SD), quartile, and categorical forms. Within the configuration panel, specify the Sample Size, Mean, and Standard Deviation for each metric (Min/Max limits are optional).
+                        </p>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                            You can specify the exact target correlation coefficient (r) between groups. Clicking <span class="text-scientific-blue font-semibold">Generate</span> button to run the simulation and display the resulting correlation matrix in a pop-up window, which can then be exported as an Excel file.
+                        </p>
+<div>
+<img alt="Correlation Matrix" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/Correlation2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 14.2: User Interface / Operations for Displaying Correlation Analysis Data</p>
+</div>
+</div>
+</section>
+<!-- Section: ROC Curve -->
+<section class="mb-20 scroll-mt-20" id="roc-curve">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">15. Generating Data for ROC Curve Analysis</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        Evaluates the diagnostic ability of a continuous or categorical test variable in distinguishing between two states (e.g., Positive vs. Negative diagnosis).
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">15.1 Workflow</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Navigate to <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → ROC Curve</span>.
+                        </p>
+<div class="mb-6">
+<img alt="ROC Curve Settings" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/ROC Curve1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 15.1: User Interface / Operations for ROC Curve Settings</p>
+</div>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<strong>Proportions:</strong> In the parameters panel on the left, enter your targeted case counts for Positive Samples (1) and Negative Samples (0) (e.g., 100 positive cases and 100 negative cases). The generation engine will construct the core statistical sampling matrix based on these proportions.
+                        </p>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">15.2 Variable Types</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            Click <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Continuous</span> or <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Categorical</span> at the bottom-left to create corresponding variables:
+                        </p>
+<ul class="list-disc pl-5 mb-4 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>Continuous Variables:</strong> Customize the Variable Name, Min/Max bounds, and targeted Decimal Places on the card. Drag the Pink slider (Positive group) and Blue slider (Negative group) to rapidly adjust their respective Mean and SD distributions.</li>
+<li><strong>⚙ Precision Tuning:</strong> If the visual sliders cannot reach the exact granularity you need, click the Gear icon (⚙) next to the parameter to manually key in precise floating-point values.</li>
+<li><strong>Monitor AUC:</strong> Throughout this tuning process, the AUC = 0.XXX indicator at the top-right of the card and the central plotting canvas will update completely in real time, allowing you to visually align the curve to your exact target cut-off.</li>
+<li><strong>Categorical Variables:</strong> Simply define the exact proportions or counts for both positive and negative cohorts. You can immediately monitor the corresponding changes in the ROC curve and the AUC value.</li>
+</ul>
+<div>
+<img alt="ROC Curve Plot" class="w-full rounded-xl shadow-md border border-gray-100" src="./image/ROC Curve2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">Figure 15.2: User Interface / Operations for Displaying ROC Curve Plot</p>
+</div>
+</div>
+</section>
+<!-- Section: Export/Import Config -->
+<section class="mb-20 scroll-mt-20" id="export-import">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">16. Saving and Exporting Configured Parameters</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        To streamline repetitive modeling tasks and avoid manual configuration errors, the application provides a powerful built-in configuration state preservation mechanism.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">16.1 Save/Restore</h3>
+<ul class="list-disc pl-5 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>Export Configuration:</strong> Navigate to <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">File → Export Configuration</span> to save all configured parameters, variable definitions, group structures, and targets as a local `.json` configuration file on your computer.</li>
+<li><strong>Import Configuration:</strong> To restore your setup during a future session, simply navigate to <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">File → Import Configuration</span> and select your previously saved configuration file. The workspace will immediately reload and recover all variable cards, sliders, and parameter values.</li>
+</ul>
+</div>
+</section>
+<div class="mt-12 pt-8 border-t border-gray-200 flex justify-between">
+<a class="text-scientific-blue font-medium hover:underline flex items-center" href="index.html">
+<svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+                        Back to Home
+                    </a>
+</div>
+</div>
+</main>
+</div>
+<script>
+        // Language Dropdown Logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const button = document.getElementById('lang-menu-button');
+            const dropdown = document.getElementById('lang-dropdown');
+            let isDropdownOpen = false;
+
+            button.addEventListener('click', function (event) {
+                event.stopPropagation();
+                isDropdownOpen = !isDropdownOpen;
+                if (isDropdownOpen) {
+                    dropdown.classList.remove('hidden');
+                } else {
+                    dropdown.classList.add('hidden');
+                }
+            });
+
+            document.addEventListener('click', function (event) {
+                if (isDropdownOpen && !dropdown.contains(event.target)) {
+                    isDropdownOpen = false;
+                    dropdown.classList.add('hidden');
+                }
+            });
+
+            // Simple scroll spy for sidebar highlighting
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('aside nav a');
+            const mainArea = document.querySelector('main');
+
+            mainArea.addEventListener('scroll', () => {
+                let current = '';
+                const mainOffset = mainArea.offsetTop;
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - mainOffset;
+                    if (mainArea.scrollTop >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                // Active last section if scrolled to the absolute bottom
+                if (mainArea.scrollHeight - mainArea.scrollTop <= mainArea.clientHeight + 10) {
+                    current = sections[sections.length - 1].getAttribute('id');
+                }
+
+                navLinks.forEach(link => {
+                    link.classList.remove('sidebar-active', 'text-gray-900', 'bg-gray-100');
+                    link.classList.add('text-gray-600');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('sidebar-active');
+                        link.classList.remove('text-gray-600');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
