@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ar">
+<head>
+<script>
+        (function () {
+            var pref = localStorage.getItem('preferredLang');
+            var browserLang = navigator.language || navigator.userLanguage;
+
+            var shouldGoToEn = (pref === 'en') || (!pref && !browserLang.toLowerCase().startsWith('zh') && !browserLang.toLowerCase().startsWith('fr') && !browserLang.toLowerCase().startsWith('pt') && !browserLang.toLowerCase().startsWith('es') && !browserLang.toLowerCase().startsWith('de') && !browserLang.toLowerCase().startsWith('ru') && !browserLang.toLowerCase().startsWith('ja') && !browserLang.toLowerCase().startsWith('ko') && !browserLang.toLowerCase().startsWith('ar'));
+
+            if (shouldGoToEn && window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = '../' + currentFile + window.location.search + window.location.hash;
+            }
+        })();
+    </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="تعرف على كيفية تكوين المعلمات وإنشاء مجموعات بيانات إحصائية اصطناعية بمستوى أكاديمي دون اتصال بالإنترنت باستخدام DataSynth Pro." name="description"/>
+<title>الوثائق | DataSynth Pro</title>
+<!-- Tailwind CSS -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Generated CSS -->
+<link href="../styles.css" rel="stylesheet"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-P31H1FL4HS"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-P31H1FL4HS');
+    </script>
+<!-- SEO Canonical and Hreflang -->
+<link href="https://www.datasynthpro.com/ar/docs.html" rel="canonical"/>
+<link href="https://www.datasynthpro.com/docs.html" hreflang="en" rel="alternate"/>
+<link href="https://www.datasynthpro.com/zh/docs.html" hreflang="zh-CN" rel="alternate"/>
+<link href="https://www.datasynthpro.com/fr/docs.html" hreflang="fr" rel="alternate"/>
+<link href="https://www.datasynthpro.com/pt/docs.html" hreflang="pt" rel="alternate"/>
+<link href="https://www.datasynthpro.com/es/docs.html" hreflang="es" rel="alternate"/>
+<link href="https://www.datasynthpro.com/de/docs.html" hreflang="de" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ru/docs.html" hreflang="ru" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ja/docs.html" hreflang="ja" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ko/docs.html" hreflang="ko" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ar/docs.html" hreflang="ar" rel="alternate"/>
+<link href="https://www.datasynthpro.com/docs.html" hreflang="x-default" rel="alternate"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://www.datasynthpro.com/ar/docs.html" property="og:url"/>
+<meta content="الوثائق | DataSynth Pro" property="og:title"/>
+<meta content="مولد احترافي للبيانات الاصطناعية يعمل دون اتصال للباحثين والمحللين." property="og:description"/>
+<meta content="https://www.datasynthpro.com/image/home.png" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="https://www.datasynthpro.com/ar/docs.html" property="twitter:url"/>
+<meta content="الوثائق | DataSynth Pro" property="twitter:title"/>
+<meta content="مولد احترافي للبيانات الاصطناعية يعمل دون اتصال للباحثين والمحللين." property="twitter:description"/>
+<meta content="https://www.datasynthpro.com/image/home.png" property="twitter:image"/>
+</head>
+<body class="bg-white text-gray-900 antialiased h-screen overflow-hidden flex flex-col selection:bg-scientific-blue selection:text-white">
+<!-- Top Navbar -->
+<nav class="w-full z-50 glass-nav h-16 flex-shrink-0">
+<div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
+<!-- Logo -->
+<a class="flex-shrink-0 flex items-center gap-2 cursor-pointer" href="index.html">
+<div class="w-7 h-7 rounded bg-scientific-blue flex items-center justify-center text-white font-bold text-lg">
+                    S</div>
+<span class="font-semibold text-lg tracking-tight text-gray-900 hidden sm:block">وثائق DataSynth Pro</span>
+</a>
+<!-- Right Nav Items -->
+<div class="flex items-center space-x-6">
+<!-- Back to Home -->
+<a class="inline-flex items-center text-xs font-medium text-gray-600 hover:text-scientific-blue transition-colors" href="index.html">
+<svg class="mr-1 h-4 w-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+                    الرئيسية
+                </a>
+<!-- Language Switcher -->
+<div class="relative inline-block text-left">
+<div>
+<button aria-expanded="true" aria-haspopup="true" class="inline-flex justify-center w-full rounded border border-gray-300 shadow-sm px-3 py-1.5 bg-white text-xs font-medium text-gray-700 hover:bg-gray-50 focus:outline-none z-50" id="lang-menu-button" type="button">
+<svg class="mr-1.5 h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                                العربية
+                                <svg class="-mr-1 ml-1 h-5 w-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+<div class="origin-top-right absolute right-0 top-full mt-2 w-32 rounded shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden focus:outline-none z-50" id="lang-dropdown">
+<div class="py-1">
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../docs.html" onclick="localStorage.setItem('preferredLang', 'en');">English</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../fr/docs.html" onclick="localStorage.setItem('preferredLang', 'fr');">Français</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../pt/docs.html" onclick="localStorage.setItem('preferredLang', 'pt');">Português</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../es/docs.html" onclick="localStorage.setItem('preferredLang', 'es');">Español</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../de/docs.html" onclick="localStorage.setItem('preferredLang', 'de');">Deutsch</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../ru/docs.html" onclick="localStorage.setItem('preferredLang', 'ru');">Русский</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../zh/docs.html" onclick="localStorage.setItem('preferredLang', 'zh');">简体中文</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../ja/docs.html" onclick="localStorage.setItem('preferredLang', 'ja');">日本語</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../ko/docs.html" onclick="localStorage.setItem('preferredLang', 'ko');">한국어</a>
+<a class="block px-4 py-2 text-sm text-scientific-blue bg-gray-50 font-medium" href="docs.html" onclick="localStorage.setItem('preferredLang', 'ar');">العربية</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Layout -->
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-gray-50 border-r border-gray-200 overflow-y-auto flex-shrink-0 hidden md:block">
+<nav class="px-3 py-6 space-y-1">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">البدء</p>
+<a class="sidebar-active group flex items-center px-3 py-2 text-sm rounded-md transition-colors font-medium" href="#overview">1. توليد المؤشرات</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">اختبارات T</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#independent-t-test">2. اختبار T للعينات المستقلة</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#paired-t-test">3. اختبار T للعينات المزدوجة</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">اختبارات أساسية أخرى</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#chi-square">4. اختبار كاي تربيع</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">ANOVA</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#one-way-anova">5. تحليل التباين الأحادي</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#two-way-anova">6. تحليل التباين الثنائي</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#repeated-anova">7. القياسات المتكررة</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">اختبارات لامعلمية</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#non-parametric-2">8. عينتان مستقلتان</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#non-parametric-k">9. K عينات مستقلة</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">تحليلات أخرى</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#quartile">10. تحليل الربيعات</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#binary-logistic">11. اللوجستي الثنائي</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#multiple-linear">12. الخطي المتعدد</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#cox-regression">13. انحدار Cox</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#correlation">14. الارتباط</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#roc-curve">15. منحنى ROC</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">إعدادات النظام</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#export-import">16. التصدير/الاستيراد</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-white p-6 md:p-10 lg:p-12 scroll-smooth">
+<div class="max-w-4xl mx-auto">
+<!-- Section: Overview -->
+<section class="mb-20 scroll-mt-20" id="overview">
+<h1 class="text-4xl font-extrabold text-gray-900 tracking-tight mb-4">الوثائق ودليل المستخدم</h1>
+<p class="text-lg text-gray-600 mb-10 leading-relaxed">
+                        مرحباً بك في الوثائق الرسمية لـ DataSynth Pro. يقدم هذا الدليل الشامل إرشادات تفصيلية حول إعداد معلمات الوحدات الإحصائية المختلفة لتركيب مجموعات بيانات قوية وصالحة أكاديمياً وإحصائياً بالكامل دون اتصال.
+                    </p>
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">1. توليد مؤشرات متعددة في الوقت نفسه</h2>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.1 المتطلبات المسبقة والتشغيل</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انقر نقراً مزدوجاً على الملف التنفيذي لتشغيل التطبيق. يتطلب البرنامج إطار تشغيل Microsoft .NET 8.0. إذا لم يكن مثبتاً على جهازك، فاتبع التعليمات لتنزيله وتثبيته، ثم أعد فتح البرنامج.
+                        </p>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4 rounded-r">
+<p class="text-sm text-blue-700">
+<strong>ملاحظة أمنية:</strong> إذا اعتبر برنامج مكافحة الفيروسات الملف التنفيذي تهديداً بالخطأ، فأضفه إلى قائمة الاستثناءات أو القائمة البيضاء المحلية لضمان عمله دون انقطاع.
+                            </p>
+</div>
+<div class="mb-6">
+<img alt="الشكل: واجهة المستخدم / العمليات (الواجهة الرئيسية)" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/main_interface.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 1.1: واجهة المستخدم / العمليات (الواجهة الرئيسية)</p>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.2 إعداد المعلمات</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            بشكل افتراضي، يملأ التطبيق متغيرين مستمرين هما 'Age' و'Gender' كمرجع سريع. يكون تعيين المجموعة افتراضياً 'Control Group'، ويُضبط حجم العينة على 100 حالة. إذا كانت دراستك تتطلب مجموعات متعددة، يمكنك توليد وتصدير بيانات كل مجموعة تباعاً عبر تحديث المعلمات لكل تشغيل.
+                        </p>
+<ul class="list-disc pl-5 mb-4 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>إضافة متغيرات رقمية مستمرة:</strong> لإضافة متغير كمي جديد، انقر زر <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ رقمي</span> ثم يمكنك تحديد اسم المؤشر (مثل 'Body Mass Index' أو 'BMI') والمتوسط والانحراف المعياري وعدد المنازل العشرية. حقلا الحد الأدنى والحد الأقصى اختياريان ويمكن تركهما فارغين إذا لم تكن لديك حدود قيمة محددة.</li>
+<li><strong>إعدادات توزيع البيانات:</strong> افتراضياً، تتبع المقاييس الرقمية المولدة توزيعاً طبيعياً. إذا كنت تحتاج إلى بيانات غير موزعة طبيعياً، فما عليك إلا ضبط خيار <span class="text-scientific-blue font-semibold">التوزيع الطبيعي</span> إلى <span class="text-red-500 font-semibold">لا</span>.</li>
+</ul>
+<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6 rounded-r">
+<p class="text-sm text-yellow-700">
+<strong>ضبط التوزيع:</strong> يعتمد التوزيع الطبيعي على مدى طبيعي للتباين؛ لذلك فإن تقييد الحدود الدنيا والعليا بشدة قد يقطع المنحنى الطبيعي وينتج قيماً غير موزعة طبيعياً. إذا حدث ذلك، فجرب توسيع الحدود أو إزالة حدود الحد الأدنى/الأقصى بالكامل.
+                            </p>
+</div>
+<div class="mb-6">
+<img alt="الشكل: واجهة المستخدم / العمليات لإضافة المتغيرات" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/adding_variables.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 1.2: واجهة المستخدم / العمليات لإضافة المتغيرات</p>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.3 إضافة متغيرات فئوية</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انقر زر <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ فئوي</span> لمتابعة إضافة متغيرات نوعية (مثل 'Hypertension'). يمكنك إدخال أسماء الفئات والتوزيعات أو النسب المستهدفة المقابلة لها. سيُعاد تحجيم مجموع نسب الفئات ديناميكياً ليتوافق مع حجم العينة الذي ضبطته.
+                        </p>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.4 تنفيذ التوليد</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انقر زر <span class="bg-scientific-blue text-white px-3 py-1 rounded text-xs font-semibold">توليد</span> لتركيب عدد السجلات المطلوب. بعد الحساب، ستظهر نافذة ملخص للإحصاءات الوصفية لتتمكن من التحقق مما إذا كانت القيم المولدة فعلياً تتوافق مع المعلمات التي ضبطتها.
+                        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<div>
+<img alt="الشكل: واجهة المستخدم / العمليات لتنفيذ التوليد" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/executing_generation.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 1.3: واجهة المستخدم / العمليات لتنفيذ التوليد</p>
+</div>
+<div>
+<img alt="الشكل: واجهة المستخدم / العمليات لعرض البيانات" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/displaying_data.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 1.4: واجهة المستخدم / العمليات لعرض البيانات</p>
+</div>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.5 التصدير والتحقق</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انقر زر <span class="bg-scientific-blue text-white px-3 py-1 rounded text-xs font-semibold">حفظ</span> لتصدير مجموعة البيانات المولدة كملف Excel قياسي. إذا فتحت جدول البيانات المصدر وحسبت الإحصاءات الوصفية لـ 'Age' (مقربة إلى منزلتين عشريتين) باستخدام صيغ Excel القياسية، فسيتطابق المتوسط والانحراف المعياري الفعليان تماماً مع إعداداتك الأولية.
+                        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<div class="space-y-4">
+<div>
+<img alt="الشكل: واجهة المستخدم / العمليات لتصدير الجداول" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/exporting_tables.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 1.5: تصدير الجداول المولدة إلى Excel</p>
+</div>
+<div>
+<img alt="الشكل: واجهة المستخدم / العمليات لحساب المتوسط" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/calculating_mean.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 1.6: عمليات Excel لحساب المتوسط</p>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<img alt="الشكل: واجهة المستخدم / العمليات لحساب الانحراف المعياري" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/calculating_std.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 1.7: عمليات Excel لحساب الانحراف المعياري</p>
+</div>
+<div>
+<img alt="الشكل: واجهة المستخدم مع نتائج حساب مطابقة للإعدادات الأولية" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/calculation_results.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 1.8: نتائج التحقق مطابقة للإعدادات الأولية</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.6 الكفاءة الحسابية</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            بفضل محرك تحسين عالي الأداء، يستطيع البرنامج توليد مجموعات بيانات تحتوي على آلاف أو عشرات الآلاف من السجلات خلال ثوانٍ. إذا فشل النظام في التقارب بعد الحد الأقصى من التكرارات، فتحقق من المعقولية الإحصائية لإعداداتك أو جرّب التشغيل دون حدود الحد الأدنى/الأقصى. يدعم البرنامج دقة عشرية تصل إلى 8 منازل لتلبية احتياجات البحث العلمي المتخصص.
+                        </p>
+<div class="bg-gray-50 border border-gray-200 p-4 rounded-xl">
+<p class="text-sm font-semibold text-gray-700 mb-1">نصائح وتوصيات:</p>
+<p class="text-sm text-gray-600 leading-relaxed">
+                                • <strong>تفضيل التوزيع الطبيعي:</strong> تكون البيانات افتراضياً موزعة طبيعياً لتسهيل التحليل اللاحق (مثل اختبارات T للعينات المستقلة). إذا كنت تفضل بيانات لامعلمية أو مخصصة التوزيع، فغيّر إعداد التوزيع الطبيعي إلى لا.
+                            </p>
+</div>
+</div>
+</section>
+<!-- Section: Independent T-Test -->
+<section class="mb-20 scroll-mt-20" id="independent-t-test">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">2. اختبار t للعينات المستقلة</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        مصمم للدراسات المقطعية التي تقارن متوسطات مجموعتين مختلفتين. يُستخدم على نطاق واسع في التجارب السريرية (مثل فعالية الدواء بين مجموعة العلاج ومجموعة الدواء الوهمي) والاستبيانات الاجتماعية.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">2.1 سير العمل</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انتقل إلى <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Independent T-Test</span>. ستظهر نافذة الإعداد كما هو موضح أدناه:
+                        </p>
+<div class="mb-6">
+<img alt="إعداد اختبار T" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Independent T-Test1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 2.1: واجهة المستخدم / العمليات لاختبار T المستقل</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">2.2 المعلمات</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            يملأ البرنامج مسبقاً إعدادات عينات لمجموعتي 'Control Group' و'Experimental Group' كمرجع. أدخل حجم العينة والمتوسط والانحراف المعياري لكل مجموعة لمعاينة قيمة t وقيمة p المحسوبتين فورياً. معلمات الحد الأدنى والحد الأقصى اختيارية.
+                        </p>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                            سيؤدي النقر على زر التوليد إلى إنشاء مجموعات بيانات خام لكلتا المجموعتين في جدول المعاينة أدناه، وستُعدّل قيمة t وقيمة p النهائيتان لتعكسا البيانات المولدة فعلياً باستخدام اختبار Levene لتساوي التباينات.
+                        </p>
+<div>
+<img alt="نتائج اختبار T" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Independent T-Test2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 2.2: واجهة المستخدم / العمليات لعرض بيانات اختبار T للعينات المستقلة</p>
+</div>
+</div>
+</section>
+<!-- Section: Paired T-Test -->
+<section class="mb-20 scroll-mt-20" id="paired-t-test">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">3. اختبار t للعينات المزدوجة</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        يُستخدم في الدراسات الطولية أو المتقاطعة التي تُقاس فيها نفس الحالات مرتين (مثل الاختبار القبلي مقابل الاختبار البعدي). يركز على تركيب فرق المتوسط بين الملاحظات المزدوجة.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">3.1 سير العمل</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انتقل إلى <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Paired T-Test</span>. يظهر تخطيط مساحة العمل أدناه:
+                        </p>
+<div class="mb-6">
+<img alt="إعداد اختبار T المزدوج" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Paired T-Test1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 3.1: واجهة المستخدم / العمليات لاختبار T المزدوج</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">3.2 منطق المحاكاة</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            يعتمد البرنامج افتراضياً متغيرين مزدوجين هما Paired Var1 وPaired Var2. يمكنك تحديد المتوسط والانحراف المعياري لكل متغير، وضبط حجم العينة الكلي، وتحديد نطاق قيمة p المستهدفة لاختبار t المزدوج. سيحسب المحرك مجموعة بيانات متوافقة بشكل تكراري.
+                        </p>
+<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6 rounded-r">
+<p class="text-sm text-yellow-700">
+<strong>التكيف مع التقارب:</strong> إذا كانت المتوسطات المضبوطة غير متسقة رياضياً مع قيمة p المستهدفة (مثلاً إذا كان المتوسطان مختلفين جداً وطلبت p غير دالة &gt; 0.05)، فسيثبت البرنامج معلمات المجموعة الأولى ويعدل متوسط المجموعة الثانية ديناميكياً لتحقيق قيمة p المستهدفة.
+                            </p>
+</div>
+<div>
+<img alt="نتائج اختبار T المزدوج" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Paired T-Test2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 3.2: واجهة المستخدم / العمليات لعرض بيانات اختبار T للعينات المزدوجة</p>
+</div>
+</div>
+</section>
+<!-- Section: Chi-Square Test -->
+<section class="mb-20 scroll-mt-20" id="chi-square">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">4. اختبار كاي تربيع</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        يحدد ما إذا كانت هناك علاقة معنوية بين متغيرين فئويين. يُستخدم كثيراً في الجداول المتقاطعة الديموغرافية.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">4.1 سير العمل</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انتقل إلى <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Chi-Square Test</span>. تفتح لوحة الإعداد كما يلي:
+                        </p>
+<div class="mb-6">
+<img alt="إعداد كاي تربيع" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Chi-Square1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 4.1: واجهة المستخدم / العمليات لاختبار كاي تربيع</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">4.2 مصفوفة التوافق</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            تعتمد الواجهة افتراضياً جدول توافق قياسي 2×2 لحسابات كاي تربيع، ويمكن تحرير أسماء المجموعات والفئات بالكامل. أدخل التكرارات المرصودة (الأعداد) لكل خلية، وستتحدث قيمة كاي تربيع وقيمة p المحسوبتان فورياً.
+                        </p>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            يمكنك إضافة مجموعات (صفوف) أو فئات (أعمدة) ديناميكياً لاستيعاب نماذج أكبر. انقر <span class="text-scientific-blue font-semibold">توليد</span> لإنتاج سجلات خام فردية تطابق هذه التكرارات، ثم انقر <span class="text-scientific-blue font-semibold">حفظ</span> لتصدير مجموعة البيانات إلى Excel.
+                        </p>
+<div>
+<img alt="نتائج كاي تربيع" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Chi-Square2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 4.2: واجهة المستخدم / العمليات لعرض بيانات اختبار كاي تربيع</p>
+</div>
+</div>
+</section>
+<!-- Section: One-Way ANOVA -->
+<section class="mb-20 scroll-mt-20" id="one-way-anova">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">5. تحليل التباين الأحادي</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        يُستخدم عند مقارنة متوسطات ثلاث مجموعات مستقلة أو أكثر. يركب الخوارزم تباين داخل المجموعات وفروقاً بين المجموعات لتلبية قيم F المستهدفة.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">5.1 سير العمل</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انتقل إلى <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → ANOVA → One-Way ANOVA</span>. تخطيط مساحة العمل كما يلي:
+                        </p>
+<div class="mb-6">
+<img alt="إعداد ANOVA" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/One-Way ANOVA1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 5.1: واجهة المستخدم / العمليات لتحليل التباين الأحادي</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">5.2 الإعداد</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            يحمّل النظام مسبقاً معلمات ثلاث مجموعات: 'Control Group' و'Experimental Group' و'Treatment Group'. أدخل حجم العينة والمتوسط والانحراف المعياري لكل مجموعة لمعاينة إحصاء F العام وقيمة p ونتائج المقارنات البعدية المتعددة Tukey HSD فورياً.
+                        </p>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انقر <span class="text-scientific-blue font-semibold">توليد</span> لحساب ومعاينة السجلات الخام الفردية أدناه. ستتحدث قيمة F العامة وقيمة p تلقائياً لتمثيل القيم المولدة فعلياً.
+                        </p>
+<div>
+<img alt="بيانات مخرجات ANOVA" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/One-Way ANOVA2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 5.2: واجهة المستخدم / العمليات لعرض بيانات تحليل التباين الأحادي</p>
+</div>
+</div>
+</section>
+<!-- Section: Two-Way ANOVA -->
+<section class="mb-20 scroll-mt-20" id="two-way-anova">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">6. تحليل التباين الثنائي</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        يفحص تأثير متغيرين فئويين مستقلين على متغير تابع مستمر واحد. وهو أساسي للتصاميم العاملية لتقييم التأثيرات الرئيسية وتأثيرات التفاعل.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">6.1 سير العمل</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انتقل إلى <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → ANOVA → Two-Way ANOVA</span>. تُعرض لوحة الإعداد أدناه:
+                        </p>
+<div class="mb-6">
+<img alt="إعداد تحليل التباين الثنائي" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Two-Way ANOVA1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 6.1: واجهة المستخدم / العمليات لتحليل التباين الثنائي</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">6.2 العوامل والتفاعلات</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            تعتمد الأداة افتراضياً عاملين: 'Time' (مستويان) و'Concentration' (مستويان). انقر <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">إضافة مجموعة</span> لإعداد مستويات إضافية إذا كان العامل يحتوي على تصنيفات متعددة.
+                        </p>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            بإدخال حجم العينة والمتوسط والانحراف المعياري لكل خلية، يمكنك معاينة إحصاءات F وقيم p للتأثير الرئيسي للوقت، والتأثير الرئيسي للتركيز، وتأثير التفاعل بينهما (Time × Concentration). انقر <span class="text-scientific-blue font-semibold">توليد</span> لبناء السجلات الخام الفردية المطابقة في لوحة المعاينة.
+                        </p>
+<div>
+<img alt="بيانات تفاعل تحليل التباين الثنائي" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Two-Way ANOVA2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 6.2: واجهة المستخدم / العمليات لعرض بيانات تحليل التباين الثنائي</p>
+</div>
+</div>
+</section>
+<!-- Section: Repeated Measures ANOVA -->
+<section class="mb-20 scroll-mt-20" id="repeated-anova">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">7. تحليل التباين الأحادي للقياسات المتكررة</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        امتداد لاختبار T المزدوج إلى ثلاث نقاط زمنية أو أكثر. مثالي للتتبع الطولي عبر فترات ممتدة (مثل خط الأساس، الشهر 1، الشهر 3).
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">7.1 سير العمل</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انتقل إلى <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → ANOVA → Repeated Measures ANOVA</span>. يظهر تخطيط مساحة العمل أدناه:
+                        </p>
+<div class="mb-6">
+<img alt="إعداد القياسات المتكررة" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Repeated Measures ANOVA1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 7.1: واجهة المستخدم / العمليات لتحليل التباين الأحادي للقياسات المتكررة</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">7.2 الملاحظات المتكررة</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            يعتمد النظام افتراضياً ثلاث نقاط زمنية للملاحظة. يمكنك زيادتها بسهولة بالنقر على <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">إضافة نقطة زمنية</span> أدخل المتوسط والانحراف المعياري لكل نقطة زمنية وحدد نطاق قيمة p المستهدفة.
+                        </p>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انقر <span class="text-scientific-blue font-semibold">توليد</span> لتركيب قيم متوافقة.
+                        </p>
+<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6 rounded-r">
+<p class="text-sm text-yellow-700">
+<strong>ضغط المحرك:</strong> إذا كان الفرق بين النقاط الزمنية كبيراً رياضياً (مما يشير إلى قيمة p عالية الدلالة) لكن نطاقك المستهدف مضبوط على p &gt; 0.05، فسيضغط المحرك تلقائياً التباينات وفروق المتوسط بين النقاط الزمنية لتحقيق قيمة p المستهدفة بدقة. ستعرض نافذة منبثقة الإحصاءات الفعلية لمجموعة البيانات المركبة.
+                            </p>
+</div>
+<div>
+<img alt="نتائج القياسات المتكررة" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Repeated Measures ANOVA2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 7.2: واجهة المستخدم / العمليات لعرض بيانات ANOVA للقياسات المتكررة</p>
+</div>
+</div>
+</section>
+<!-- Section: Non-Parametric Test (2 Ind. Samples) -->
+<section class="mb-20 scroll-mt-20" id="non-parametric-2">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">8. اختبار مجموع الرتب لعينتين مستقلتين (لامعلمي)</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        بديل اختبار Mann-Whitney U للبيانات التي لا تحقق افتراضات الطبيعية. يقيّم فروق الوسيط بناءً على منطق ترتيب الرتب للمتغيرات المستمرة أو الترتيبية.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">8.1 سير العمل</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انتقل إلى <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Non-parametric → 2 Independent Samples</span>. تظهر مساحة عمل الإعداد أدناه:
+                        </p>
+<div class="mb-6">
+<img alt="إعداد عينتين لامعلميتين" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Non-Parametric Test (2 Ind. Samples)1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 8.1: واجهة المستخدم / العمليات لاختبار مجموع الرتب لعينتين مستقلتين</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">8.2 الإعداد</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            يعتمد البرنامج افتراضياً مجموعتين مرجعيتين. وبما أن الطرق اللامعلمية مصممة للبيانات غير الموزعة طبيعياً، فإن خيار التوزيع الطبيعي مضبوط على <span class="text-red-500 font-semibold">لا</span> افتراضياً. باستخدام اختبار Mann-Whitney U، يمكنك تحديد نطاق قيمة p مستهدفة. انقر <span class="text-scientific-blue font-semibold">توليد</span> لتركيب ملاحظات خام متوافقة إحصائياً مع هذا الحد.
+                        </p>
+<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6 rounded-r">
+<p class="text-sm text-yellow-700">
+<strong>منطق توليد مجموع الرتب:</strong> تحلل الاختبارات اللامعلمية فروق المجموعات عبر دمج جميع الملاحظات وتعيين الرتب. لذلك، إذا كانت معلمات المجموعتين مختلفة جداً (مما يعطي طبيعياً قيمة p صغيرة جداً) لكنك ضبطت الحد المستهدف على p &gt; 0.05، فسيقلل المحرك تلقائياً التباعد بين المجموعتين لتحقيق هدفك. ستُعرض المتوسطات والانحرافات المعيارية النهائية في نافذة منبثقة.
+                            </p>
+</div>
+<div>
+<img alt="مخرجات عينتين لامعلميتين" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Non-Parametric Test (2 Ind. Samples)2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 8.2: واجهة المستخدم / العمليات لعرض بيانات اختبار مجموع الرتب لعينتين مستقلتين</p>
+</div>
+</div>
+</section>
+<!-- Section: Non-Parametric Test (K Ind. Samples) -->
+<section class="mb-20 scroll-mt-20" id="non-parametric-k">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">9. اختبار Kruskal-Wallis (K عينات مستقلة لامعلمية)</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        مكافئ لاختبار Kruskal-Wallis H. يولد بيانات ترتيبية أو مستمرة غير موزعة طبيعياً عبر ثلاث مجموعات مستقلة أو أكثر.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">9.1 سير العمل</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انتقل إلى <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Non-parametric → K Independent Samples</span>. تظهر مساحة عمل الإعداد أدناه:
+                        </p>
+<div class="mb-6">
+<img alt="إعداد K عينات لامعلمية" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Non-Parametric Test (K Ind. Samples)1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 9.1: واجهة المستخدم / العمليات لاختبار Kruskal-Wallis</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">9.2 ترتيب المجموعات المتعددة</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            يعتمد البرنامج افتراضياً ثلاث مجموعات مرجعية ويجري اختبار Kruskal-Wallis. وكما في اختبار المجموعتين، لأن الحسابات تعتمد على الرتب في مجموعة بيانات مدمجة، فإذا كانت معلمات المجموعات المتعددة تتضمن فروقاً كبيرة (مما ينتج قيم p عالية الدلالة) لكنك تطلب هدف p &gt; 0.05، فسيضغط محرك المحاكاة فروق ما بين المجموعات تلقائياً. ستُلخص الإحصاءات الناتجة في نافذة منبثقة.
+                        </p>
+<div>
+<img alt="مخرجات K عينات لامعلمية" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Non-Parametric Test (K Ind. Samples)2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 9.2: واجهة المستخدم / العمليات لعرض بيانات اختبار Kruskal-Wallis</p>
+</div>
+</div>
+</section>
+<!-- Section: Quartile Analysis -->
+<section class="mb-20 scroll-mt-20" id="quartile">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">10. توليد بيانات الربيعات</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        يقسم مجموعة بيانات مرتبة إلى أربعة أجزاء متساوية. مفيد لتقييم انتشار البيانات ونزعتها المركزية وإبراز الوسيط واكتشاف القيم الشاذة.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">10.1 سير العمل</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انتقل إلى <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Quartile Data</span>. يوضح التخطيط أدناه:
+                        </p>
+<div class="mb-6">
+<img alt="إعداد الربيعات" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Quartile1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 10.1: واجهة المستخدم / العمليات لبيانات الربيعات</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">10.2 تعريف المعلمات</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            حدد حجم العينة المستهدف وQ1 (المئين 25) وQ2 (الوسيط/المئين 50) وQ3 (المئين 75). يمكن ترك حدود الحد الأدنى/الأقصى فارغة إذا لم توجد قيود محددة. اختر الدقة العشرية وانقر <span class="text-scientific-blue font-semibold">توليد</span> لإنتاج ملاحظات تحقق حدود الربيعات هذه بدقة.
+                        </p>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<strong>الملخص:</strong> اضبط أحجام العينات والقيم المستهدفة لـ Q1 وQ2 وQ3. تشمل المعلمات الاختيارية الحد الأدنى والحد الأقصى والمنازل العشرية. انقر <span class="text-scientific-blue font-semibold">توليد</span> لحساب وعرض الملاحظات الخام المطابقة لبنية الربيعات المستهدفة. في إعدادات المجموعات المتعددة، يمكنك أيضاً تثبيت نطاق قيمة p مستهدفة بين المجموعات.
+                        </p>
+<div>
+<img alt="بيانات مخرجات الربيعات" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Quartile2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 10.2: واجهة المستخدم / العمليات لعرض بيانات الربيعات</p>
+</div>
+</div>
+</section>
+<!-- Section: Binary Logistic Regression -->
+<section class="mb-20 scroll-mt-20" id="binary-logistic">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">11. توليد بيانات الانحدار اللوجستي الثنائي</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        أساسي لمشكلات التصنيف التي تكون فيها النتيجة ثنائية (DV=0 أو DV=1). شائع جداً في علم الوبائيات لتحديد عوامل الخطر (مثل المرض مقابل الصحة).
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">11.1 سير العمل</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انتقل إلى <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Regression → Binary Logistic</span>.
+                        </p>
+<div class="mb-6">
+<img alt="إعداد الانحدار اللوجستي" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Binary Logistic1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 11.1: واجهة المستخدم / العمليات للانحدار اللوجستي الثنائي</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">11.2 التصميم</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            افتراضياً، يتم إعداد متغيرين مستقلين مستمرين كمرجع. في النموذج اللوجستي الثنائي، يحتوي المتغير التابع على نتيجتين فقط (0 و1). لذلك يُبنى المتغير التابع كمجموعتي 0 و1، مع حجم عينة افتراضي 100 حالة لكل فئة (قابل للتخصيص).
+                        </p>
+<ul class="list-disc pl-5 mb-4 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>إعداد المتغير:</strong> انقر <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ رقمي</span> لإضافة متغيرات مستقلة مستمرة (مثل 'Age' و'BMI'). أدخل اسم المتغير والمتوسط والانحراف المعياري والمنازل العشرية ونطاق قيمة p المستهدف (وهو يحدد مستوى الدلالة المستهدف الذي تريد أن يحققه المتغير في نموذج الانحدار اللوجستي النهائي). قيود الحد الأدنى/الأقصى اختيارية.</li>
+<li><strong>التوليد والتحقق:</strong> انقر <span class="text-scientific-blue font-semibold">توليد</span> لتشغيل خوارزمية التركيب. سيحسب النظام بشكل تكراري مجموعة بيانات يعطي فيها نموذج الانحدار اللوجستي قيماً لـ p تطابق إعداداتك.</li>
+</ul>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                            سيظهر تلقائياً تقرير تفصيلي لتحليل الانحدار بتنسيق يطابق IBM SPSS. عند إغلاق التقرير، ستظهر مجموعة البيانات الخام في جدول المعاينة جاهزة للتصدير إلى Excel.
+                        </p>
+<div>
+<img alt="مخرجات الانحدار اللوجستي" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Binary Logistic2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 11.2: واجهة المستخدم / العمليات لعرض بيانات الانحدار اللوجستي الثنائي</p>
+</div>
+</div>
+</section>
+<!-- Section: Multiple Linear Regression -->
+<section class="mb-20 scroll-mt-20" id="multiple-linear">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">12. توليد بيانات الانحدار الخطي المتعدد</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        أداة أساسية للنمذجة التنبؤية. تركب متغيراً تابعاً مستمراً (Y) يتأثر بعدة متغيرات مستقلة (X)، ويمكن أن تكون رقمية مستمرة أو ربيعات أو فئوية مرتبة أو فئوية غير مرتبة.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">12.1 سير العمل</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انتقل إلى <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Regression → Linear Regression</span>.
+                        </p>
+<div class="mb-6">
+<img alt="إعدادات الانحدار الخطي" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Multiple Linear Regression1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 12.1: واجهة المستخدم / العمليات للانحدار الخطي المتعدد</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">12.2 إعدادات النموذج</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            تحمّل الواجهة مسبقاً متغيراً تابعاً مستمراً ('Blood Glucose Fluctuation') ومتغيرين مستقلين ('Total Cholesterol' كرقمي و'Gender' كفئوي) مع حجم عينة افتراضي 200 حالة. يمكنك ضبط نطاق R-squared (R²) مستهدف (مثل 0.4 إلى 0.6).
+                        </p>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                            انقر <span class="text-scientific-blue font-semibold">توليد</span> لتشغيل نموذج الانحدار. سيظهر تقرير تحقق يطابق مخرجات SPSS. عند إغلاق التقرير، تعود إلى جدول معاينة البيانات الخام، والذي يمكن حفظه كجدول Excel.
+                        </p>
+<div>
+<img alt="معاينة بيانات الانحدار الخطي" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Multiple Linear Regression2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 12.2: واجهة المستخدم / العمليات لعرض بيانات الانحدار الخطي المتعدد</p>
+</div>
+</div>
+</section>
+<!-- Section: Cox Regression -->
+<section class="mb-20 scroll-mt-20" id="cox-regression">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">13. توليد بيانات انحدار Cox للمخاطر النسبية</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        المعيار الذهبي لتحليل البقاء. يحاكي بيانات الوقت حتى الحدث مع مراعاة الرقابة اليمنى، مما يتيح للباحثين تقييم تأثير المتغيرات المشتركة على أزمنة البقاء.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">13.1 سير العمل والإرشادات الفنية</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انتقل إلى <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Regression → Cox Regression</span>.
+                        </p>
+<div class="mb-6">
+<img alt="إعداد انحدار Cox" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Cox Regression1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 13.1: واجهة المستخدم / العمليات لانحدار Cox للمخاطر النسبية</p>
+</div>
+<ul class="list-disc pl-5 mb-4 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>إجمالي حجم العينة (N):</strong> العدد الكلي للمشاركين/المرضى (مثل 200 مشارك).</li>
+<li><strong>الأحداث المرصودة (أحداث النتيجة):</strong> عدد الحالات الإيجابية التي شهدت النتيجة النهائية (مثل الوفاة أو النكس أو فشل الحدث) خلال فترة المتابعة. <em>ملاحظة: يجب أن يكون عدد الأحداث أقل تماماً من إجمالي حجم العينة.</em></li>
+<li><strong>نطاق زمن البقاء (T):</strong> حدد حدود مدة البقاء من [الحد الأدنى للمتابعة] إلى [الحد الأقصى للمتابعة] (مثل 1~60 شهراً)، ووسم الزمن بالأيام أو الأشهر أو السنوات، وحدد الدقة العشرية الرقمية.</li>
+</ul>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4 rounded-r">
+<p class="text-sm text-blue-700">
+<strong>قاعدة EPV الإحصائية (الأحداث لكل متغير):</strong> لضمان الاستقرار الرياضي والموثوقية في نموذج Cox للمخاطر النسبية، يُوصى بشدة بأن تكون نسبة أحداث النتيجة المرصودة إلى عدد المتغيرات المستقلة (EPV) بين 10 و20 على الأقل. إذا فشل النموذج في التقارب، فحاول زيادة إجمالي حجم العينة أو عدد الأحداث المرصودة.
+                            </p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">13.2 بناء متغيرات البحث</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انقر الأزرار المقابلة أسفل بطاقة المتغير لبناء المتغيرات المشتركة المستقلة:
+                        </p>
+<ul class="list-disc pl-5 mb-4 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>متغيرات رقمية مستمرة:</strong> انقر <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ رقمي</span> لإضافة متغيرات مشتركة مستمرة (مثل العمر وBMI والمؤشرات الحيوية السريرية). أدخل المتوسط والانحراف المعياري (مطلوب)، واختيارياً حدود الحد الأدنى/الأقصى لتقييد القيم الشاذة والدقة العشرية.</li>
+<li><strong>متغيرات فئوية:</strong> انقر <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ فئوي</span> لإضافة متغيرات مشتركة اسمية/ترتيبية (مثل Gender أو Satisfaction Score). أدخل التكرار المستهدف الدقيق لكل فئة. <em>ملاحظة: يجب أن يساوي مجموع الأعداد عبر جميع الفئات إجمالي حجم العينة تماماً حتى يعمل.</em></li>
+<li><strong>متغيرات الربيعات:</strong> انقر <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ ربيع</span> لإضافة متغيرات منظمة بالربيعات عبر ملء معلمات Q1 وQ2 (الوسيط) وQ3 المستهدفة.</li>
+</ul>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<strong>المعلمات المستهدفة:</strong> تحتوي كل بطاقة متغير في الأسفل على معلمتين مستهدفتين قويتين:
+                        </p>
+<ol class="list-decimal pl-5 mb-6 text-gray-600 space-y-1 leading-relaxed">
+<li><strong>قيمة p للانحدار:</strong> اختر أهداف الدلالة (مثل p &gt; 0.05 أو p &lt; 0.05 أو p &lt; 0.01 أو p &lt; 0.001).</li>
+<li><strong>اتجاه نسبة الخطر (HR):</strong> اختر إما HR &gt; 1 (عامل خطر يشير إلى زيادة معدل الخطر) أو HR &lt; 1 (عامل وقائي يشير إلى انخفاض معدل الخطر).</li>
+</ol>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">13.3 تنفيذ توليد البيانات وحفظها</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            بعد ملء جميع المعلمات، انقر <span class="text-scientific-blue font-semibold">توليد</span> أسفل النافذة. سينفذ الخلفية محاكاة تكرارية عالية التوازي. سيظهر تلقائياً تقرير موثوق وشامل لتحليل انحدار Cox للمخاطر النسبية، يعكس الإحصاءات الدقيقة والتنسيق المحسوبين بواسطة IBM SPSS.
+                        </p>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                            انقر <span class="text-scientific-blue font-semibold">حفظ</span> لتصدير مجموعة البيانات الخام المركبة إلى ملف Excel يمكن استيراده بسهولة إلى SPSS أو حزم إحصائية احترافية أخرى للتحقق.
+                        </p>
+<div>
+<img alt="نتائج انحدار Cox" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Cox Regression2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 13.2: واجهة المستخدم / العمليات لعرض بيانات انحدار Cox للمخاطر النسبية</p>
+</div>
+</div>
+</section>
+<!-- Section: Correlation Analysis -->
+<section class="mb-20 scroll-mt-20" id="correlation">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">14. توليد بيانات لتحليل الارتباط</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        يحاكي العلاقات الثنائية (Pearson أو Spearman) والارتباط الجزئي عبر فرض معاملات الارتباط المستهدفة (قيم r) ومستويات الدلالة.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">14.1 سير العمل</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انتقل إلى <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Correlation</span>.
+                        </p>
+<div class="mb-6">
+<img alt="إعداد الارتباط" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Correlation1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 14.1: واجهة المستخدم / العمليات لتحليل الارتباط</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">14.2 المعلمات</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            يحمّل النظام مسبقاً مجموعتين من المتغيرات كمرجع سريع. يمكنك بسهولة إضافة متغيرات أخرى تدعم الأشكال المستمرة (المتوسط/الانحراف المعياري) والربيعات والفئات. داخل لوحة الإعداد، حدد حجم العينة والمتوسط والانحراف المعياري لكل مقياس (حدود الحد الأدنى/الأقصى اختيارية).
+                        </p>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                            يمكنك تحديد معامل الارتباط المستهدف الدقيق (r) بين المجموعات. عند النقر <span class="text-scientific-blue font-semibold">توليد</span> سيتم تشغيل المحاكاة وعرض مصفوفة الارتباط الناتجة في نافذة منبثقة، ويمكن بعد ذلك تصديرها كملف Excel.
+                        </p>
+<div>
+<img alt="مصفوفة الارتباط" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Correlation2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 14.2: واجهة المستخدم / العمليات لعرض بيانات تحليل الارتباط</p>
+</div>
+</div>
+</section>
+<!-- Section: ROC Curve -->
+<section class="mb-20 scroll-mt-20" id="roc-curve">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">15. توليد بيانات لتحليل منحنى ROC</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        يقيّم القدرة التشخيصية لمتغير اختبار مستمر أو فئوي على التمييز بين حالتين (مثل التشخيص الإيجابي مقابل السلبي).
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">15.1 سير العمل</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انتقل إلى <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → ROC Curve</span>.
+                        </p>
+<div class="mb-6">
+<img alt="إعدادات منحنى ROC" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/ROC Curve1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 15.1: واجهة المستخدم / العمليات لإعدادات منحنى ROC</p>
+</div>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<strong>النسب:</strong> في لوحة المعلمات على اليسار، أدخل أعداد الحالات المستهدفة للعينات الإيجابية (1) والعينات السلبية (0) (مثل 100 حالة إيجابية و100 حالة سلبية). سيبني محرك التوليد مصفوفة العينة الإحصائية الأساسية بناءً على هذه النسب.
+                        </p>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">15.2 أنواع المتغيرات</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            انقر <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ مستمر</span> أو <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ فئوي</span> في أسفل اليسار لإنشاء المتغيرات المقابلة:
+                        </p>
+<ul class="list-disc pl-5 mb-4 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>متغيرات مستمرة:</strong> خصص اسم المتغير وحدود الحد الأدنى/الأقصى والمنازل العشرية المستهدفة على البطاقة. اسحب شريط التمرير الوردي (المجموعة الإيجابية) والأزرق (المجموعة السلبية) لضبط توزيعات المتوسط والانحراف المعياري لكل منهما بسرعة.</li>
+<li><strong>⚙ ضبط الدقة:</strong> إذا لم تتمكن أشرطة التمرير المرئية من الوصول إلى الدقة المطلوبة، فانقر أيقونة الترس (⚙) بجانب المعلمة لإدخال قيم عشرية دقيقة يدوياً.</li>
+<li><strong>مراقبة AUC:</strong> طوال عملية الضبط، سيتحدث مؤشر AUC = 0.XXX في أعلى يمين البطاقة ولوحة الرسم المركزية فورياً بالكامل، مما يسمح لك بمحاذاة المنحنى بصرياً مع حد القطع المستهدف بدقة.</li>
+<li><strong>متغيرات فئوية:</strong> حدد ببساطة النسب أو الأعداد الدقيقة لكل من المجموعتين الإيجابية والسلبية. يمكنك فوراً مراقبة التغييرات المقابلة في منحنى ROC وقيمة AUC.</li>
+</ul>
+<div>
+<img alt="مخطط منحنى ROC" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/ROC Curve2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">الشكل 15.2: واجهة المستخدم / العمليات لعرض مخطط منحنى ROC</p>
+</div>
+</div>
+</section>
+<!-- Section: Export/Import Config -->
+<section class="mb-20 scroll-mt-20" id="export-import">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">16. حفظ وتصدير المعلمات المضبوطة</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        لتبسيط مهام النمذجة المتكررة وتجنب أخطاء الإعداد اليدوي، يوفر التطبيق آلية مدمجة قوية لحفظ حالة الإعداد.
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">16.1 الحفظ/الاستعادة</h3>
+<ul class="list-disc pl-5 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>تصدير الإعداد:</strong> انتقل إلى <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">File → Export Configuration</span> لحفظ جميع المعلمات المضبوطة وتعريفات المتغيرات وبنى المجموعات والأهداف كملف إعداد محلي بصيغة `.json` على جهازك.</li>
+<li><strong>استيراد الإعداد:</strong> لاستعادة إعداداتك في جلسة لاحقة، انتقل ببساطة إلى <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">File → Import Configuration</span> واختر ملف الإعداد الذي حفظته سابقاً. ستُعاد مساحة العمل فوراً وتستعيد جميع بطاقات المتغيرات وأشرطة التمرير وقيم المعلمات.</li>
+</ul>
+</div>
+</section>
+<div class="mt-12 pt-8 border-t border-gray-200 flex justify-between">
+<a class="text-scientific-blue font-medium hover:underline flex items-center" href="index.html">
+<svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+                        العودة إلى الرئيسية
+                    </a>
+</div>
+</div>
+</main>
+</div>
+<script>
+        // Language Dropdown Logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const button = document.getElementById('lang-menu-button');
+            const dropdown = document.getElementById('lang-dropdown');
+            let isDropdownOpen = false;
+
+            button.addEventListener('click', function (event) {
+                event.stopPropagation();
+                isDropdownOpen = !isDropdownOpen;
+                if (isDropdownOpen) {
+                    dropdown.classList.remove('hidden');
+                } else {
+                    dropdown.classList.add('hidden');
+                }
+            });
+
+            document.addEventListener('click', function (event) {
+                if (isDropdownOpen && !dropdown.contains(event.target)) {
+                    isDropdownOpen = false;
+                    dropdown.classList.add('hidden');
+                }
+            });
+
+            // Simple scroll spy for sidebar highlighting
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('aside nav a');
+            const mainArea = document.querySelector('main');
+
+            mainArea.addEventListener('scroll', () => {
+                let current = '';
+                const mainOffset = mainArea.offsetTop;
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - mainOffset;
+                    if (mainArea.scrollTop >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                // Active last section if scrolled to the absolute bottom
+                if (mainArea.scrollHeight - mainArea.scrollTop <= mainArea.clientHeight + 10) {
+                    current = sections[sections.length - 1].getAttribute('id');
+                }
+
+                navLinks.forEach(link => {
+                    link.classList.remove('sidebar-active', 'text-gray-900', 'bg-gray-100');
+                    link.classList.add('text-gray-600');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('sidebar-active');
+                        link.classList.remove('text-gray-600');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

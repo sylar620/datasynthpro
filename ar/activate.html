@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ar">
+<head>
+<script>
+        (function () {
+            var pref = localStorage.getItem('preferredLang');
+            var browserLang = navigator.language || navigator.userLanguage;
+
+            var shouldGoToZh = (pref === 'zh') || (!pref && browserLang.toLowerCase().startsWith('zh'));
+            var shouldGoToFr = (pref === 'fr') || (!pref && browserLang.toLowerCase().startsWith('fr'));
+            var shouldGoToPt = (pref === 'pt') || (!pref && browserLang.toLowerCase().startsWith('pt'));
+            var shouldGoToEs = (pref === 'es') || (!pref && browserLang.toLowerCase().startsWith('es'));
+            var shouldGoToDe = (pref === 'de') || (!pref && browserLang.toLowerCase().startsWith('de'));
+            var shouldGoToRu = (pref === 'ru') || (!pref && browserLang.toLowerCase().startsWith('ru'));
+            var shouldGoToJa = (pref === 'ja') || (!pref && browserLang.toLowerCase().startsWith('ja'));
+            var shouldGoToKo = (pref === 'ko') || (!pref && browserLang.toLowerCase().startsWith('ko'));
+            var shouldGoToAr = (pref === 'ar') || (!pref && browserLang.toLowerCase().startsWith('ar'));
+            var shouldGoToEn = (pref === 'en') || (!pref && !browserLang.toLowerCase().startsWith('zh') && !browserLang.toLowerCase().startsWith('fr') && !browserLang.toLowerCase().startsWith('pt') && !browserLang.toLowerCase().startsWith('es') && !browserLang.toLowerCase().startsWith('de') && !browserLang.toLowerCase().startsWith('ru') && !browserLang.toLowerCase().startsWith('ja') && !browserLang.toLowerCase().startsWith('ko') && !browserLang.toLowerCase().startsWith('ar'));
+
+            var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+
+            if (shouldGoToZh && !window.location.pathname.includes('/zh')) {
+                window.location.href = '../zh/' + currentFile + window.location.search + window.location.hash;
+            } else if (shouldGoToFr && !window.location.pathname.includes('/fr')) {
+                window.location.href = '../fr/' + currentFile + window.location.search + window.location.hash;
+            } else if (shouldGoToPt && !window.location.pathname.includes('/pt')) {
+                window.location.href = '../pt/' + currentFile + window.location.search + window.location.hash;
+            } else if (shouldGoToEs && !window.location.pathname.includes('/es')) {
+                window.location.href = '../es/' + currentFile + window.location.search + window.location.hash;
+            } else if (shouldGoToDe && !window.location.pathname.includes('/de')) {
+                window.location.href = '../de/' + currentFile + window.location.search + window.location.hash;
+            } else if (shouldGoToRu && !window.location.pathname.includes('/ru')) {
+                window.location.href = '../ru/' + currentFile + window.location.search + window.location.hash;
+            } else if (shouldGoToJa && !window.location.pathname.includes('/ja')) {
+                window.location.href = '../ja/' + currentFile + window.location.search + window.location.hash;
+            } else if (shouldGoToKo && !window.location.pathname.includes('/ko')) {
+                window.location.href = '../ko/' + currentFile + window.location.search + window.location.hash;
+            } else if (shouldGoToAr && !window.location.pathname.includes('/ar')) {
+                window.location.href = '../ar/' + currentFile + window.location.search + window.location.hash;
+            } else if (shouldGoToEn && (window.location.pathname.includes('/zh') || window.location.pathname.includes('/fr') || window.location.pathname.includes('/pt') || window.location.pathname.includes('/es') || window.location.pathname.includes('/de') || window.location.pathname.includes('/ru') || window.location.pathname.includes('/ja') || window.location.pathname.includes('/ko') || window.location.pathname.includes('/ar'))) {
+                window.location.href = '../' + currentFile + window.location.search + window.location.hash;
+            }
+        })();
+    </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="قم بتنشيط مفتاح ترخيص مدى الحياة لـ DataSynth Pro باستخدام بريد إيصال Stripe ورمز الجهاز." name="description"/>
+<title>تفعيل الترخيص | DataSynth Pro</title>
+<!-- Tailwind CSS -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Generated CSS -->
+<link href="../styles.css" rel="stylesheet"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-P31H1FL4HS"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-P31H1FL4HS');
+    </script>
+<!-- SEO Canonical and Hreflang -->
+<link href="https://www.datasynthpro.com/ar/activate.html" rel="canonical"/>
+<link href="https://www.datasynthpro.com/activate.html" hreflang="en" rel="alternate"/>
+<link href="https://www.datasynthpro.com/zh/activate.html" hreflang="zh-CN" rel="alternate"/>
+<link href="https://www.datasynthpro.com/fr/activate.html" hreflang="fr" rel="alternate"/>
+<link href="https://www.datasynthpro.com/pt/activate.html" hreflang="pt" rel="alternate"/>
+<link href="https://www.datasynthpro.com/es/activate.html" hreflang="es" rel="alternate"/>
+<link href="https://www.datasynthpro.com/de/activate.html" hreflang="de" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ru/activate.html" hreflang="ru" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ja/activate.html" hreflang="ja" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ko/activate.html" hreflang="ko" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ar/activate.html" hreflang="ar" rel="alternate"/>
+<link href="https://www.datasynthpro.com/activate.html" hreflang="x-default" rel="alternate"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://www.datasynthpro.com/ar/activate.html" property="og:url"/>
+<meta content="تفعيل الترخيص | DataSynth Pro" property="og:title"/>
+<meta content="مولد احترافي للبيانات الاصطناعية يعمل دون اتصال للباحثين والمحللين." property="og:description"/>
+<meta content="https://www.datasynthpro.com/image/home.png" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="https://www.datasynthpro.com/ar/activate.html" property="twitter:url"/>
+<meta content="تفعيل الترخيص | DataSynth Pro" property="twitter:title"/>
+<meta content="مولد احترافي للبيانات الاصطناعية يعمل دون اتصال للباحثين والمحللين." property="twitter:description"/>
+<meta content="https://www.datasynthpro.com/image/home.png" property="twitter:image"/>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased selection:bg-scientific-blue selection:text-white flex flex-col min-h-screen">
+<!-- Navbar -->
+<nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<!-- Logo -->
+<a class="flex-shrink-0 flex items-center gap-2 cursor-pointer" href="index.html">
+<div class="w-8 h-8 rounded bg-scientific-blue flex items-center justify-center text-white font-bold text-xl">
+                        S</div>
+<span class="font-bold text-xl tracking-tight text-gray-900">DataSynth Pro</span>
+</a>
+<!-- Mobile Language Switcher -->
+<div class="relative md:hidden inline-block text-left">
+<div>
+<button aria-expanded="true" aria-haspopup="true" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-3 py-1.5 bg-white text-xs font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-scientific-blue transition-all" id="mobile-lang-menu-button" type="button">
+<svg class="mr-1 h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                            العربية
+                            <svg aria-hidden="true" class="-mr-1 ml-1 h-4 w-4" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+<div aria-labelledby="mobile-lang-menu-button" aria-orientation="vertical" class="origin-top-right absolute right-0 top-full mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden focus:outline-none transition-opacity duration-200 z-50" id="mobile-lang-dropdown" role="menu" tabindex="-1">
+<div class="py-1" role="none">
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../activate.html" onclick="localStorage.setItem('preferredLang', 'en');" role="menuitem" tabindex="-1">English</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../fr/activate.html" onclick="localStorage.setItem('preferredLang', 'fr');" role="menuitem" tabindex="-1">Français</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../pt/activate.html" onclick="localStorage.setItem('preferredLang', 'pt');" role="menuitem" tabindex="-1">Português</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../es/activate.html" onclick="localStorage.setItem('preferredLang', 'es');" role="menuitem" tabindex="-1">Español</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../de/activate.html" onclick="localStorage.setItem('preferredLang', 'de');" role="menuitem" tabindex="-1">Deutsch</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ru/activate.html" onclick="localStorage.setItem('preferredLang', 'ru');" role="menuitem" tabindex="-1">Русский</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../zh/activate.html" onclick="localStorage.setItem('preferredLang', 'zh');" role="menuitem" tabindex="-1">简体中文</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ja/activate.html" onclick="localStorage.setItem('preferredLang', 'ja');" role="menuitem" tabindex="-1">日本語</a>
+<a class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ko/activate.html" onclick="localStorage.setItem('preferredLang', 'ko');" role="menuitem" tabindex="-1">한국어</a>
+<a class="block px-4 py-2 text-xs text-scientific-blue bg-gray-50 font-medium" href="activate.html" onclick="localStorage.setItem('preferredLang', 'ar');" role="menuitem" tabindex="-1">العربية</a>
+</div>
+</div>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-sm font-medium text-gray-600 hover:text-scientific-blue transition-colors" href="index.html">الرئيسية</a>
+<a class="text-sm font-medium text-gray-600 hover:text-scientific-blue transition-colors" href="docs.html">الوثائق</a>
+<a class="text-sm font-medium text-gray-600 hover:text-scientific-blue transition-colors" href="download.html">تنزيل</a>
+<a class="text-sm font-medium text-gray-600 hover:text-scientific-blue transition-colors " href="support.html">الدعم</a>
+<a class="text-sm font-medium text-gray-600 hover:text-scientific-blue transition-colors " href="license.html">تفعيل الترخيص</a>
+<!-- Language Switcher -->
+<div class="relative inline-block text-left">
+<div>
+<button aria-expanded="true" aria-haspopup="true" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-scientific-blue transition-all" id="lang-menu-button" type="button">
+<svg class="mr-2 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                                العربية
+                                <svg aria-hidden="true" class="-mr-1 ml-2 h-5 w-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+<div aria-labelledby="lang-menu-button" aria-orientation="vertical" class="origin-top-right absolute right-0 top-full mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden focus:outline-none transition-opacity duration-200" id="lang-dropdown" role="menu" tabindex="-1">
+<div class="py-1" role="none">
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../activate.html" onclick="localStorage.setItem('preferredLang', 'en');" role="menuitem" tabindex="-1">English</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../fr/activate.html" onclick="localStorage.setItem('preferredLang', 'fr');" role="menuitem" tabindex="-1">Français</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../pt/activate.html" onclick="localStorage.setItem('preferredLang', 'pt');" role="menuitem" tabindex="-1">Português</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../es/activate.html" onclick="localStorage.setItem('preferredLang', 'es');" role="menuitem" tabindex="-1">Español</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../de/activate.html" onclick="localStorage.setItem('preferredLang', 'de');" role="menuitem" tabindex="-1">Deutsch</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ru/activate.html" onclick="localStorage.setItem('preferredLang', 'ru');" role="menuitem" tabindex="-1">Русский</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../zh/activate.html" onclick="localStorage.setItem('preferredLang', 'zh');" role="menuitem" tabindex="-1">简体中文</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ja/activate.html" onclick="localStorage.setItem('preferredLang', 'ja');" role="menuitem" tabindex="-1">日本語</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" href="../ko/activate.html" onclick="localStorage.setItem('preferredLang', 'ko');" role="menuitem" tabindex="-1">한국어</a>
+<a class="block px-4 py-2 text-sm text-scientific-blue bg-gray-50 font-medium" href="activate.html" onclick="localStorage.setItem('preferredLang', 'ar');" role="menuitem" tabindex="-1">العربية</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-20 flex items-center justify-center relative overflow-hidden">
+<!-- Decorative background -->
+<div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+<div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]">
+</div>
+</div>
+<div class="max-w-xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-10">
+<div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-6 shadow-sm">
+<svg aria-hidden="true" class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h1 class="text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl mb-3">تم الدفع بنجاح!
+                </h1>
+<p class="text-lg text-gray-600">شكراً لعملية الشراء. يرجى تفعيل البرنامج أدناه للحصول على مفتاح الترخيص مدى الحياة.</p>
+</div>
+<div class="bg-white py-10 px-6 shadow-2xl sm:rounded-3xl sm:px-12 border border-gray-100">
+<!-- Error Message Area (Hidden initially) -->
+<div class="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 hidden" id="errorArea">
+<div class="flex">
+<div class="flex-shrink-0">
+<svg aria-hidden="true" class="h-5 w-5 text-red-400" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<div class="ml-3">
+<h3 class="text-sm font-medium text-red-800">فشل التحقق</h3>
+<div class="mt-2 text-sm text-red-700">
+<p id="errorText">يرجى التحقق من معلوماتك والمحاولة مرة أخرى.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Activation Form -->
+<form class="space-y-6" id="activationForm">
+<div>
+<label class="block text-sm font-medium leading-6 text-gray-900" for="email">بريد إيصال Stripe</label>
+<div class="mt-2">
+<input autocomplete="email" class="block w-full rounded-xl border-0 py-3 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-scientific-blue sm:text-sm sm:leading-6 bg-gray-50 transition-all" id="email" name="email" placeholder="email@example.com" required="" type="email"/>
+</div>
+<p class="mt-2 text-xs text-gray-500">عنوان البريد الإلكتروني الذي استخدمته أثناء عملية الدفع عبر Stripe.</p>
+</div>
+<div>
+<label class="block text-sm font-medium leading-6 text-gray-900" for="machineCode">رمز الجهاز</label>
+<div class="mt-2">
+<input class="block w-full rounded-xl border-0 py-3 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-scientific-blue sm:text-sm sm:leading-6 bg-gray-50 transition-all font-mono" id="machineCode" name="machineCode" placeholder="مثال: ABCD1234EFGH5678" required="" type="text"/>
+</div>
+<p class="mt-2 text-xs text-gray-500">يمكنك العثور على هذا الرمز في صفحة تسجيل البرنامج.</p>
+</div>
+<div class="pt-4">
+<button class="flex w-full justify-center items-center rounded-xl bg-scientific-blue px-3 py-3.5 text-sm font-semibold text-white shadow-md hover:bg-scientific-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-scientific-blue transition-all transform hover:-translate-y-0.5" id="submitBtn" type="submit">
+<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white hidden" fill="none" id="btnSpinner" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor">
+</path>
+</svg>
+<span id="btnText">إنشاء مفتاح الترخيص</span>
+</button>
+</div>
+</form>
+<!-- Result Area (Hidden initially) -->
+<div class="mt-10 pt-8 border-t border-gray-100 hidden" id="resultArea">
+<h3 class="text-sm font-semibold text-gray-900 mb-4 text-center">مفتاح الترخيص غير المتصل</h3>
+<div class="relative bg-gray-900 rounded-xl p-6 text-center shadow-inner group">
+<code class="text-xl sm:text-2xl font-mono text-green-400 tracking-wider break-all" id="licenseKeyText"></code>
+<div class="absolute inset-0 flex items-center justify-center bg-gray-900/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity rounded-xl">
+<button class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-scientific-blue hover:bg-scientific-hover focus:outline-none" id="copyBtn" type="button">
+<svg class="mr-2 -ml-1 h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+                                نسخ إلى الحافظة
+                            </button>
+</div>
+</div>
+<p class="text-sm text-green-600 text-center mt-3 font-medium opacity-0 transition-opacity" id="copyFeedback">تم نسخ مفتاح الترخيص!</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Product Selection Modal -->
+<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="productModal" role="dialog">
+<!-- Background backdrop -->
+<div class="fixed inset-0 bg-gray-900 bg-opacity-50 backdrop-blur-sm transition-opacity"></div>
+<div class="fixed inset-0 z-10 overflow-y-auto">
+<div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+<div class="relative transform overflow-hidden rounded-xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg border border-gray-100">
+<div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+<div class="sm:flex sm:items-start">
+<div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-50 sm:mx-0 sm:h-10 sm:w-10">
+<svg class="h-6 w-6 text-scientific-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left w-full">
+<h3 class="text-lg font-semibold leading-6 text-gray-900" id="modal-title">اختر منتجاً</h3>
+<div class="mt-2">
+<p class="text-sm text-gray-500 mb-4">وجدنا عدة تراخيص متاحة لحسابك. يرجى اختيار المنتج الذي تريد تفعيله على هذا الجهاز.</p>
+<div class="space-y-3 max-h-60 overflow-y-auto pr-1" id="productList">
+<!-- Products will be dynamically inserted here -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+<button class="mt-3 inline-flex w-full justify-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto" id="closeModalBtn" type="button">إلغاء</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-white border-t border-gray-200 mt-auto">
+<div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+<div class="md:flex md:items-center md:justify-between">
+<div class="flex justify-center space-x-6 md:order-2">
+<a class="text-gray-400 hover:text-gray-500" href="docs.html">
+<span class="sr-only">الوثائق</span>
+                        الوثائق
+                    </a>
+<a class="text-gray-400 hover:text-gray-500" href="support.html">
+<span class="sr-only">الدعم</span>
+                        الدعم
+                    </a>
+<a class="text-gray-400 hover:text-gray-500" href="license.html">
+<span class="sr-only">تفعيل الترخيص</span>
+                        تفعيل الترخيص
+                    </a>
+</div>
+<div class="mt-8 md:mt-0 md:order-1">
+<p class="text-center text-base text-gray-400">
+                        © 2026 DataSynth Pro. جميع الحقوق محفوظة.
+                    </p>
+</div>
+</div>
+</div>
+</footer>
+<!-- Interactive Scripts -->
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Language Dropdown Logic
+            const langButton = document.getElementById('lang-menu-button');
+            const langDropdown = document.getElementById('lang-dropdown');
+            let isLangDropdownOpen = false;
+
+            if (langButton && langDropdown) {
+                langButton.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    isLangDropdownOpen = !isLangDropdownOpen;
+                    if (isLangDropdownOpen) {
+                        langDropdown.classList.remove('hidden');
+                        setTimeout(() => langDropdown.classList.remove('opacity-0', 'scale-95'), 10);
+                    } else {
+                        closeLangDropdown();
+                    }
+                });
+            }
+
+            // Mobile Language Dropdown Logic
+            const mobileLangButton = document.getElementById('mobile-lang-menu-button');
+            const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
+            let isMobileLangDropdownOpen = false;
+
+            if (mobileLangButton && mobileLangDropdown) {
+                mobileLangButton.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    isMobileLangDropdownOpen = !isMobileLangDropdownOpen;
+                    if (isMobileLangDropdownOpen) {
+                        mobileLangDropdown.classList.remove('hidden');
+                        setTimeout(() => mobileLangDropdown.classList.remove('opacity-0', 'scale-95'), 10);
+                    } else {
+                        closeMobileLangDropdown();
+                    }
+                });
+            }
+
+            document.addEventListener('click', function (event) {
+                if (isLangDropdownOpen && langDropdown && !langDropdown.contains(event.target)) {
+                    closeLangDropdown();
+                }
+                if (isMobileLangDropdownOpen && mobileLangDropdown && !mobileLangDropdown.contains(event.target)) {
+                    closeMobileLangDropdown();
+                }
+            });
+
+            function closeLangDropdown() {
+                isLangDropdownOpen = false;
+                if (langDropdown) langDropdown.classList.add('hidden');
+            }
+
+            function closeMobileLangDropdown() {
+                isMobileLangDropdownOpen = false;
+                if (mobileLangDropdown) mobileLangDropdown.classList.add('hidden');
+            }
+            // Navbar blur effect
+            window.addEventListener('scroll', () => {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 10) {
+                    nav.classList.add('shadow-sm');
+                } else {
+                    nav.classList.remove('shadow-sm');
+                }
+            });
+
+            const form = document.getElementById('activationForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const btnSpinner = document.getElementById('btnSpinner');
+            const resultArea = document.getElementById('resultArea');
+            const licenseKeyText = document.getElementById('licenseKeyText');
+            const copyBtn = document.getElementById('copyBtn');
+            const copyFeedback = document.getElementById('copyFeedback');
+            const errorArea = document.getElementById('errorArea');
+            const errorText = document.getElementById('errorText');
+
+            const originalBtnText = btnText.textContent;
+            const isChinese = false;
+
+            // Custom Validation Messages for English
+            if (!isChinese) {
+                const emailInput = document.getElementById('email');
+                const machineCodeInput = document.getElementById('machineCode');
+
+                if (emailInput) {
+                    emailInput.addEventListener('invalid', function () {
+                        if (this.validity.valueMissing) {
+                            this.setCustomValidity('يرجى ملء هذا الحقل.');
+                        } else if (this.validity.typeMismatch) {
+                            this.setCustomValidity('يرجى إدخال عنوان بريد إلكتروني صالح.');
+                        }
+                    });
+                    emailInput.addEventListener('input', function () {
+                        this.setCustomValidity('');
+                    });
+                }
+
+                if (machineCodeInput) {
+                    machineCodeInput.addEventListener('invalid', function () {
+                        if (this.validity.valueMissing) {
+                            this.setCustomValidity('يرجى ملء هذا الحقل.');
+                        }
+                    });
+                    machineCodeInput.addEventListener('input', function () {
+                        this.setCustomValidity('');
+                    });
+                }
+            }
+
+            // Modal Elements
+            const productModal = document.getElementById('productModal');
+            const productList = document.getElementById('productList');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', () => {
+                    productModal.classList.add('hidden');
+                });
+            }
+
+            async function performActivation(email, machineCode, selectedPriceId = null) {
+                // UI Loading State
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+                btnText.textContent = isChinese ? '生成中...' : 'جارٍ الإنشاء...';
+                btnSpinner.classList.remove('hidden');
+                resultArea.classList.add('hidden');
+                if (errorArea) errorArea.classList.add('hidden');
+                copyFeedback.classList.remove('opacity-100');
+                copyFeedback.classList.add('opacity-0');
+
+                try {
+                    const payload = { email, machineCode };
+                    if (selectedPriceId) {
+                        payload.selectedPriceId = selectedPriceId;
+                    }
+
+                    const response = await fetch('https://api.datasynthpro.com/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        // Determine error message based on errorCode first
+                        let errorMessage;
+                        if (data.errorCode === 'QUOTA_EXHAUSTED') {
+                            // User has purchased but all seats are used up
+                            errorMessage = `تم استخدام حصة الترخيص للإصدار (${data.prefix}) بالكامل (${data.purchasedCount} من ${data.purchasedCount}). يرجى شراء الترخيص مرة أخرى.`;
+                        } else if (data.errorCode === 'NOT_PURCHASED') {
+                            // No purchase record found
+                            errorMessage = 'لم تقم بشراء هذا المنتج. يرجى إكمال الشراء قبل التفعيل.';
+                        } else if (data.errorCode === 'INVALID_PREFIX') {
+                            errorMessage = `تنسيق رمز الجهاز غير صالح: بادئة المنتج غير معروفة [${data.prefix || '?'}].`;
+                        } else {
+                            errorMessage = data.error || data.message || 'فشل التفعيل. يرجى المحاولة مرة أخرى.';
+                        }
+                        throw new Error(errorMessage);
+                    }
+
+                    if (data.status === 'multiple_choices') {
+                        // Render modal
+                        productList.innerHTML = '';
+                        data.products.forEach(prod => {
+                            const btn = document.createElement('button');
+                            btn.type = 'button';
+                            btn.className = 'w-full text-left px-4 py-4 border border-gray-200 rounded-xl hover:border-scientific-blue hover:bg-blue-50 transition-all group relative overflow-hidden flex justify-between items-center';
+
+                            const nameSpan = document.createElement('span');
+                            nameSpan.className = 'font-medium text-gray-900 group-hover:text-scientific-blue transition-colors';
+                            nameSpan.textContent = prod.name;
+
+                            const iconSpan = document.createElement('span');
+                            iconSpan.innerHTML = '<svg class="h-5 w-5 text-gray-400 group-hover:text-scientific-blue transition-colors" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" /></svg>';
+
+                            btn.appendChild(nameSpan);
+                            btn.appendChild(iconSpan);
+
+                            btn.addEventListener('click', () => {
+                                productModal.classList.add('hidden');
+                                performActivation(email, machineCode, prod.priceId);
+                            });
+
+                            productList.appendChild(btn);
+                        });
+
+                        productModal.classList.remove('hidden');
+                    } else {
+                        // Show Success Result
+                        licenseKeyText.textContent = data.licenseKey;
+                        resultArea.classList.remove('hidden');
+
+                        // Smooth scroll down to result
+                        setTimeout(() => {
+                            resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }, 100);
+                    }
+
+                } catch (error) {
+                    if (errorArea) {
+                        errorText.textContent = error.message;
+                        errorArea.classList.remove('hidden');
+                        errorArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    } else {
+                        alert(error.message);
+                    }
+                    console.error(error);
+                } finally {
+                    // Restore UI State
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                    btnText.textContent = originalBtnText;
+                    btnSpinner.classList.add('hidden');
+                }
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const email = document.getElementById('email').value.trim();
+                const machineCode = document.getElementById('machineCode').value.trim();
+                performActivation(email, machineCode);
+            });
+
+            // Copy to Clipboard Logic
+            copyBtn.addEventListener('click', async function () {
+                const key = licenseKeyText.textContent;
+                try {
+                    await navigator.clipboard.writeText(key);
+                    copyFeedback.classList.remove('opacity-0');
+                    copyFeedback.classList.add('opacity-100');
+
+                    // Hide feedback after 3 seconds
+                    setTimeout(() => {
+                        copyFeedback.classList.remove('opacity-100');
+                        copyFeedback.classList.add('opacity-0');
+                    }, 3000);
+                } catch (err) {
+                    console.error('فشل نسخ النص: ', err);
+                    alert('تعذر النسخ إلى الحافظة. يرجى نسخه يدوياً.');
+                }
+            });
+            // Desktop Language Dropdown Logic
+            const button = document.getElementById('lang-menu-button');
+            const dropdown = document.getElementById('lang-dropdown');
+            let isDropdownOpen = false;
+
+            if (button && dropdown) {
+                button.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    isDropdownOpen = !isDropdownOpen;
+                    if (isDropdownOpen) {
+                        dropdown.classList.remove('hidden');
+                        setTimeout(() => dropdown.classList.remove('opacity-0', 'scale-95'), 10);
+                    } else {
+                        closeDropdown();
+                    }
+                });
+            }
+
+            // Mobile Language Dropdown Logic
+            const mobileButton = document.getElementById('mobile-lang-menu-button');
+            const mobileDropdown = document.getElementById('mobile-lang-dropdown');
+            let isMobileDropdownOpen = false;
+
+            if (mobileButton && mobileDropdown) {
+                mobileButton.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    isMobileDropdownOpen = !isMobileDropdownOpen;
+                    if (isMobileDropdownOpen) {
+                        mobileDropdown.classList.remove('hidden');
+                        setTimeout(() => mobileDropdown.classList.remove('opacity-0', 'scale-95'), 10);
+                    } else {
+                        closeMobileDropdown();
+                    }
+                });
+            }
+
+            document.addEventListener('click', function (event) {
+                if (isDropdownOpen && dropdown && !dropdown.contains(event.target)) {
+                    closeDropdown();
+                }
+                if (isMobileDropdownOpen && mobileDropdown && !mobileDropdown.contains(event.target)) {
+                    closeMobileDropdown();
+                }
+            });
+
+            function closeDropdown() {
+                isDropdownOpen = false;
+                if (dropdown) dropdown.classList.add('hidden');
+            }
+
+            function closeMobileDropdown() {
+                isMobileDropdownOpen = false;
+                if (mobileDropdown) mobileDropdown.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ja">
+<head>
+<script>
+        (function () {
+            var pref = localStorage.getItem('preferredLang');
+            var browserLang = navigator.language || navigator.userLanguage;
+
+            var shouldGoToZh = (pref === 'zh') || (!pref && browserLang.toLowerCase().startsWith('zh'));
+            var shouldGoToFr = (pref === 'fr') || (!pref && browserLang.toLowerCase().startsWith('fr'));
+            var shouldGoToPt = (pref === 'pt') || (!pref && browserLang.toLowerCase().startsWith('pt'));
+            var shouldGoToEs = (pref === 'es') || (!pref && browserLang.toLowerCase().startsWith('es'));
+            var shouldGoToDe = (pref === 'de') || (!pref && browserLang.toLowerCase().startsWith('de'));
+            var shouldGoToRu = (pref === 'ru') || (!pref && browserLang.toLowerCase().startsWith('ru'));
+            var shouldGoToJa = (pref === 'ja') || (!pref && browserLang.toLowerCase().startsWith('ja'));
+            var shouldGoToKo = (pref === 'ko') || (!pref && browserLang.toLowerCase().startsWith('ko'));
+            var shouldGoToAr = (pref === 'ar') || (!pref && browserLang.toLowerCase().startsWith('ar'));
+            var shouldGoToEn = (pref === 'en') || (!pref && !browserLang.toLowerCase().startsWith('zh') && !browserLang.toLowerCase().startsWith('fr') && !browserLang.toLowerCase().startsWith('pt') && !browserLang.toLowerCase().startsWith('es') && !browserLang.toLowerCase().startsWith('de') && !browserLang.toLowerCase().startsWith('ru') && !browserLang.toLowerCase().startsWith('ja') && !browserLang.toLowerCase().startsWith('ko') && !browserLang.toLowerCase().startsWith('ar'));
+
+            if (shouldGoToZh && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'zh/' + currentFile + window.location.search + window.location.hash;
+            } else if (shouldGoToFr && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'fr/' + currentFile + window.location.search + window.location.hash;
+            } else if (shouldGoToPt && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'pt/' + currentFile + window.location.search + window.location.hash;
+            } else if (shouldGoToEs && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'es/' + currentFile + window.location.search + window.location.hash;
+            } else if (shouldGoToDe && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'de/' + currentFile + window.location.search + window.location.hash;
+            } else if (shouldGoToRu && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'ru/' + currentFile + window.location.search + window.location.hash;
+            } else if (shouldGoToJa && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'ja/' + currentFile + window.location.search + window.location.hash;
+            }             else if (shouldGoToKo && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'ko/' + currentFile + window.location.search + window.location.hash;
+            }             else if (shouldGoToAr && !window.location.pathname.includes('/zh') && !window.location.pathname.includes('/fr') && !window.location.pathname.includes('/pt') && !window.location.pathname.includes('/es') && !window.location.pathname.includes('/de') && !window.location.pathname.includes('/ru') && !window.location.pathname.includes('/ja') && !window.location.pathname.includes('/ko') && !window.location.pathname.includes('/ar')) {
+                var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+                window.location.href = 'ar/' + currentFile + window.location.search + window.location.hash;
+            }
+        })();
+    </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="DataSynth Proを使用して、パラメーターを設定し、アカデミックグレードの合成統計データセットをオフラインで生成する方法を学びます。" name="description"/>
+<title>ドキュメント | DataSynth Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-P31H1FL4HS"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P31H1FL4HS');
+    </script>
+<link href="https://www.datasynthpro.com/ja/docs.html" rel="canonical"/>
+<link href="https://www.datasynthpro.com/docs.html" hreflang="en" rel="alternate"/>
+<link href="https://www.datasynthpro.com/zh/docs.html" hreflang="zh-CN" rel="alternate"/>
+<link href="https://www.datasynthpro.com/fr/docs.html" hreflang="fr" rel="alternate"/>
+<link href="https://www.datasynthpro.com/pt/docs.html" hreflang="pt" rel="alternate"/>
+<link href="https://www.datasynthpro.com/es/docs.html" hreflang="es" rel="alternate"/>
+<link href="https://www.datasynthpro.com/de/docs.html" hreflang="de" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ru/docs.html" hreflang="ru" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ja/docs.html" hreflang="ja" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ko/docs.html" hreflang="ko" rel="alternate"/>
+<link href="https://www.datasynthpro.com/ar/docs.html" hreflang="ar" rel="alternate"/>
+<link href="https://www.datasynthpro.com/docs.html" hreflang="x-default" rel="alternate"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.datasynthpro.com/ja/docs.html" property="og:url"/>
+<meta content="ドキュメント | DataSynth Pro" property="og:title"/>
+<meta content="プロフェッショナルなオフライン合成データ生成ツール。" property="og:description"/>
+<meta content="https://www.datasynthpro.com/image/home.png" property="og:image"/>
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="https://www.datasynthpro.com/ja/docs.html" property="twitter:url"/>
+<meta content="ドキュメント | DataSynth Pro" property="twitter:title"/>
+<meta content="プロフェッショナルなオフライン合成データ生成ツール。" property="twitter:description"/>
+<meta content="https://www.datasynthpro.com/image/home.png" property="twitter:image"/>
+</head>
+<body class="bg-white text-gray-900 antialiased h-screen overflow-hidden flex flex-col selection:bg-scientific-blue selection:text-white">
+<!-- Top Navbar -->
+<nav class="w-full z-50 glass-nav h-16 flex-shrink-0">
+<div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
+<!-- Logo -->
+<a class="flex-shrink-0 flex items-center gap-2 cursor-pointer" href="../index.html">
+<div class="w-7 h-7 rounded bg-scientific-blue flex items-center justify-center text-white font-bold text-lg">
+                    S</div>
+<span class="font-semibold text-lg tracking-tight text-gray-900 hidden sm:block">DataSynth Pro
+                    ドキュメント</span>
+</a>
+<!-- Right Nav Items -->
+<div class="flex items-center space-x-6">
+<!-- Back to Home -->
+<a class="inline-flex items-center text-xs font-medium text-gray-600 hover:text-scientific-blue transition-colors" href="../index.html">
+<svg class="mr-1 h-4 w-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+                    ホーム
+                </a>
+<!-- Language Switcher -->
+<div class="relative inline-block text-left">
+<div>
+<button aria-expanded="true" aria-haspopup="true" class="inline-flex justify-center w-full rounded border border-gray-300 shadow-sm px-3 py-1.5 bg-white text-xs font-medium text-gray-700 hover:bg-gray-50 focus:outline-none z-50" id="lang-menu-button" type="button">
+<svg class="mr-1.5 h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                                日本語
+                                <svg class="-mr-1 ml-1 h-5 w-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+<div class="origin-top-right absolute right-0 top-full mt-2 w-32 rounded shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden focus:outline-none z-50" id="lang-dropdown">
+<div class="py-1">
+
+
+
+
+
+
+
+
+
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../docs.html" onclick="localStorage.setItem('preferredLang', 'en');">English</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../fr/docs.html" onclick="localStorage.setItem('preferredLang', 'fr');">Français</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../pt/docs.html" onclick="localStorage.setItem('preferredLang', 'pt');">Português</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../es/docs.html" onclick="localStorage.setItem('preferredLang', 'es');">Español</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../de/docs.html" onclick="localStorage.setItem('preferredLang', 'de');">Deutsch</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../ru/docs.html" onclick="localStorage.setItem('preferredLang', 'ru');">Русский</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../zh/docs.html" onclick="localStorage.setItem('preferredLang', 'zh');">简体中文</a>
+<a class="block px-4 py-2 text-sm text-scientific-blue bg-gray-50 font-medium" href="docs.html" onclick="localStorage.setItem('preferredLang', 'ja');">日本語</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../ko/docs.html" onclick="localStorage.setItem('preferredLang', 'ko');">한국어</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="../ar/docs.html" onclick="localStorage.setItem('preferredLang', 'ar');">العربية</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Layout -->
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-gray-50 border-r border-gray-200 overflow-y-auto flex-shrink-0 hidden md:block">
+<nav class="px-3 py-6 space-y-1">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">はじめに</p>
+<a class="sidebar-active group flex items-center px-3 py-2 text-sm rounded-md transition-colors font-medium" href="#overview">1. 指標の生成</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">T検定</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#independent-t-test">2. 独立したT検定</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#paired-t-test">3. 対応のあるT検定</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">その他の基本テスト</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#chi-square">4. カイ二乗検定</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">ANOVA（分散分析）</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#one-way-anova">5. 一元配置分散分析</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#two-way-anova">6. 二元配置分散分析</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#repeated-anova">7. 反復測定分散分析</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">ノンパラメトリック</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#non-parametric-2">8. 2つの独立標本</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#non-parametric-k">9. K個の独立標本</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">その他の分析</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#quartile">10. 四分位分析</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#binary-logistic">11. 二項ロジスティック</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#multiple-linear">12. 重回帰</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#cox-regression">13. コックス回帰</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#correlation">14. 相関</a>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#roc-curve">15. ROC曲線</a>
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mt-6 mb-2">システム設定</p>
+<a class="text-gray-600 hover:bg-gray-100 hover:text-gray-900 group flex items-center px-3 py-2 text-sm rounded-md transition-colors" href="#export-import">16. エクスポート/インポート</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-white p-6 md:p-10 lg:p-12 scroll-smooth">
+<div class="max-w-4xl mx-auto">
+<!-- Section: Overview -->
+<section class="mb-20 scroll-mt-20" id="overview">
+<h1 class="text-4xl font-extrabold text-gray-900 tracking-tight mb-4">ドキュメントとユーザーガイド</h1>
+<p class="text-lg text-gray-600 mb-10 leading-relaxed">
+                        DataSynth Proの公式ドキュメントへようこそ。この包括的なマニュアルでは、さまざまな統計モジュールのパラメータ設定方法について詳細なガイダンスを提供し、堅牢で学術的に有効な統計データセットを完全オフラインで合成する方法を説明します。
+                    </p>
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">1. 複数の指標を同時に生成</h2>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.1 前提条件と起動</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            実行可能ファイルをダブルクリックしてアプリケーションを起動します。このソフトウェアにはMicrosoft .NET 8.0 Runtime Frameworkが必要です。お使いのコンピュータにインストールされていない場合は、プロンプトに従ってダウンロードしてインストールし、プログラムを再起動してください。
+                        </p>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4 rounded-r">
+<p class="text-sm text-blue-700">
+<strong>セキュリティ通知：</strong> ウイルス対策ソフトウェアが実行ファイルを誤検出した場合は、ローカルの除外リストまたはホワイトリストに追加して、中断のない動作を確保してください。
+                            </p>
+</div>
+<div class="mb-6">
+<img alt="図：メインインターフェース" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/main_interface.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図1.1: メインインターフェース</p>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.2 パラメータ設定</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            デフォルトでは、アプリケーションは「年齢」と「性別」の2つの連続変数を事前入力し、クイックリファレンスとして機能します。グループ名はデフォルトで「Control Group」に設定され、サンプルサイズは100ケースに設定されています。研究で複数のグループが必要な場合は、各実行のパラメータを更新して各グループのデータセットを順次生成・エクスポートできます。
+                        </p>
+<ul class="list-disc pl-5 mb-4 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>連続数値変数の追加：</strong> 新しい量的変数を追加するには、<span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Numeric</span> ボタンをクリックします。指標名（例：「Body Mass Index」や「BMI」）、平均、標準偏差、小数点以下の桁数を指定できます。最小値と最大値のフィールドはオプションで、特定の値の制限がない場合は空白のままにできます。</li>
+<li><strong>データ分布の設定：</strong> デフォルトでは、生成される数値指標は正規分布に従います。非正規分布のデータが必要な場合は、<span class="text-scientific-blue font-semibold">Normal Distribution</span> オプションを <span class="text-red-500 font-semibold">No</span> に設定するだけです。</li>
+</ul>
+<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6 rounded-r">
+<p class="text-sm text-yellow-700">
+<strong>分布調整：</strong> 正規分布は自然な分散範囲に依存します。最小値と最大値の制限を厳しくしすぎると正規曲線が切断され、非正規分布の値になる可能性があります。この問題が発生した場合は、境界を広げるか、最小値/最大値の制限を完全に削除してみてください。
+                            </p>
+</div>
+<div class="mb-6">
+<img alt="図：変数の追加" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/adding_variables.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図1.2: 変数の追加</p>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.3 カテゴリカル変数の追加</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Categorical</span> ボタンをクリックして、質的変数（例：「高血圧」）を追加します。カテゴリ名と対応する目標分布または比率を入力できます。カテゴリ比率の合計は、設定されたサンプルサイズに合わせて動的にスケーリングされます。
+                        </p>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.4 生成の実行</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="bg-scientific-blue text-white px-3 py-1 rounded text-xs font-semibold">Generate</span> ボタンをクリックして、要求された数のレコードを合成します。計算後、記述統計のサマリーウィンドウが表示され、実際の生成値が設定パラメータと一致するかどうかを確認できます。
+                        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<div>
+<img alt="図：生成の実行" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/executing_generation.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図1.3: 生成の実行</p>
+</div>
+<div>
+<img alt="図：データの表示" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/displaying_data.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図1.4: データの表示</p>
+</div>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.5 エクスポートと検証</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="bg-scientific-blue text-white px-3 py-1 rounded text-xs font-semibold">Save</span> ボタンをクリックして、生成されたデータセットを標準のExcelファイルとしてエクスポートします。エクスポートされたスプレッドシートを開き、標準のExcel数式を使用して「年齢」の記述統計（小数点以下2桁に四捨五入）を計算すると、実際の平均と標準偏差が初期設定と完全に一致します。
+                        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<div class="space-y-4">
+<div>
+<img alt="図：テーブルのエクスポート" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/exporting_tables.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図1.5: 生成されたテーブルのExcelへのエクスポート</p>
+</div>
+<div>
+<img alt="図：平均の計算" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/calculating_mean.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図1.6: Excelでの平均計算</p>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<img alt="図：標準偏差の計算" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/calculating_std.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図1.7: Excelでの標準偏差計算</p>
+</div>
+<div>
+<img alt="図：計算結果" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/calculation_results.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図1.8: 初期設定と一致する検証結果</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">1.6 計算効率</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            高性能最適化エンジンを搭載しており、数千から数万のレコードを含むデータセットを数秒で生成できます。最大反復回数後にシステムが収束しない場合は、設定の統計的妥当性を再確認するか、最小値/最大値なしでクエリを実行してみてください。プログラムは特殊な科学研究のニーズを満たすために、最大8桁の小数点精度をサポートしています。
+                        </p>
+<div class="bg-gray-50 border border-gray-200 p-4 rounded-xl">
+<p class="text-sm font-semibold text-gray-700 mb-1">ヒントと推奨事項：</p>
+<p class="text-sm text-gray-600 leading-relaxed">
+                                • <strong>正規分布の推奨：</strong> データはデフォルトで正規分布になり、シームレスなダウンストリーム分析（例：独立したサンプルのt検定）を可能にします。ノンパラメトリックまたはカスタム分布のデータセットが必要な場合は、Normal Distribution設定をNoに切り替えるだけです。
+                            </p>
+</div>
+</div>
+</section>
+<!-- Section: Independent T-Test -->
+<section class="mb-20 scroll-mt-20" id="independent-t-test">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">2. 独立したサンプルのt検定</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        2つの異なるグループの平均を比較する横断研究向けに設計。臨床試験（例：治療群とプラセボ群間の薬効）や社会学的調査で広く使用されています。
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">2.1 ワークフロー</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Independent T-Test</span> に移動します。以下のように設定ウィンドウが表示されます。
+                        </p>
+<div class="mb-6">
+<img alt="T検定設定" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Independent T-Test1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図2.1: 独立したT検定の設定</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">2.2 パラメータ</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            プログラムは「Control Group」と「Experimental Group」のサンプル設定を事前入力します。各グループのサンプルサイズ、平均、標準偏差を入力すると、計算されたt値とp値がリアルタイムでプレビューされます。最小値と最大値のパラメータはオプションです。
+                        </p>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                            Generateボタンをクリックすると、両グループの生データセットが下のプレビューテーブルに作成され、最終的なt値とp値は実際の生成データを反映するように調整され、Leveneの等分散性検定が使用されます。
+                        </p>
+<div>
+<img alt="T検定結果" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Independent T-Test2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図2.2: 独立したサンプルのT検定データの表示</p>
+</div>
+</div>
+</section>
+<!-- Section: Paired T-Test -->
+<section class="mb-20 scroll-mt-20" id="paired-t-test">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">3. 対応のあるサンプルのt検定</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        同じ被験者が2回測定される縦断研究やクロスオーバー研究で使用されます（例：事前テスト vs. 事後テスト）。ペアになった観測間の平均差の合成に焦点を当てています。
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">3.1 ワークフロー</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Paired T-Test</span> に移動します。ワークスペースのレイアウトは以下のとおりです。
+                        </p>
+<div class="mb-6">
+<img alt="対応のあるT検定設定" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Paired T-Test1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図3.1: 対応のあるT検定の設定</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">3.2 シミュレーションロジック</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            ソフトウェアはデフォルトで2つのペア変数（Paired Var1とPaired Var2）を設定します。各変数の平均と標準偏差を定義し、全体のサンプルサイズを設定し、対応のあるt検定の目標p値範囲を確立できます。エンジンは反復的に準拠したデータセットを計算します。
+                        </p>
+<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6 rounded-r">
+<p class="text-sm text-yellow-700">
+<strong>収束適応：</strong> 設定された平均が目標のp値と数学的に矛盾している場合（例：2つの平均が大きく異なるが、p &gt; 0.05の非有意を要求する場合）、プログラムは最初のグループのパラメータを一定に保ち、2番目のグループの平均を動的に調整して目標のp値を達成します。
+                            </p>
+</div>
+<div>
+<img alt="対応のあるT検定結果" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Paired T-Test2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図3.2: 対応のあるサンプルのT検定データの表示</p>
+</div>
+</div>
+</section>
+<!-- Section: Chi-Square Test -->
+<section class="mb-20 scroll-mt-20" id="chi-square">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">4. カイ二乗検定</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        2つのカテゴリカル変数間に有意な関連があるかどうかを判断します。人口統計学的クロス集計で広く使用されています。
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">4.1 ワークフロー</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Chi-Square Test</span> に移動します。設定ペインが以下のように開きます。
+                        </p>
+<div class="mb-6">
+<img alt="カイ二乗設定" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Chi-Square1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図4.1: カイ二乗検定の設定</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">4.2 分割表</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            インターフェースはデフォルトでカイ二乗計算用の標準的な2x2分割表を使用します。グループ名とカテゴリ名は完全に編集可能です。各セルに観測頻度（カウント）を入力すると、計算されたカイ二乗値とp値がリアルタイムで更新されます。
+                        </p>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            グループ（行）やカテゴリ（列）を動的に追加して、より大きなモデルに対応できます。<span class="text-scientific-blue font-semibold">Generate</span> ボタンをクリックしてこれらの頻度に一致する個々の生レコードを生成し、<span class="text-scientific-blue font-semibold">Save</span> をクリックしてデータセットをExcelにエクスポートします。
+                        </p>
+<div>
+<img alt="カイ二乗結果" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Chi-Square2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図4.2: カイ二乗検定データの表示</p>
+</div>
+</div>
+</section>
+<!-- Section: One-Way ANOVA -->
+<section class="mb-20 scroll-mt-20" id="one-way-anova">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">5. 一元配置分散分析</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        3つ以上の独立したグループの平均を比較する際に使用されます。アルゴリズムはグループ内分散とグループ間差異を合成して、目標のF値を達成します。
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">5.1 ワークフロー</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → ANOVA → One-Way ANOVA</span> に移動します。ワークスペースのレイアウトは以下のとおりです。
+                        </p>
+<div class="mb-6">
+<img alt="ANOVA設定" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/One-Way ANOVA1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図5.1: 一元配置分散分析の設定</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">5.2 設定</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            システムは「Control Group」、「Experimental Group」、「Treatment Group」の3つのグループのパラメータを事前読み込みします。各グループのサンプルサイズ、平均、標準偏差を入力するだけで、全体的なF統計量、p値、TukeyのHSDの事後多重比較結果を即座にプレビューできます。
+                        </p>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="text-scientific-blue font-semibold">Generate</span> ボタンをクリックして、個々の生レコードを計算・プレビューします。全体的なF値とp値は自動的に更新され、実際の生成値を表します。
+                        </p>
+<div>
+<img alt="ANOVA出力データ" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/One-Way ANOVA2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図5.2: 一元配置分散分析データの表示</p>
+</div>
+</div>
+</section>
+<!-- Section: Two-Way ANOVA -->
+<section class="mb-20 scroll-mt-20" id="two-way-anova">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">6. 二元配置分散分析</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        2つの独立したカテゴリカル変数が1つの連続従属変数に及ぼす影響を調べます。因子計画で主効果と交互作用効果を評価するために不可欠です。
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">6.1 ワークフロー</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → ANOVA → Two-Way ANOVA</span> に移動します。設定ペインが以下のように表示されます。
+                        </p>
+<div class="mb-6">
+<img alt="二元配置分散分析設定" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Two-Way ANOVA1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図6.1: 二元配置分散分析の設定</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">6.2 因子と交互作用</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            ツールはデフォルトで「時間」（2水準）と「濃度」（2水準）の2因子を使用します。因子に複数の分類が含まれる場合は、<span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Add Group</span> をクリックしてより多くの水準を設定します。
+                        </p>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            各セルのサンプルサイズ、平均、標準偏差を入力することで、時間の主効果、濃度の主効果、およびそれらの交互作用効果（時間×濃度）のF統計量とp値をプレビューできます。<span class="text-scientific-blue font-semibold">Generate</span> ボタンをクリックして、プレビューペインに一致する個々の生レコードを構築します。
+                        </p>
+<div>
+<img alt="二元配置分散分析交互作用データ" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Two-Way ANOVA2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図6.2: 二元配置分散分析データの表示</p>
+</div>
+</div>
+</section>
+<!-- Section: Repeated Measures ANOVA -->
+<section class="mb-20 scroll-mt-20" id="repeated-anova">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">7. 一元配置反復測定分散分析</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        対応のあるT検定を3つ以上の時点に拡張したものです。長期間にわたる縦断的追跡に最適です（例：ベースライン、1ヶ月後、3ヶ月後）。
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">7.1 ワークフロー</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → ANOVA → Repeated Measures ANOVA</span> に移動します。ワークスペースのレイアウトは以下のとおりです。
+                        </p>
+<div class="mb-6">
+<img alt="反復測定設定" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Repeated Measures ANOVA1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図7.1: 一元配置反復測定分散分析の設定</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">7.2 反復観測</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            システムはデフォルトで3つの観測時点を使用します。<span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Add Time Point</span> ボタンをクリックして簡単に拡張できます。各時点の平均と標準偏差を入力し、目標のp値範囲を定義します。
+                        </p>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="text-scientific-blue font-semibold">Generate</span> ボタンをクリックして、準拠した値を合成します。
+                        </p>
+<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6 rounded-r">
+<p class="text-sm text-yellow-700">
+<strong>エンジン圧縮：</strong> 時点間の差が数学的に大きく（非常に有意なp値を示す）、目標範囲がp &gt; 0.05に設定されている場合、エンジンは自動的に時点間の分散と平均差を圧縮して、正確な目標p値を満たします。ポップアップダイアログに合成データセットの実際の統計情報が表示されます。
+                            </p>
+</div>
+<div>
+<img alt="反復測定結果" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Repeated Measures ANOVA2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図7.2: 反復測定分散分析データの表示</p>
+</div>
+</div>
+</section>
+<!-- Section: Non-Parametric Test (2 Ind. Samples) -->
+<section class="mb-20 scroll-mt-20" id="non-parametric-2">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">8. 2つの独立標本の順位和検定（ノンパラメトリック）</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        正規性の仮定を満たさないデータに対するマン・ホイットニーのU検定の代替手段です。連続変数または順序変数における順位ベースのロジックに基づいて中央値の差を評価します。
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">8.1 ワークフロー</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Non-parametric → 2 Independent Samples</span> に移動します。設定ワークスペースは以下のとおりです。
+                        </p>
+<div class="mb-6">
+<img alt="ノンパラメトリック2標本設定" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Non-Parametric Test (2 Ind. Samples)1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図8.1: 2つの独立標本の順位和検定の設定</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">8.2 設定</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            プログラムはデフォルトで2つの参照グループを設定します。ノンパラメトリック手法は非正規分布データ向けに設計されているため、Normal Distributionオプションはデフォルトで <span class="text-red-500 font-semibold">No</span> に設定されています。マン・ホイットニーのU検定を使用して、目標のp値範囲を定義できます。<span class="text-scientific-blue font-semibold">Generate</span> ボタンをクリックして、統計的にこの閾値に準拠する生データを合成します。
+                        </p>
+<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6 rounded-r">
+<p class="text-sm text-yellow-700">
+<strong>順位和生成ロジック：</strong> ノンパラメトリック検定は、すべての観測値をプールして順位を割り当てることによりグループ間の差を分析します。したがって、2つのグループの設定パラメータが大きく異なり（自然に非常に小さなp値が得られる）、目標がp &gt; 0.05に設定されている場合、エンジンは自動的にグループ間の乖離を減らして目標を満たします。最終的な計算平均と標準偏差はポップアップダイアログに表示されます。
+                            </p>
+</div>
+<div>
+<img alt="ノンパラメトリック2標本出力" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Non-Parametric Test (2 Ind. Samples)2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図8.2: 2つの独立標本の順位和検定データの表示</p>
+</div>
+</div>
+</section>
+<!-- Section: Non-Parametric Test (K Ind. Samples) -->
+<section class="mb-20 scroll-mt-20" id="non-parametric-k">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">9. クラスカル・ウォリス検定（K個の独立標本ノンパラメトリック）</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        クラスカル・ウォリスのH検定と同等です。3つ以上の独立したグループにわたって、順序データまたは非正規分布の連続データを生成します。
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">9.1 ワークフロー</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Non-parametric → K Independent Samples</span> に移動します。設定ワークスペースは以下のとおりです。
+                        </p>
+<div class="mb-6">
+<img alt="ノンパラメトリックK標本設定" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Non-Parametric Test (K Ind. Samples)1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図9.1: クラスカル・ウォリス検定の設定</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">9.2 マルチグループ順位付け</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            プログラムはデフォルトで3つの参照グループを設定し、クラスカル・ウォリス検定を実行します。2グループテストと同様に、計算はプールされたデータセットの順位に基づいているため、設定されたマルチグループパラメータに大きな矛盾があり（非常に有意なp値が得られる）、目標がp &gt; 0.05に設定されている場合、シミュレーションエンジンは自動的にグループ間の差を圧縮します。結果の統計情報はポップアップウィンドウに要約されます。
+                        </p>
+<div>
+<img alt="ノンパラメトリックK標本出力" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Non-Parametric Test (K Ind. Samples)2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図9.2: クラスカル・ウォリス検定データの表示</p>
+</div>
+</div>
+</section>
+<!-- Section: Quartile Analysis -->
+<section class="mb-20 scroll-mt-20" id="quartile">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">10. 四分位データの生成</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        順位付けされたデータセットを4つの等しい部分に分割します。データの散布度と中心傾向の評価、中央値の強調、外れ値の検出に役立ちます。
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">10.1 ワークフロー</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Quartile Data</span> に移動します。レイアウトは以下のとおりです。
+                        </p>
+<div class="mb-6">
+<img alt="四分位設定" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Quartile1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図10.1: 四分位データの設定</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">10.2 パラメータ定義</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            目標のサンプルサイズ、Q1（25パーセンタイル）、Q2（中央値/50パーセンタイル）、Q3（75パーセンタイル）を定義します。特定の制約がない場合は、最小値/最大値の境界は空白のままにできます。小数点精度を選択し、<span class="text-scientific-blue font-semibold">Generate</span> ボタンをクリックして、これらの正確な四分位境界を満たす観測値を生成します。
+                        </p>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<strong>要約：</strong> Q1、Q2、Q3のサンプルサイズと目標値を設定します。オプションパラメータには最小値、最大値、小数点以下の桁数が含まれます。<span class="text-scientific-blue font-semibold">Generate</span> ボタンをクリックして、目標の四分位構造に一致する生データを計算して表示します。マルチグループ設定では、グループ間の目標p値範囲も設定できます。
+                        </p>
+<div>
+<img alt="四分位出力データ" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Quartile2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図10.2: 四分位データの表示</p>
+</div>
+</div>
+</section>
+<!-- Section: Binary Logistic Regression -->
+<section class="mb-20 scroll-mt-20" id="binary-logistic">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">11. 二項ロジスティック回帰データの生成</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        結果が二値（DV=0またはDV=1）である分類問題に不可欠です。疫学におけるリスク因子の特定（例：疾患 vs. 健康）で非常に一般的です。
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">11.1 ワークフロー</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Regression → Binary Logistic</span> に移動します。
+                        </p>
+<div class="mb-6">
+<img alt="ロジスティック回帰設定" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Binary Logistic1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図11.1: 二項ロジスティック回帰の設定</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">11.2 設計</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            デフォルトでは、2つの連続独立変数が参照として設定されます。二項ロジスティックモデルでは、従属変数には正確に2つの結果（0と1）があります。したがって、従属変数は0と1のグループとして構成され、デフォルトではカテゴリあたり100ケースのサンプルサイズ（カスタマイズ可能）になります。
+                        </p>
+<ul class="list-disc pl-5 mb-4 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>変数設定：</strong> <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Numeric</span> をクリックして連続独立変数（例：「年齢」、「BMI」）を追加します。変数名、平均、標準偏差、小数点以下の桁数、目標p値範囲（最終的なロジスティック回帰モデルで変数が達成する目標有意水準を指定）を入力します。最小値/最大値の制約はオプションです。</li>
+<li><strong>生成と検証：</strong> <span class="text-scientific-blue font-semibold">Generate</span> ボタンをクリックして合成アルゴリズムを実行します。システムは反復的に、ロジスティック回帰モデルが設定と一致するp値を生成するデータセットを計算します。</li>
+</ul>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                            IBM SPSSの書式と一致する詳細な回帰分析レポートが自動的に表示されます。このレポートを閉じると、プレビューテーブルに生データセットが表示され、Excelにエクスポートできる状態になります。
+                        </p>
+<div>
+<img alt="ロジスティック回帰出力" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Binary Logistic2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図11.2: 二項ロジスティック回帰データの表示</p>
+</div>
+</div>
+</section>
+<!-- Section: Multiple Linear Regression -->
+<section class="mb-20 scroll-mt-20" id="multiple-linear">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">12. 重回帰データの生成</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        中核的な予測モデリングツールです。複数の独立変数（X）の影響を受ける連続従属変数（Y）を合成します。独立変数は、連続数値、四分位、順序カテゴリカル（順序）、または非順序カテゴリカル（名義）にすることができます。
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">12.1 ワークフロー</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Regression → Linear Regression</span> に移動します。
+                        </p>
+<div class="mb-6">
+<img alt="重回帰設定" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Multiple Linear Regression1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図12.1: 重回帰の設定</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">12.2 モデル設定</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            インターフェースは、連続従属変数（「血糖変動」）と2つの独立変数（数値の「総コレステロール」、カテゴリカルの「性別」）をデフォルトのサンプルサイズ200ケースで事前読み込みします。目標のR二乗（R²）範囲（例：0.4〜0.6）を設定できます。
+                        </p>
+<p class="text-gray-600 mb-6 leading-relaxed">
+<span class="text-scientific-blue font-semibold">Generate</span> ボタンをクリックして回帰モデルを実行します。SPSS出力と一致する検証レポートが表示されます。このレポートを閉じると、生データプレビューテーブルに戻り、Excelスプレッドシートとして保存できます。
+                        </p>
+<div>
+<img alt="重回帰データプレビュー" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Multiple Linear Regression2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図12.2: 重回帰データの表示</p>
+</div>
+</div>
+</section>
+<!-- Section: Cox Regression -->
+<section class="mb-20 scroll-mt-20" id="cox-regression">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">13. コックス比例ハザード回帰データの生成</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        生存分析のゴールドスタンダードです。右側打ち切りを考慮したイベント発生日時データをシミュレートし、研究者が共変量が生存時間に及ぼす影響を評価できるようにします。
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">13.1 ワークフローと技術ガイドライン</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Regression → Cox Regression</span> に移動します。
+                        </p>
+<div class="mb-6">
+<img alt="コックス回帰設定" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Cox Regression1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図13.1: コックス比例ハザード回帰の設定</p>
+</div>
+<ul class="list-disc pl-5 mb-4 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>総サンプルサイズ（N）：</strong> 被験者/患者の総数（例：200被験者）。</li>
+<li><strong>観測イベント（結果イベント）：</strong> 追跡期間中に最終結果（例：死亡、再発、イベント失敗）を経験した陽性症例の数。<em>注：イベント数は総サンプルサイズより厳密に小さくなければなりません。</em></li>
+<li><strong>生存時間範囲（T）：</strong> 生存期間の[最小追跡]から[最大追跡]の範囲を定義し（例：1〜60ヶ月）、時間を日、月、年でラベル付けし、数値の小数点精度を定義します。</li>
+</ul>
+<div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4 rounded-r">
+<p class="text-sm text-blue-700">
+<strong>統計的EPVルール（変数あたりのイベント数）：</strong> コックス比例ハザードモデルの数学的安定性と信頼性を保証するには、観測された結果イベント数と独立変数の数（EPV）の比率が少なくとも10〜20であることが強く推奨されます。モデルが収束しない場合は、総サンプルサイズまたは観測イベント数のいずれかを増やしてみてください。
+                            </p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">13.2 研究変数の構築</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            変数カードの下部にある対応するボタンをクリックして、独立共変量を構築します：
+                        </p>
+<ul class="list-disc pl-5 mb-4 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>連続数値変数：</strong> <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Numeric</span> をクリックして連続共変量（例：年齢、BMI、臨床バイオマーカー）を追加します。平均、標準偏差（必須）、およびオプションで外れ値の制限と小数点精度のための最小値/最大値の境界を入力します。</li>
+<li><strong>カテゴリカル変数：</strong> <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Categorical</span> をクリックして名義/順序共変量（例：性別、満足度スコア）を追加します。各カテゴリの正確な目標頻度を入力します。<em>注：すべてのカテゴリのカウントの合計は、実行するために総サンプルサイズと厳密に等しくなければなりません。</em></li>
+<li><strong>四分位変数：</strong> <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Quartile</span> をクリックして四分位構造の変数を追加し、Q1、Q2（中央値）、Q3の目標パラメータを入力します。</li>
+</ul>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<strong>目標パラメータ：</strong> すべての変数カードには、下部に2つの強力な目標パラメータが含まれています：
+                        </p>
+<ol class="list-decimal pl-5 mb-6 text-gray-600 space-y-1 leading-relaxed">
+<li><strong>回帰p値：</strong> 有意目標を選択します（例：p &gt; 0.05、p &lt; 0.05、p &lt; 0.01、またはp &lt; 0.001）。</li>
+<li><strong>ハザード比（HR）の方向：</strong> HR &gt; 1（リスク因子、ハザード率の増加を示す）またはHR &lt; 1（保護因子、ハザード率の減少を示す）のいずれかを選択します。</li>
+</ol>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">13.3 データ生成の実行と保存</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            すべてのパラメータが入力されたら、ウィンドウの下部にある <span class="text-scientific-blue font-semibold">Generate</span> ボタンをクリックします。バックエンドは高度に並行した反復シミュレーションを実行します。IBM SPSSで計算された正確な統計とスタイルを反映した、信頼性の高い包括的なコックス比例ハザード回帰分析レポートが自動的に表示されます。
+                        </p>
+<p class="text-gray-600 mb-6 leading-relaxed">
+<span class="text-scientific-blue font-semibold">Save</span> ボタンをクリックして、合成された生データセットをExcelファイルにエクスポートします。このファイルは検証のためにSPSSや他のプロフェッショナルな統計スイートに簡単にインポートできます。
+                        </p>
+<div>
+<img alt="コックス回帰結果" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Cox Regression2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図13.2: コックス比例ハザード回帰データの表示</p>
+</div>
+</div>
+</section>
+<!-- Section: Correlation Analysis -->
+<section class="mb-20 scroll-mt-20" id="correlation">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">14. 相関分析のためのデータ生成</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        目標の相関係数（r値）と有意水準を強制することにより、二変量関係（PearsonまたはSpearman）および偏相関をシミュレートします。
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">14.1 ワークフロー</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → Correlation</span> に移動します。
+                        </p>
+<div class="mb-6">
+<img alt="相関設定" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Correlation1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図14.1: 相関分析の設定</p>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">14.2 パラメータ</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            システムはクイックリファレンス用に2つの変数セットを事前読み込みします。連続（平均/SD）、四分位、カテゴリカル形式をサポートする変数を簡単に追加できます。設定パネル内で、各指標のサンプルサイズ、平均、標準偏差を指定します（最小値/最大値の制限はオプションです）。
+                        </p>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                            グループ間の正確な目標相関係数（r）を指定できます。<span class="text-scientific-blue font-semibold">Generate</span> ボタンをクリックしてシミュレーションを実行し、結果の相関行列をポップアップウィンドウに表示します。その後、Excelファイルとしてエクスポートできます。
+                        </p>
+<div>
+<img alt="相関行列" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/Correlation2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図14.2: 相関分析データの表示</p>
+</div>
+</div>
+</section>
+<!-- Section: ROC Curve -->
+<section class="mb-20 scroll-mt-20" id="roc-curve">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">15. ROC曲線分析のためのデータ生成</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        連続またはカテゴリカルのテスト変数が2つの状態（例：陽性 vs. 陰性診断）を区別する診断能力を評価します。
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">15.1 ワークフロー</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">Analyze → ROC Curve</span> に移動します。
+                        </p>
+<div class="mb-6">
+<img alt="ROC曲線設定" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/ROC Curve1.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図15.1: ROC曲線設定</p>
+</div>
+<p class="text-gray-600 mb-4 leading-relaxed">
+<strong>比率：</strong> 左側のパラメータパネルで、陽性サンプル（1）と陰性サンプル（0）の目標ケース数を入力します（例：100の陽性ケースと100の陰性ケース）。生成エンジンはこれらの比率に基づいて中核となる統計的サンプリング行列を構築します。
+                        </p>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">15.2 変数タイプ</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">
+                            左下の <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Continuous</span> または <span class="bg-gray-100 px-2 py-0.5 rounded border text-xs font-semibold text-gray-800">+ Categorical</span> をクリックして、対応する変数を作成します：
+                        </p>
+<ul class="list-disc pl-5 mb-4 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>連続変数：</strong> カード上の変数名、最小値/最大値の範囲、目標の小数点以下の桁数をカスタマイズします。ピンクのスライダー（陽性グループ）と青のスライダー（陰性グループ）をドラッグして、それぞれの平均と標準偏差の分布を迅速に調整します。</li>
+<li><strong>精度調整：</strong> ビジュアルスライダーが必要な粒度に達しない場合は、パラメータの横にあるギアアイコンをクリックして、正確な浮動小数点値を手動で入力します。</li>
+<li><strong>AUCの監視：</strong> この調整プロセス全体を通じて、カード右上のAUC = 0.XXXインジケーターと中央のプロットキャンバスが完全にリアルタイムで更新され、曲線を正確な目標カットオフに視覚的に合わせることができます。</li>
+<li><strong>カテゴリカル変数：</strong> 陽性コホートと陰性コホートの正確な比率またはカウントを定義するだけです。ROC曲線とAUC値の対応する変化を即座に監視できます。</li>
+</ul>
+<div>
+<img alt="ROC曲線プロット" class="w-full rounded-xl shadow-md border border-gray-100" src="../image/ROC Curve2.png"/>
+<p class="text-xs text-gray-400 mt-2 text-center">図15.2: ROC曲線プロットの表示</p>
+</div>
+</div>
+</section>
+<!-- Section: Export/Import Config -->
+<section class="mb-20 scroll-mt-20" id="export-import">
+<h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">16. 設定パラメータの保存とエクスポート</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        反復的なモデリングタスクを効率化し、手動設定エラーを回避するために、アプリケーションは強力な組み込み設定状態保存メカニズムを提供します。
+                    </p>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">16.1 保存/復元</h3>
+<ul class="list-disc pl-5 text-gray-600 space-y-2 leading-relaxed">
+<li><strong>設定のエクスポート：</strong> <span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">File → Export Configuration</span> に移動して、すべての設定パラメータ、変数定義、グループ構造、目標をローカルの`.json`設定ファイルとしてコンピュータに保存します。</li>
+<li><strong>設定のインポート：</strong> 将来のセッションで設定を復元するには、<span class="bg-gray-100 px-1.5 py-0.5 rounded border text-xs font-semibold text-gray-800">File → Import Configuration</span> に移動し、以前保存した設定ファイルを選択します。ワークスペースはすぐにリロードされ、すべての変数カード、スライダー、パラメータ値を復元します。</li>
+</ul>
+</div>
+</section>
+<div class="mt-12 pt-8 border-t border-gray-200 flex justify-between">
+<a class="text-scientific-blue font-medium hover:underline flex items-center" href="../index.html">
+<svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+                        ホームに戻る
+                    </a>
+</div>
+</div>
+</main>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const button = document.getElementById('lang-menu-button');
+            const dropdown = document.getElementById('lang-dropdown');
+            let isDropdownOpen = false;
+
+            button.addEventListener('click', function (event) {
+                event.stopPropagation();
+                isDropdownOpen = !isDropdownOpen;
+                if (isDropdownOpen) {
+                    dropdown.classList.remove('hidden');
+                } else {
+                    dropdown.classList.add('hidden');
+                }
+            });
+
+            document.addEventListener('click', function (event) {
+                if (isDropdownOpen && !dropdown.contains(event.target)) {
+                    isDropdownOpen = false;
+                    dropdown.classList.add('hidden');
+                }
+            });
+
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('aside nav a');
+            const mainArea = document.querySelector('main');
+
+            mainArea.addEventListener('scroll', () => {
+                let current = '';
+                const mainOffset = mainArea.offsetTop;
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - mainOffset;
+                    if (mainArea.scrollTop >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                if (mainArea.scrollHeight - mainArea.scrollTop <= mainArea.clientHeight + 10) {
+                    current = sections[sections.length - 1].getAttribute('id');
+                }
+
+                navLinks.forEach(link => {
+                    link.classList.remove('sidebar-active', 'text-gray-900', 'bg-gray-100');
+                    link.classList.add('text-gray-600');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('sidebar-active');
+                        link.classList.remove('text-gray-600');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
